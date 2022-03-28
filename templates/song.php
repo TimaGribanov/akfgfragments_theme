@@ -42,7 +42,14 @@
                                     echo "</div>"; //End of the first col
                                     echo "<div class='col'>"; //The second col: Spotify, Releases containing the song
                                     echo "<div class='row'>"; //Spotify
-                                    echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/" . $row->spotify_uri . "?utm_source=generator' width='60%' height='80' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
+                                    if(strpos($row->spotify_uri, ",") === false) {
+                                        echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/" . $row->spotify_uri . "?utm_source=generator' width='60%' height='80' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
+                                    } else {
+                                        $spotify_uri_arr = explode(",", $row->spotify_uri);
+                                        foreach($spotify_uri_arr as &$uri) {
+                                            echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/" . $uri . "?utm_source=generator' width='60%' height='80' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
+                                        }
+                                    }
                                     echo "</div>";
                                     echo "<div class='row'>"; //Releases
                                     echo "<h3>Part of the following releases:</h3>";
@@ -150,39 +157,6 @@
             })
 
         })( jQuery );
-
-        //Change language
-        //(function($) {
-            
-        //    $('.song-text-btn').on('click', function() {
-        //        let title = $(document).attr('title');
-        //        console.log(title);
-        //        let lang = $(this).attr('name');
-        //        console.log(lang);
-         //       $.ajax({
-         //           url: '<?php bloginfo('url');?>/wp-content/themes/akfgfragments/lyrics-query.php?song=' + title + '&lang=' + lang,
-         //           success: function(output) {
-         //               var res = output;
-        //                console.log('Inside jquery: ' + res);
-         //           }
-         //       });
-
-//                console.log('Outside jquery: ' + res);
-                
-                //if($(this).attr('name') === 'ja') {
-                   <?php //$lyrics_results = $songdb->get_results( "SELECT * FROM lyrics WHERE song LIKE '$title_parsed' AND lang = 'ja'" ); ?>
-                //}
-
-                //$('#lyrics-div').append('
-                //    <?php
-                //        foreach($lyrics_results as $row) {
-                 //           echo "<div id='song-text'>" . $row->text . "</div>";
-                 //       }
-                 //   ?>
-                //')
-//            })
-
-//        })( jQuery );
     </script>
 </body>
 </html>
