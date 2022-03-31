@@ -1,4 +1,4 @@
-<?php /* Template Name: Akfgfragments Song */ ?>
+<?php /* Template Name: Akfgfragments Release */ ?>
 
 <?php get_header(song); ?>
 <?php get_header(header); ?>
@@ -16,13 +16,13 @@
                             $title_parsed = str_replace('%27', '\'', $title_parsed); //Change %27 to a single quote
 
                             //Connect to another DB containing discography data
-                            $songdb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
-                            $results = $songdb->get_results( "SELECT * FROM songs WHERE title_ro = \"$title_parsed\"" );
-                            $song_releases = $songdb->get_results( "SELECT r.title_ro FROM rel_songs rs JOIN releases r ON r.id = rs.release_id JOIN songs s ON s.id = rs.song_id WHERE s.title_ro LIKE '$title_parsed%'" );
+                            $releasedb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
+                            $results = $releasedb->get_results( "SELECT r.title_ja, r.title_ro, r.title_en, r.title_ru, r.title_es, r.title_de, r.title_fr, r.title_be, r.title_uk, r.title_fi, r.title_pt, r.date, r.catalogue, r.spotify_uri, t.type FROM releases r JOIN types t ON t.id = r.type WHERE title_ro =  \"$title_parsed\";" );
+                            $song_releases = $releasedb->get_results( "SELECT r.title_ro FROM rel_songs rs JOIN releases r ON r.id = rs.release_id JOIN songs s ON s.id = rs.song_id WHERE s.title_ro LIKE '$title_parsed%'" );
 
                             if(!empty($results)) {
                                 foreach($results as $row) {
-                                    echo "<h1 class='song_title'>$row->title_ro</h1>"; //Song title
+                                    echo "<h1 class='song_title'>$row->title_ro</h1><span id='release-type'>$row->type</span>"; //Release title
                                     echo "<div class='row'>"; //The first row: Title translations, Credits, Spotify, Releases containing the song
                                     echo "<div class='col'>"; //The first col: Title translations, Credits
                                     echo "<div class='row'>"; //Title translations
@@ -44,14 +44,7 @@
                                     echo "</div>"; //End of the first col
                                     echo "<div class='col'>"; //The second col: Spotify, Releases containing the song
                                     echo "<div class='row'>"; //Spotify
-                                    if(strpos($row->spotify_uri, ",") === false) {
-                                        echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/" . $row->spotify_uri . "?utm_source=generator' width='60%' height='80' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
-                                    } else {
-                                        $spotify_uri_arr = explode(",", $row->spotify_uri);
-                                        foreach($spotify_uri_arr as &$uri) {
-                                            echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/" . $uri . "?utm_source=generator' width='60%' height='80' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
-                                        }
-                                    }
+                                    echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/album/" . $row->spotify_uri . "?utm_source=generator' width='60%' height='380' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
                                     echo "</div>";
                                     echo "<div class='row'>"; //Releases
                                     echo "<h3>Part of the following releases:</h3>";
