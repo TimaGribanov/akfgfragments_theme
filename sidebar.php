@@ -4,4 +4,6 @@
     
     <h2 ><?php _e('Archives'); ?></h2>
     <ul > <?php wp_get_archives(); ?> </ul>
+
+    <!-- iframe src="https://discord.com/widget?id=469504344337678336&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe -->
 </div>

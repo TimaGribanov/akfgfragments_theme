@@ -6,6 +6,7 @@
     $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     $title = parse_url($url, PHP_URL_QUERY); //Get a query
     $title_parsed = str_replace('_', ' ', $title); //Delete underscores if they exist
+    $title_parsed = str_replace('%27', '\'', $title_parsed); //Change %27 to a single quote
     ?>
     <title><?php echo($title_parsed)?></title>
 

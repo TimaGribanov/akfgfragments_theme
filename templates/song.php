@@ -9,13 +9,15 @@
                 <div id="ttr_content" class="col-lg-8 col-sm-8 col-md-8 col-xs-12">
                     <div class="row">
                         <?php
+                            //THE FOLLOWING FOUR LINES ARE DOUBLED IN THE header-song.php!!! DO NOT FORGET TO MAKE CHANGES THERE AS WHERE!!!
                             $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
                             $title = parse_url($url, PHP_URL_QUERY); //Get a query
                             $title_parsed = str_replace('_', ' ', $title); //Delete underscores if they exist
+                            $title_parsed = str_replace('%27', '\'', $title_parsed); //Change %27 to a single quote
 
                             //Connect to another DB containing discography data
                             $songdb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
-                            $results = $songdb->get_results( "SELECT * FROM songs WHERE title_ro = '$title_parsed'" );
+                            $results = $songdb->get_results( "SELECT * FROM songs WHERE title_ro = \"$title_parsed\"" );
                             $song_releases = $songdb->get_results( "SELECT r.title_ro FROM rel_songs rs JOIN releases r ON r.id = rs.release_id JOIN songs s ON s.id = rs.song_id WHERE s.title_ro LIKE '$title_parsed%'" );
 
                             if(!empty($results)) {
