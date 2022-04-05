@@ -9,10 +9,10 @@
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="./disco">Discography</a>
+                            <a class="nav-link" href="./discography">Discography</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./mv">Music Videos</a>
+                            <a class="nav-link" href="./music_videos">Music Videos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./lyrics">Lyrics</a>

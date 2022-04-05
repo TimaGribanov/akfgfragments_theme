@@ -17,119 +17,63 @@
 
                             //Connect to another DB containing discography data
                             $releasedb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
-                            $results = $releasedb->get_results( "SELECT r.title_ja, r.title_ro, r.title_en, r.title_ru, r.title_es, r.title_de, r.title_fr, r.title_be, r.title_uk, r.title_fi, r.title_pt, r.date, r.catalogue, r.spotify_uri, t.type FROM releases r JOIN types t ON t.id = r.type WHERE title_ro =  \"$title_parsed\";" );
-                            $song_releases = $releasedb->get_results( "SELECT r.title_ro FROM rel_songs rs JOIN releases r ON r.id = rs.release_id JOIN songs s ON s.id = rs.song_id WHERE s.title_ro LIKE '$title_parsed%'" );
+                            $results = $releasedb->get_results( "SELECT r.title_ja, r.title_ro, r.title_en, r.title_ru, r.title_es, r.title_de, r.title_fr, r.title_be, r.title_uk, r.title_fi, r.title_pt, r.date, r.catalogue, r.spotify_uri, r.img_uri, t.type FROM releases r JOIN types t ON t.id = r.type WHERE title_ro =  \"$title_parsed\";" );
+                            $tracklist = $releasedb->get_results( "SELECT s.title_ro FROM rel_songs rs JOIN releases r ON r.id = rs.release_id JOIN songs s ON s.id = rs.song_id WHERE r.title_ro = \"$title_parsed\" ORDER BY rs.release_pos ASC;" );
 
                             if(!empty($results)) {
                                 foreach($results as $row) {
-                                    echo "<h1 class='song_title'>$row->title_ro</h1><span id='release-type'>$row->type</span>"; //Release title
-                                    echo "<div class='row'>"; //The first row: Title translations, Credits, Spotify, Releases containing the song
-                                    echo "<div class='col'>"; //The first col: Title translations, Credits
-                                    echo "<div class='row'>"; //Title translations
-                                    echo "<p class='title-trans'>" . $row->title_ja . ", " . $row->title_en . "</p>";
-                                    echo "<p class='title-trans' id='open-hidden'>more...</p>";
-                                    echo "<div id='hidden-translations' style='display:none;'>";
-                                    echo "<p class='title-trans'>" . $row->title_de . "</p>";
-                                    echo "<p class='title-trans'>" . $row->title_es . "</p>";
-                                    echo "<p class='title-trans'>" . $row->title_fr . "</p>";
-                                    echo "<p class='title-trans'>" . $row->title_pt . "</p>";
-                                    echo "<p class='title-trans'>" . $row->title_ru . "</p>";
-                                    echo "<p class='title-trans'>" . $row->title_uk . "</p>";
-                                    echo "<p class='title-trans'>" . $row->title_be . "</p>";
-                                    echo "</div>";
-                                    echo "</div>"; //End of title translations
-                                    //echo "<div class='row'>"; //Credits
-                                    //echo "<h3>Credits:</h3>";
-                                    //echo "</div>"; //End of credits
+                                    echo "<h1 class='song_title'>$row->title_ro</h1>"; //Release title
+                                    echo "<div class='col'>"; //The first col: Title translations, Type of release, Release date, Tracklist, Credits
+                                        echo "<div class='row'>"; //Title translations
+                                            echo "<p class='title-trans'>$row->title_ja, $row->title_en</p>";
+                                            echo "<p class='title-trans' id='open-hidden'>more...</p>";
+                                            echo "<div id='hidden-translations' style='display:none;'>";
+                                                echo "<p class='title-trans'>" . $row->title_de . "</p>";
+                                                echo "<p class='title-trans'>" . $row->title_es . "</p>";
+                                                echo "<p class='title-trans'>" . $row->title_fr . "</p>";
+                                                echo "<p class='title-trans'>" . $row->title_pt . "</p>";
+                                                echo "<p class='title-trans'>" . $row->title_ru . "</p>";
+                                                echo "<p class='title-trans'>" . $row->title_uk . "</p>";
+                                                echo "<p class='title-trans'>" . $row->title_be . "</p>";
+                                            echo "</div>";
+                                        echo "</div>"; //End of title translations
+                                        
+                                        echo "<div class='row'>"; //Release type
+                                            echo "<p id='release-type'>Type of release: $row->type</span>";
+                                        echo "</div>";
+
+                                        echo "<div class='row'>"; //Release date
+                                            echo "<p id='release-type'>Release date: " . date("jS F, Y", strtotime("$row->date")) . "</span>";
+                                        echo "</div>";
+
+                                        echo "<div class='row'>"; //Tracklist
+                                        ## CHANGE TRACKLISTS LOGIC!!!!
+                                        $tracklist_length = count($tracklist);
+                                            echo "<h3>Tracklist:</h3>";
+                                            echo "<ol>";
+                                            for ($i = 0; $i < $tracklist_length; $i++) {
+                                                $track = $tracklist["$i"]->title_ro;
+                                                echo "<li>$track</li>";
+                                            }
+                                            echo "</ol>";
+                                        echo "</div>";
+
+                                        //echo "<div class='row'>"; //Credits
+                                        //echo "<h3>Credits:</h3>";
+                                        //echo "</div>"; //End of credits
                                     echo "</div>"; //End of the first col
-                                    echo "<div class='col'>"; //The second col: Spotify, Releases containing the song
-                                    echo "<div class='row'>"; //Spotify
-                                    echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/album/" . $row->spotify_uri . "?utm_source=generator' width='60%' height='380' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
-                                    echo "</div>";
-                                    echo "<div class='row'>"; //Releases
-                                    echo "<h3>Part of the following releases:</h3>";
-                                    echo "<div>"; //List of releases
-                                    if(!empty($song_releases)) {  
-                                        foreach($song_releases as $row) {
-                                            echo "<p class='release'>" . $row->title_ro . "</p>";                      
-                                        }
-                                    }
-                                    echo "</div>";
-                                    echo "</div>";
+
+                                    echo "<div class='col'>"; //The second col: Album cover, Spotify
+                                        echo "<div class='row'>"; //Album cover
+                                            echo "<img src='$row->img_uri' />";
+                                        echo "</div>";
+                                        echo "<div class='row'>"; //Spotify
+                                            echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/album/" . $row->spotify_uri . "?utm_source=generator' width='60%' height='380' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
+                                        echo "</div>";
                                     echo "</div>"; //End of the second col
-                                    echo "</div>"; //End of the first row
                                 }
                             }                            
                         ?>
-
-                        <div class="row" id="lyrics-div"> <!-- The second row: Lyrics -->
-                            <h3>Lyrics:</h3>
-                            <div class="d-grid gap-2 d-md-block"> <!-- Buttons -->
-                            <form method="post">
-                                <input type="submit" class="btn btn-primary me-2 song-text-btn" name="ja" value="japanese">
-                                <input type="submit" class="btn btn-primary me-2 song-text-btn" name="ro" value="romaji">
-                                <input type="submit" class="btn btn-primary me-2 song-text-btn" name="en" value="english">
-                                <input type="submit" class="btn btn-primary me-2 song-text-btn" name="fr" value="french">
-                                <input type="submit" class="btn btn-primary me-2 song-text-btn" name="de" value="german">
-                                <input type="submit" class="btn btn-primary me-2 song-text-btn" name="es" value="spanish">
-                                <input type="submit" class="btn btn-primary song-text-btn" name="pt" value="portuguese">
-                            </form>
-                            </div>
-                            <?php
-                                if (array_key_exists('ja', $_POST)) {
-                                    getLyrics(ja);
-                                } elseif (array_key_exists('ro', $_POST)) {
-                                    getLyrics(ro);
-                                } elseif (array_key_exists('en', $_POST)) {
-                                    getLyrics(en);
-                                } elseif (array_key_exists('fr', $_POST)) {
-                                    getLyrics(fr);
-                                } elseif (array_key_exists('de', $_POST)) {
-                                    getLyrics(de);
-                                } elseif (array_key_exists('es', $_POST)) {
-                                    getLyrics(es);
-                                } elseif (array_key_exists('pt', $_POST)) {
-                                    getLyrics(pt);
-                                }
-                                function getLyrics($lang) {
-                                    global $title_parsed, $songdb;
-                                    
-                                    $lyrics_results = $songdb->get_results( "SELECT * FROM lyrics WHERE song = '$title_parsed' AND lang = '$lang'" );
-                                    if(!empty($lyrics_results)) {
-                                        foreach($lyrics_results as $row) {
-                                            echo "<div id='song-text'>" . $row->text . "</div>";
-                                        }
-                                    } else {
-                                        switch ($lang) {
-                                            case ja:
-                                                $lang_full = 'Japanese';
-                                                break;
-                                            case ro:
-                                                $lang_full = 'romaji';
-                                                break;
-                                            case en:
-                                                $lang_full = 'English';
-                                                break;
-                                            case fr:
-                                                $lang_full = 'French';
-                                                break;
-                                            case de:
-                                                $lang_full = 'German';
-                                                break;
-                                            case es:
-                                                $lang_full = 'Spanish';
-                                                break;
-                                            case pt:
-                                                $lang_full = 'Portuguese';
-                                                break;
-                                            default:
-                                                $lang_full = 'the selected language';
-                                        }
-                                        echo "<div id='song-text'>Sorry! This song's lyrics are not yet available in $lang_full.</div>";
-                                    }
-                                }
-                            ?>
-                        </div> <!-- End of the second row -->
                     </div>
                 </div>
                 <?php get_sidebar(); ?>
