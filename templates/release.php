@@ -47,7 +47,6 @@
                                         echo "</div>";
 
                                         echo "<div class='row'>"; //Tracklist
-                                        ## CHANGE TRACKLISTS LOGIC!!!!
                                         $tracklist_length = count($tracklist);
                                             echo "<h3>Tracklist:</h3>";
                                             echo "<ol>";

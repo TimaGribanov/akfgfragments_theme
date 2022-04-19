@@ -58,7 +58,7 @@
                                     echo "<div>"; //List of releases
                                     if(!empty($song_releases)) {  
                                         foreach($song_releases as $row) {
-                                            echo "<p class='release'>" . $row->title_ro . "</p>";                      
+                                            echo "<p class='release'><a href='release?" . str_replace('\'', '%27', str_replace(' ', '_', $row->title_ro)) . "'>" . $row->title_ro . "</a></p>";                      
                                         }
                                     }
                                     echo "</div>";
@@ -101,7 +101,7 @@
                                 function getLyrics($lang) {
                                     global $title_parsed, $songdb;
                                     
-                                    $lyrics_results = $songdb->get_results( "SELECT * FROM lyrics WHERE song = '$title_parsed' AND lang = '$lang'" );
+                                    $lyrics_results = $songdb->get_results( "SELECT * FROM lyrics WHERE song_id = (SELECT id FROM songs WHERE title_ro = '$title_parsed') AND lang = '$lang'" );
                                     if(!empty($lyrics_results)) {
                                         foreach($lyrics_results as $row) {
                                             echo "<div id='song-text'>" . $row->text . "</div>";

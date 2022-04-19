@@ -1,6 +1,6 @@
 <?php
 /**
- * Discography Releases Administration Screen – Add new.
+ * Discography Songs Administration Screen.
  *
  * If accessed directly in a browser this page shows a list of actions which can be done.
  *
@@ -12,17 +12,17 @@
 require_once __DIR__ . '/admin.php';
 
 // Used in the HTML title tag.
-$title       = __( 'New release' );
-$this_file   = 'discography-release-new.php';
-$parent_file = 'discography-release.php';
+$title       = __( 'New song' );
+$this_file   = 'discography-song-new.php';
+$parent_file = 'discography-song.php';
 
 require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
 
 <div class="wrap">
-    <h1><?php esc_html_e( 'New release' ); ?></h1>
+    <h1><?php esc_html_e( 'New song' ); ?></h1>
     <form action="" method="POST">
-        <div style="display: flex; width: 100%;">
-            <div style="flex: 0 0 30%;">
+        <div style="display: flex; width: 500px;">
+            <div style="flex: 1;">
                 <h3>Title*:</h3>
                 <div>
                     <table>
@@ -72,77 +72,38 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                         </tr>
                     </table>
                 </div><br>
-                <label for="type"><h3>Type*:</h3></label>
-                <select type="text" id="type" name="type">
-                    <?php
-                    $discodb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
-                    $types = $discodb->get_results( "SELECT * FROM types;" );
-                    foreach ($types as $row) {
-                        echo "<option value='$row->id'>$row->type</option>";
-                    }
-                    ?>
-                </select><br><br>
-                <label for="date"><h3>Date of release:</h3></label>
-                <input type="date" id="date" name="date"><br><br>
-                <label for="catalogue"><h3>Catalogue Number:</h3></label>
-                <input type="text" id="catalogue" name="catalogue"><br><br>
+
                 <label for="spotify_uri"><h3>Spotify URI:</h3></label>
                 <input type="text" id="spotify_uri" name="spotify_uri"><br><br>
-                <label for="img_uri"><h3>Cover Image URI:</h3></label>
-                <input type="text" id="img_uri" name="img_uri"><br><br>
-                <input type="submit" name="submit" value="Add release">
+                
             </div>
 
-            <div style="flex: 1;">
-                <h3>Tracklist:</h3>
-                <script type="text/javascript">
-                    let i = 1;
-                    (function($) {
-
-                        $(document).on('click', '.song-button', function() {
-                            $('#song-list').append( '<span>' + i + '</span><input type="text" name="song[]" value="' + $(this).find('.song-id').text() + '" style="display: none;"><input type="text" name="song-title[]" value="' + $(this).find('.song-title').text() + '"><br>' );
-                            i++;
-                        })
-
-                    })( jQuery );
-                </script>
-                <div id="song-list"></div>
-                <input type="text" id="song-search" name="song-search" style="margin-top: 20px;">
-                <div id="song-search-list"></div>
-                <script type="text/javascript">
-                    document.getElementById('song-search').addEventListener('keyup', findSongs);
-
-                    function findSongs() {
-                        let queryParam = document.getElementById('song-search').value;
-                        let searchString = 'param=' + queryParam;
-
-                        //AJAX to search for songs
-                        if (queryParam) {
-                            (function($) {
-                                $.ajax({
-                                    type: "POST",
-                                    url: "/wp-admin/discography-release-new-query.php",
-                                    data: searchString,
-                                    cache: false,
-                                    success: function(html) {
-                                        document.getElementById('song-search-list').innerHTML = html
-                                    }
-                                });
-                            })( jQuery );
-                        } else {
-                            document.getElementById('song-search-list').innerHTML = '';
-                        }
-                        
-                        return false;
-                    }
-                </script>
+            <div style="margin-right: 20px;">
+                <h3>Lyrics:</h3>
+                <p><em>Please add ONLY Japanese lyrics here. All other lyrics you will be able to add from the Edit menu.</em></p>
+                    <!--
+                    <label for="lyrics-lang">Language: </label>
+                    <select type="text" id="lyrics-lang" name="lyrics-lang">
+                        <option value="ja">Japanese</option>
+                        <option value="ro">romaji</option>
+                        <option value="en">English</option>
+                        <option value="ru">Russian</option>
+                        <option value="es">Spanish</option>
+                        <option value="de">German</option>
+                        <option value="fr">French</option>
+                        <option value="be">Belarusian</option>
+                        <option value="uk">Ukrainian</option>
+                        <option value="fi">Finnish</option>
+                        <option value="py">Portuguese</option>
+                    </select><br>
+                    -->
+                    <textarea name="lyrics-text" style="width: 400px; height: 424px;"></textarea>
             </div>
         </div>
+        <input type="submit" name="submit">
     </form>
 
-    <?php    
-    error_reporting(E_ALL);
-    ini_set('display_errors', 'on');
+    <?php
         if (isset($_POST['submit'])) {
             $title_ja = $_POST['title_ja'];
             $title_ro = $_POST['title_ro'];
@@ -155,17 +116,12 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
             $title_uk = $_POST['title_uk'];
             $title_fi = $_POST['title_fi'];
             $title_pt = $_POST['title_pt'];
-            $type = $_POST['type'];
-            $date = $_POST['date'];
-            $catalogue = $_POST['catalogue'];
             $spotify_uri = $_POST['spotify_uri'];
-            $img_uri = $_POST['img_uri'];
-            $songs = $_POST['song'];
-            $songs_count = count($songs);
+            $lyrics = nl2br($_POST['lyrics-text']);
 
             $discodb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
             $discodb->insert(
-                "releases",
+                "songs",
                 array(
                     "title_ja" => "$title_ja",
                     "title_ro" => "$title_ro",
@@ -178,29 +134,20 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                     "title_uk" => "$title_uk",
                     "title_fi" => "$title_fi",
                     "title_pt" => "$title_pt",
-                    "type" => "$type",
-                    "date" => "$date",
-                    "catalogue" => "$catalogue",
-                    "spotify_uri" => "$spotify_uri",
-                    "img_uri" => "$img_uri"
+                    "spotify_uri" => "$spotify_uri"
                 ) 
             );
-
-            $rel_id_arr = $discodb->get_results( "SELECT id FROM releases WHERE title_ro = \"$title_ro\";" );
-            $rel_id = $rel_id_arr["0"]->id;
-            $i = 1;
-            foreach ($songs as $song) {
-                $curr_pos = array_search('$song', $songs);
+            $song_id = $discodb->get_results( "SELECT id FROM songs WHERE title_ja = \"$title_ja\";" );
+            foreach ($song_id as $row) {
                 $discodb->insert(
-                    "rel_songs",
+                    "lyrics",
                     array(
-                        "release_id" => "$rel_id",
-                        "song_id" => "$song",
-                        "release_pos" => "$i"
+                        "song_id" => "$row->id",
+                        "band_id" => "1",
+                        "lang" => "ja",
+                        "text" => "$lyrics"
                     )
                 );
-
-                $i++;
             }
         }
     ?>
