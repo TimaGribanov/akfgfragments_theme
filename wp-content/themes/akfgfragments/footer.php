@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-3">
             <h6>akfgfragments.com</h6>
-            <p>Your guide to Asian Kung-Fu Generation world world world</p>
+            <p>Your guide to Asian Kung-Fu Generation <span class="ftr-crossed">world world</span> world</p>
         </div>
         <div class="col-6">
             <nav id="footer-menu" class="navbar navbar-expand-lg">
