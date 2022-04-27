@@ -12,7 +12,7 @@
 require_once __DIR__ . '/admin.php';
 
 // Used in the HTML title tag.
-$title       = __( 'New song' );
+$title       = __( 'Edit song' );
 $this_file   = 'discography-song-edit.php';
 $parent_file = 'discography-song.php';
 
@@ -26,22 +26,25 @@ $url = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $title = parse_url($url, PHP_URL_QUERY); //Get a query
 $title_parsed = str_replace('_', ' ', $title); //Delete underscores if they exist
 $title_parsed = str_replace('%27', '\'', $title_parsed); //Change %27 to a single quote
+$title_parsed = str_replace('%26', '&', $title_parsed); //Cahnge %26 to an ampersand
+$title_parsed = str_replace('%23', '#', $title_parsed); //Cahnge %23 to a number sign
+$title_parsed = str_replace('%3F', '?', $title_parsed); //Cahnge %3F to a question mark
 ?>
 
 <div class="wrap">
-    <h1><?php global $title_parsed; esc_html_e( 'Edit song $title_parsed' ); ?></h1>
-    <?php
-    $discodb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
-    $results = $discodb->get_results( "SELECT title_ja, title_ro, title_en, title_ru, title_es, title_de, title_fr, title_be, title_uk, title_fi, title_pt, spotify_uri FROM songs WHERE title_ro =  \"$title_parsed\";" );
-    foreach ($results as $row) {
-    ?>
-
-    <form action="" method="POST">
-        <div style="display: flex; width: 500px;">
-            <div style="flex: 1;">
+    <h1><?php global $title_parsed; esc_html_e( 'Edit song ' . $title_parsed ); ?></h1>
+    
+    <div style="display: flex; width: 100%;">
+        <?php
+        $discodb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
+        $results = $discodb->get_results( "SELECT title_ja, title_ro, title_en, title_ru, title_es, title_de, title_fr, title_be, title_uk, title_fi, title_pt, spotify_uri FROM songs WHERE title_ro =  \"$title_parsed\";" );
+        foreach ($results as $row) {
+        ?>
+        <div style="flex: 0 0 30%;">
+            <form action="" method="POST">            
                 <h3>Title*:</h3>
                 <div>
-                <table>
+                    <table>
                         <tr>
                             <td><label for="title_ja">Japanese*: </label></td>
                             <td><input type="text" id="title_ja" name="title_ja" value="<?php echo $row->title_ja; ?>"></td>
@@ -91,35 +94,68 @@ $title_parsed = str_replace('%27', '\'', $title_parsed); //Change %27 to a singl
 
                 <label for="spotify_uri"><h3>Spotify URI:</h3></label>
                 <input type="text" id="spotify_uri" name="spotify_uri" value="<?php echo $row->spotify_uri; ?>"><br><br>
-            </div>
+            
+                <input type="submit" name="submit" value="Update song">
+            </form>
+        </div>
         <?php
         }
         ?>
 
-            <div style="margin-right: 20px;">
+        <div style="flex: 1;">        
+            <form action="" method="POST">    
                 <h3>Lyrics:</h3>
-                <p><em>Please add ONLY Japanese lyrics here. All other lyrics you will be able to add from the Edit menu.</em></p>
-                    <!--
-                    <label for="lyrics-lang">Language: </label>
-                    <select type="text" id="lyrics-lang" name="lyrics-lang">
-                        <option value="ja">Japanese</option>
-                        <option value="ro">romaji</option>
-                        <option value="en">English</option>
-                        <option value="ru">Russian</option>
-                        <option value="es">Spanish</option>
-                        <option value="de">German</option>
-                        <option value="fr">French</option>
-                        <option value="be">Belarusian</option>
-                        <option value="uk">Ukrainian</option>
-                        <option value="fi">Finnish</option>
-                        <option value="py">Portuguese</option>
-                    </select><br>
-                    -->
-                    <textarea name="lyrics-text" style="width: 400px; height: 424px;"></textarea>
-            </div>
+                <p><em><strong>NB!</strong> Update one language at a time!</em></p>
+                
+                <label for="lyrics-lang">Language: </label>
+                <select type="text" id="lyrics-lang" name="lyrics-lang">
+                    <option class="lyrics-lang-option" value="ja">Japanese</option>
+                    <option class="lyrics-lang-option" value="ro">romaji</option>
+                    <option class="lyrics-lang-option" value="en">English</option>
+                    <option class="lyrics-lang-option" value="ru">Russian</option>
+                    <option class="lyrics-lang-option" value="es">Spanish</option>
+                    <option class="lyrics-lang-option" value="de">German</option>
+                    <option class="lyrics-lang-option" value="fr">French</option>
+                    <option class="lyrics-lang-option" value="be">Belarusian</option>
+                    <option class="lyrics-lang-option" value="uk">Ukrainian</option>
+                    <option class="lyrics-lang-option" value="fi">Finnish</option>
+                    <option class="lyrics-lang-option" value="pt">Portuguese</option>
+                </select><br>
+                    
+                <textarea id="lyrics-text" name="lyrics-text" style="width: 400px; height: 424px;"></textarea><br><br>
+
+                <input type="submit" name="submit-lyrics" value="Update song's lyrics">
+
+                <script type="text/javascript">
+                    document.getElementById('lyrics-lang').addEventListener('click', function(){showLyrics('<?php echo $title ?>', this.value)});
+
+                    function showLyrics(song, lang) {
+                        let searchString = 'song=' + song + '&lang=' + lang;
+
+                        //AJAX to search for lyrics
+                        if (searchString) {
+                            (function($) {
+                                $.ajax({
+                                    type: "POST",
+                                    url: "/wp-admin/discography-song-edit-query.php",
+                                    data: searchString,
+                                    cache: false,
+                                    success: function(text) {
+                                        document.getElementById('lyrics-text').innerHTML = text
+                                    }
+                                });
+                            })( jQuery );
+                        } else {
+                            document.getElementById('lyrics-text').innerHTML = '';
+                        }
+                        
+                        return false;
+                    }
+                </script>
+            </form>
         </div>
-        <input type="submit" name="submit" value="Update song">
-    </form>
+    </div>
+        
 
     <?php
         if (isset($_POST['submit'])) {
@@ -135,7 +171,6 @@ $title_parsed = str_replace('%27', '\'', $title_parsed); //Change %27 to a singl
             $title_fi = $_POST['title_fi'];
             $title_pt = $_POST['title_pt'];
             $spotify_uri = $_POST['spotify_uri'];
-            $lyrics = nl2br($_POST['lyrics-text']);
 
             $song_id_arr = $discodb->get_results( "SELECT id FROM songs WHERE title_ro = \"$title_ro\";" );
             $song_id = $song_id_arr["0"]->id;
@@ -157,16 +192,29 @@ $title_parsed = str_replace('%27', '\'', $title_parsed); //Change %27 to a singl
                 ),
                 array( "ID" => $song_id )
             );
-            $song_id = $discodb->get_results( "SELECT id FROM songs WHERE title_ja = \"$title_ja\";" );
+        }
+
+        if (isset($_POST['submit-lyrics'])) {
+            $lyrics = nl2br($_POST['lyrics-text'], false);
+            $lyrics = preg_replace("/[\r\n]*/","",$lyrics);
+            var_dump($lyrics);
+            $lang = $_POST['lyrics-lang'];
+
+            $song_id = $discodb->get_results( "SELECT id FROM songs WHERE title_ro = \"$title_parsed\";" );
+            
             foreach ($song_id as $row) {
-                $discodb->insert(
+                $lyrics_id_arr = $discodb->get_results( "SELECT id FROM lyrics WHERE song_id = \"$row->id\" AND lang = \"$lang\";" );
+                $lyrics_id = $lyrics_id_arr["0"]->id;
+                
+                $discodb->update(
                     "lyrics",
                     array(
                         "song_id" => "$row->id",
                         "band_id" => "1",
-                        "lang" => "ja",
+                        "lang" => "$lang",
                         "text" => "$lyrics"
-                    )
+                    ),
+                    array( "id" =>  $lyrics_id )
                 );
             }
         }

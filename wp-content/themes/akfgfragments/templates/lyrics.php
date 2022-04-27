@@ -23,7 +23,7 @@
                                 for ($i = 0; $i < $songs_number; $i++) {
                                     $song = $results_songs["$i"]->title_ro;
                                     echo "<div class='col mb-2'>";
-                                    echo "<a href='/song?" . str_replace('\'', '%27', str_replace(' ', '_',$song)) . "' target='blank_'>" . $song . "</a>";
+                                    echo "<a href='/song?" . str_replace('?', '%3F', str_replace('#', '%23', str_replace('&', '%26', str_replace('\'', '%27', str_replace(' ', '_',$song))))) . "' target='blank_'>" . $song . "</a>";
                                     echo "</div>";
                                 }
                                 echo "</div>";
