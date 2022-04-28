@@ -1,6 +1,10 @@
 body {
     text-align: left;
-    width: 80vw;
+    margin:0 auto;
+}
+
+#main, .main-wrapper {
+    width: 80%;
     margin:0 auto;
 }
 
@@ -15,11 +19,11 @@ body {
     color: red;
 }
 
-#ttr_sidebar {
+#main_sidebar {
     border-left: 1px solid black;
 }
 
-#ttr_footer {
+#main_footer {
     width: 100%;
     border-top: 1px #a2a2a2 solid;
     text-align: center;
@@ -37,4 +41,12 @@ body {
 
 .ftr-crossed {
     text-decoration-line: line-through;
+}
+
+#ftr-left-block {
+    text-align: left;
+}
+
+#ftr-right-block {
+
 }

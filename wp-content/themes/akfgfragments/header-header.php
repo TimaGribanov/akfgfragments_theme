@@ -1,7 +1,7 @@
 <body>
-    <header id="ttr_header" class="jumbotron">
+    <header id="main-header" class="jumbotron">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
+            <div class="container-fluid main-wrapper">
                 <a class="navbar-brand" href="/">akfgfragments<span id="hdr-alpha-sign">α</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
