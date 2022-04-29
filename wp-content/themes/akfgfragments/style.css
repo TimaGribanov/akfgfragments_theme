@@ -1,11 +1,65 @@
+/********************/
+/* COLOUR VARIABLES */
+/********************/
+
+:root {
+    --bg-colour: #fff;
+    --text-colour: #46413e;
+    --header-colour: #523233;
+    --link-hover-colour: #bc661d;
+    --block-border-colour: #dcb04f;
+    --btn-colour: #488888;
+    --btn-hover-colour: #5a6c9e;
+    --alpha-letter-colour: #bf6277;
+  }
+
+/*****************/
+/***** BASIC *****/
+/*****************/
+
 body {
+    background: var(--bg-colour);
     text-align: left;
     margin:0 auto;
+    color: var(--text-colour);
 }
 
 #main, .main-wrapper {
     width: 80%;
     margin:0 auto;
+}
+
+.block {
+    border-color: var(--block-border-colour);
+}
+
+a {
+    color: var(--text-colour);
+}
+
+a:hover, a:active {
+    color: var(--link-hover-colour);
+}
+
+.nav-link {
+    color: var(--text-colour);
+}
+
+.nav-link:hover, .nav-link:active {
+    color: var(--link-hover-colour);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--header-colour);
+}
+
+.btn-primary {
+    background-color: var(--btn-colour);
+    border: 0px;
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-hover-colour);
 }
 
 /******************/
@@ -16,7 +70,7 @@ body {
     position: relative;
     top: -0.5em;
     font-size: 80%;
-    color: red;
+    color: var(--alpha-letter-colour);
 }
 
 #main_sidebar {
