@@ -1,12 +1,12 @@
 <?php /* Template Name: Akfgfragments Release */ ?>
 
-<?php get_header(song); ?>
+<?php get_header(); ?>
 <?php get_header(header); ?>
 
-    <main>
+    <main role="main">
         <div class="container">
-            <div id="ttr_main" class="row">
-                <div id="ttr_content" class="col-lg-8 col-sm-8 col-md-8 col-xs-12">
+            <div id="main" class="row">
+                <div id="content" class="col-lg-8 col-sm-8 col-md-8 col-xs-12">
                     <div class="row">
                         <?php
                             //THE FOLLOWING FOUR LINES ARE DOUBLED IN THE header-song.php!!! DO NOT FORGET TO MAKE CHANGES THERE AS WHERE!!!
@@ -52,10 +52,10 @@
                                         echo "<div class='row'>"; //Tracklist
                                         $tracklist_length = count($tracklist);
                                             echo "<h3>Tracklist:</h3>";
-                                            echo "<ol>";
+                                            echo "<ol class='main-tracklist'>";
                                             for ($i = 0; $i < $tracklist_length; $i++) {
                                                 $track = $tracklist["$i"]->title_ro;
-                                                echo "<li>$track</li>";
+                                                echo "<li><a class='main-traclist-link' href='song?" . str_replace('?', '%3F', str_replace('#', '%23', str_replace('&', '%26', str_replace('\'', '%27', str_replace(' ', '_',$track))))) . "'>" . $track . "</a></li>";
                                             }
                                             echo "</ol>";
                                         echo "</div>";

@@ -1,12 +1,12 @@
 <?php /* Template Name: Akfgfragments Song */ ?>
 
-<?php get_header(song); ?>
+<?php get_header(); ?>
 <?php get_header(header); ?>
 
-    <main>
+    <main role="main">
         <div class="container">
-            <div id="ttr_main" class="row">
-                <div id="ttr_content" class="col-lg-8 col-sm-8 col-md-8 col-xs-12">
+            <div id="main" class="row">
+                <div id="main-content" class="col-lg-8 col-sm-8 col-md-8 col-xs-12">
                     <div class="row">
                         <?php
                             //THE FOLLOWING FOUR LINES ARE DOUBLED IN THE header-song.php!!! DO NOT FORGET TO MAKE CHANGES THERE AS WHERE!!!

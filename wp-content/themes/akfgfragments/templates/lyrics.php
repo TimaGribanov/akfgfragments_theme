@@ -2,10 +2,10 @@
 
 <?php get_header(); ?>
 
-    <main>
+    <main role="main">
         <div class="container">
-            <div id="ttr_main" class="row">
-                <div id="ttr_content" class="col-lg-8 col-sm-8 col-md-8 col-xs-12">
+            <div id="main" class="row">
+                <div id="content" class="col-lg-8 col-sm-8 col-md-8 col-xs-12">
                     <div class="row">
                         <?php
                             //Connect to another DB containing discography data

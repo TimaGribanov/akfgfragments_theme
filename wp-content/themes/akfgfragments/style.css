@@ -43,6 +43,7 @@ a:hover, a:active {
 
 .nav-link {
     color: var(--text-colour);
+    cursor: pointer;
 }
 
 .nav-link:hover, .nav-link:active {
@@ -62,6 +63,23 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--btn-hover-colour);
 }
 
+.btn-discord {
+    background-color:#5865f2;
+}
+
+.btn-discord>a, .btn-discord>i {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-discord>a {
+    margin-left: 10px;
+}
+
+.side-block {
+    border: var(--block-border-colour) 1px solid;
+}
+
 /******************/
 /***** HEADER *****/
 /******************/
@@ -73,25 +91,48 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--alpha-letter-colour);
 }
 
-#main_sidebar {
-    border-left: 1px solid black;
-}
-
-#main_footer {
-    width: 100%;
-    border-top: 1px #a2a2a2 solid;
-    text-align: center;
-}
-
 .title {
     font-size: 11pt;
     font-family: verdana;
     font-weight: bold;
 }
 
+/*******************/
+/***** SIDEBAR *****/
+/*******************/
+#main_sidebar {
+
+}
+
+#main-discord {
+    width: 300px;
+}
+
+/******************/
+/***** RELEASE *****/
+/******************/
+
+.main-tracklist {
+    margin-left: 30px;
+}
+
+.main-tracklist-link {
+    text-decoration: none;
+}
+
 /******************/
 /***** FOOTER *****/
 /******************/
+
+
+#main-footer {
+    width: 100%;
+    text-align: center;
+}
+
+#main-footer.main-wrapper {
+    padding-left: 20px;
+}
 
 .ftr-crossed {
     text-decoration-line: line-through;

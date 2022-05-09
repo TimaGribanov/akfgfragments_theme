@@ -1,4 +1,4 @@
-<body>
+<body class="d-flex flex-column min-vh-100">
     <header id="main-header" class="jumbotron">
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid main-wrapper">

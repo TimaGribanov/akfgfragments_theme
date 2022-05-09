@@ -1,9 +1,7 @@
 <div id="main-sidebar" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-    <h2 ><?php _e('Categories'); ?></h2>
-    <ul > <?php wp_list_cats('sort_column=namonthly'); ?> </ul>
-    
-    <h2 ><?php _e('Archives'); ?></h2>
-    <ul > <?php wp_get_archives(); ?> </ul>
-
-    <!-- iframe src="https://discord.com/widget?id=469504344337678336&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe -->
+    <div id="main-discord" class="text-center side-block">
+        <h4>Join our Discord server!</h3>
+        <p>We have interesting Asian Kung-Fu Generation related discussions there, and more!</p>
+        <button type="button" class="btn btn-discord"><i class="bi bi-discord"></i><a href="https://discord.gg/mQJ4TcjM3h">Join</a></button>
+    </div>
 </div>
