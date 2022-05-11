@@ -2,7 +2,34 @@
     //Scroll through socials
     (function($) {
 
+        $(document).ready(function() {
+            var socials = $('#main-socials-block').find('.main-socials');
+            var socialsDots = $('#main-social-dots').find('.main-social-dot');
+            var i = 0;
+            setInterval(function() {
+                if (i == socials.length) {
+                    i = 0;
+                }
+                var j;
+                if (i == socials.length - 1) {
+                    
+                    j = 0;
+                } else {
+                    j = i + 1;
+                }
+                var currentElement = $(socials[i]);
+                var currentDot = $(socialsDots[i]);
+                var nextElement = $(socials[j]);
+                var nextDot = $(socialsDots[j]);
 
+                currentElement.hide();
+                currentDot.attr('style', 'background-color: #bbb;');
+                nextElement.show();
+                nextDot.attr('style', 'background-color: var(--text-colour);');
+
+                i++;
+            }, 15000);
+        });
 
     })( jQuery );
 </script>
@@ -11,27 +38,53 @@
     <div id="main-discord" class="main-side-block text-center border border-light border-2 rounded-2">
         <h4>Join our Discord server!</h3>
         <p>We have interesting Asian Kung-Fu Generation related discussions there, and more!</p>
-        <button type="button" class="btn btn-discord"><i class="bi bi-discord"></i><a href="https://discord.gg/mQJ4TcjM3h">Join</a></button>
+        <button type="button" class="btn btn-discord mb-2"><i class="bi bi-discord"></i><a href="https://discord.gg/mQJ4TcjM3h">Join</a></button>
     </div>
 
     <div id="main-socials-block" class="main-side-block text-center border border-light border-2 rounded-2">
         <div id="main-social-1" class="main-socials">
             <a class="twitter-timeline" data-width="300" data-height="400" data-dnt="true" href="https://twitter.com/AKG_information?ref_src=twsrc%5Etfw">Tweets by AKG_information</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
-        <div id="main-social-2" class="main-socials main-socials-plus">
+        <div id="main-social-2" class="main-socials">
             <a class="twitter-timeline" data-width="300" data-height="400" data-dnt="true" href="https://twitter.com/gotch_akg?ref_src=twsrc%5Etfw">Tweets by gotch_akg</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
-        <div id="main-social-3" class="main-socials main-socials-plus">
+        <div id="main-social-3" class="main-socials">
             <a class="twitter-timeline" data-width="300" data-height="400" data-dnt="true" href="https://twitter.com/kiyoshiakg?ref_src=twsrc%5Etfw">Tweets by kiyoshiakg</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
-        <div>
-            <i id="main-social-1-btn" class="bi bi-dot"></i>
-            <i id="main-social-2-btn" class="bi bi-dot"></i>
-            <i id="main-social-3-btn" class="bi bi-dot"></i>
+        <div id="main-social-dots">
+            <span class="main-social-dot"></span>
+            <span class="main-social-dot"></span>
+            <span class="main-social-dot"></span>
         </div>
     </div>
 
+    <script type="text/javascript">
+    //Click through socials
+    (function($) {
+
+        $('.main-social-dot').on('click', function() {
+            var socials = $('#main-socials-block').find('.main-socials');
+            var socialsDots = $('#main-social-dots').find('.main-social-dot');
+
+            var index = $('.main-social-dot').index(this);
+
+            var currentIndex
+            socials.each(function() {
+                if($(this).is(':visible')) {
+                    currentIndex = $(socials).index(this);
+                }
+            });
+
+            $(socials[currentIndex]).hide();
+            $(socialsDots[currentIndex]).attr('style', 'background-color: #bbb;');
+            $(socials[index]).show();
+            $(socialsDots[index]).attr('style', 'background-color: var(--text-colour);');
+        });
+
+    })( jQuery );
+</script>
+
     <div id="main-ajikan-project" class="main-side-block text-center border border-light border-2 rounded-2">
-        <a href="https://ajikanproject.com" target="_blank"><img src="wp-content/themes/akfgfragments/assets/img/ajikan_project_logo.png" width="300px" height="300px"/></a>
+        <a href="https://ajikanproject.com" target="_blank"><img class="rounded-2" src="wp-content/themes/akfgfragments/assets/img/ajikan_project_logo.png" width="300px" height="300px"/></a>
     </div>
 </div>
