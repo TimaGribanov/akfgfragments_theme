@@ -11,8 +11,6 @@
                             //Connect to another DB containing discography data
                             $lyricsdb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
                             $results_letter = $lyricsdb->get_results( "SELECT DISTINCT LEFT(title_ro, 1) AS first_letter FROM songs ORDER BY title_ro ASC;" );
-                            
-                            //var_dump($results_letter);
 
                             foreach($results_letter as $letter) {
                                 echo "<div class='row mb-2'>";

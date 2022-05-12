@@ -59,30 +59,30 @@
     </div>
 
     <script type="text/javascript">
-    //Click through socials
-    (function($) {
+        //Click through socials
+        (function($) {
 
-        $('.main-social-dot').on('click', function() {
-            var socials = $('#main-socials-block').find('.main-socials');
-            var socialsDots = $('#main-social-dots').find('.main-social-dot');
+            $('.main-social-dot').on('click', function() {
+                var socials = $('#main-socials-block').find('.main-socials');
+                var socialsDots = $('#main-social-dots').find('.main-social-dot');
 
-            var index = $('.main-social-dot').index(this);
+                var index = $('.main-social-dot').index(this);
 
-            var currentIndex
-            socials.each(function() {
-                if($(this).is(':visible')) {
-                    currentIndex = $(socials).index(this);
-                }
+                var currentIndex;
+                socials.each(function() {
+                    if($(this).is(':visible')) {
+                        currentIndex = $(socials).index(this);
+                    }
+                });
+
+                $(socials[currentIndex]).hide();
+                $(socialsDots[currentIndex]).attr('style', 'background-color: #bbb;');
+                $(socials[index]).show();
+                $(socialsDots[index]).attr('style', 'background-color: var(--text-colour);');
             });
 
-            $(socials[currentIndex]).hide();
-            $(socialsDots[currentIndex]).attr('style', 'background-color: #bbb;');
-            $(socials[index]).show();
-            $(socialsDots[index]).attr('style', 'background-color: var(--text-colour);');
-        });
-
-    })( jQuery );
-</script>
+        })( jQuery );
+    </script>
 
     <div id="main-ajikan-project" class="main-side-block text-center border border-light border-2 rounded-2">
         <a href="https://ajikanproject.com" target="_blank"><img class="rounded-2" src="wp-content/themes/akfgfragments/assets/img/ajikan_project_logo.png" width="300px" height="300px"/></a>
