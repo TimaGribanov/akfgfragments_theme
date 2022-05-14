@@ -4,7 +4,7 @@ A simple but effective WordPress theme for akfgfragments – international Asian
 
 ## wp-content
 
-Contains the them itself.
+Contains the theme itself.
 
 ## wp-admin
 

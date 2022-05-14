@@ -66,11 +66,29 @@
                                     echo "</div>"; //End of the first col
 
                                     echo "<div class='col'>"; //The second col: Album cover, Spotify
-                                        echo "<div class='row'>"; //Album cover
-                                            echo "<img src='$row->img_uri' />";
+                                        echo "<div class='row main-image-container'>"; //Album cover
+                                            if(strpos($row->img_uri, ",") === false) {
+                                                echo "<img src='$row->img_uri' />";
+                                            } else {
+                                                $img_uri_arr = explode(",", $row->img_uri);
+                                                foreach($img_uri_arr as &$img) {
+                                                    echo "<img class='main-double-image' src='$img' />";
+                                                }
+                                                echo "<div class='main-double-image-arrows'>";
+                                                    echo "<i class='bi bi-chevron-left main-double-image-arrow main-double-image-arrow-left'></i>";
+                                                    echo "<i class='bi bi-chevron-right main-double-image-arrow main-double-image-arrow-right'></i>";
+                                                echo "</div>";
+                                            }
                                         echo "</div>";
                                         echo "<div class='row'>"; //Spotify
-                                            echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/album/" . $row->spotify_uri . "?utm_source=generator' width='60%' height='380' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
+                                            if(strpos($row->spotify_uri, ",") === false) {
+                                                echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/album/" . $row->spotify_uri . "?utm_source=generator' width='60%' height='80' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
+                                            } else {
+                                                $spotify_uri_arr = explode(",", $row->spotify_uri);
+                                                foreach($spotify_uri_arr as &$uri) {
+                                                    echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/album/" . $uri . "?utm_source=generator' width='60%' height='80' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
+                                                }
+                                            }
                                         echo "</div>";
                                     echo "</div>"; //End of the second col
                                 }
@@ -81,6 +99,51 @@
                 <?php get_sidebar(); ?>
             </div>
         </div>
+
+        <script type="text/javascript">
+            //Click through images
+            (function($) {
+
+                $('.main-double-image-arrow-left').on('click', function() {
+                    var images = $('.main-image-container').find('.main-double-image');
+
+                    var currentIndex;
+                    images.each(function() {
+                        if($(this).is(':visible')) {
+                            currentIndex = $(images).index(this);
+                        }
+                    });
+
+                    $(images[currentIndex]).hide();
+                    $(images[currentIndex - 1]).show();
+                    $('.main-double-image-arrow-right').show();
+                    if(currentIndex - 1 == 0) {
+                        $('.main-double-image-arrow-left').hide();
+                    }
+                });
+
+                $('.main-double-image-arrow-right').on('click', function() {
+                    var images = $('.main-image-container').find('.main-double-image');
+
+                    var currentIndex;
+                    
+                    images.each(function() {
+                        if($(this).is(':visible')) {
+                            currentIndex = $(images).index(this);
+                        }
+                    });
+
+                    $(images[currentIndex]).hide();
+                    $(images[currentIndex + 1]).show();
+                    $('.main-double-image-arrow-left').show();
+                    if(currentIndex == images.length - 2) {
+                        $('.main-double-image-arrow-right').hide();
+                    }
+                });
+
+            })( jQuery );
+        </script>
+
     </main>
 
     <?php get_footer(); ?>

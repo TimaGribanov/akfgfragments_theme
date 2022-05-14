@@ -150,6 +150,48 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
 }
 
+.main-image-container {
+    position: relative;
+    text-align: center;
+    color: gray;
+    font-size: 30pt;
+    margin-bottom: 30px;
+}
+
+.main-double-image-arrows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main-double-image-arrow {
+    cursor: pointer;
+}
+
+.main-double-image-arrow:hover {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+}
+
+.main-double-image-arrow-left {
+    position: absolute;
+    left: 5%;
+    display: none;
+}
+
+.main-double-image-arrow-right {
+    position: absolute;
+    right: 5%;
+}
+
+.main-double-image {
+    display: none;
+}
+
+.main-double-image:first-of-type {
+    display: block;
+}
+
 /******************/
 /***** FOOTER *****/
 /******************/
