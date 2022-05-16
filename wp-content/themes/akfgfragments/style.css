@@ -93,16 +93,39 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
+/************************/
+/***** MAIN CONTENT *****/
+/************************/
+
+#main {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.main-post {
+    margin-bottom: 30px;
+}
+
+.main-post-taglist li {
+    display: inline;
+    margin-right: 5px;
+}
+
+.pagination div {
+    margin: 0 auto;
+}
+
+.pagination .screen-reader-text {
+    display: none;
+}
+
 /*******************/
 /***** SIDEBAR *****/
 /*******************/
-#main_sidebar div {
-    margin-top: 30px;
-}
 
 .main-side-block {
     width: 300px;
-    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .main-side-block:last-of-type {
@@ -196,7 +219,6 @@ h1, h2, h3, h4, h5, h6 {
 /***** FOOTER *****/
 /******************/
 
-
 #main-footer {
     width: 100%;
     text-align: center;
@@ -212,8 +234,4 @@ h1, h2, h3, h4, h5, h6 {
 
 #ftr-left-block {
     text-align: left;
-}
-
-#ftr-right-block {
-
 }
