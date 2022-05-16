@@ -127,6 +127,10 @@ $title_parsed = str_replace('%3F', '?', $title_parsed); //Cahnge %3F to a questi
                 <input type="submit" name="submit-lyrics" value="Update song's lyrics">
 
                 <script type="text/javascript">
+                    window.onload = (event) => {
+                        showLyrics('<?php echo $title ?>', 'ja')
+                    };
+
                     document.getElementById('lyrics-lang').addEventListener('click', function(){showLyrics('<?php echo $title ?>', this.value)});
 
                     function showLyrics(song, lang) {
@@ -204,18 +208,32 @@ $title_parsed = str_replace('%3F', '?', $title_parsed); //Cahnge %3F to a questi
             
             foreach ($song_id as $row) {
                 $lyrics_id_arr = $discodb->get_results( "SELECT id FROM lyrics WHERE song_id = \"$row->id\" AND lang = \"$lang\";" );
-                $lyrics_id = $lyrics_id_arr["0"]->id;
                 
-                $discodb->update(
-                    "lyrics",
-                    array(
-                        "song_id" => "$row->id",
-                        "band_id" => "1",
-                        "lang" => "$lang",
-                        "text" => "$lyrics"
-                    ),
-                    array( "id" =>  $lyrics_id )
-                );
+                if(!empty($lyrics_id_arr)) {
+                    $lyrics_id = $lyrics_id_arr["0"]->id;
+                
+                    $discodb->update(
+                        "lyrics",
+                        array(
+                            "song_id" => "$row->id",
+                            "band_id" => "1",
+                            "lang" => "$lang",
+                            "text" => "$lyrics"
+                        ),
+                        array( "id" =>  $lyrics_id )
+                    );
+                } else {
+                    $discodb->insert(
+                        "lyrics",
+                        array(
+                            "song_id" => "$row->id",
+                            "band_id" => "1",
+                            "lang" => "$lang",
+                            "text" => "$lyrics"
+                        )
+                    );
+                }
+                
             }
         }
     ?>
