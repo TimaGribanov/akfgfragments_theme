@@ -9,19 +9,19 @@
                 <div id="main-content" class="col-lg-8 col-sm-8 col-md-8 col-xs-12">
                     <div class="row">
                         <?php
-                            //THE FOLLOWING FOUR LINES ARE DOUBLED IN THE header-song.php!!! DO NOT FORGET TO MAKE CHANGES THERE AS WHERE!!!
-                            $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+                            //THE FOLLOWING FOUR LINES ARE DOUBLED IN THE header.php!!! DO NOT FORGET TO MAKE CHANGES THERE AS WELL!!!
+                            $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                             $title = parse_url($url, PHP_URL_QUERY); //Get a query
                             $title_parsed = str_replace('_', ' ', $title); //Delete underscores if they exist
                             $title_parsed = str_replace('%27', '\'', $title_parsed); //Change %27 to a single quote
-                            $title_parsed = str_replace('%26', '&', $title_parsed); //Cahnge %26 to an ampersand
-                            $title_parsed = str_replace('%23', '#', $title_parsed); //Cahnge %26 to a number sign
-                            $title_parsed = str_replace('%3F', '?', $title_parsed); //Cahnge %26 to a question mark
+                            $title_parsed = str_replace('%26', '&', $title_parsed); //Change %26 to an ampersand
+                            $title_parsed = str_replace('%23', '#', $title_parsed); //Change %26 to a number sign
+                            $title_parsed = str_replace('%3F', '?', $title_parsed); //Change %26 to a question mark
 
                             //Connect to another DB containing discography data
                             $songdb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
                             $results = $songdb->get_results( "SELECT * FROM songs WHERE title_ro = \"$title_parsed\"" );
-                            $song_releases = $songdb->get_results( "SELECT r.title_ro FROM rel_songs rs JOIN releases r ON r.id = rs.release_id JOIN songs s ON s.id = rs.song_id WHERE s.title_ro LIKE '$title_parsed%'" );
+                            $song_releases = $songdb->get_results( "SELECT r.title_ro FROM rel_songs rs JOIN releases r ON r.id = rs.release_id JOIN songs s ON s.id = rs.song_id WHERE s.title_ro LIKE \"$title_parsed%\"" );
 
                             if(!empty($results)) {
                                 foreach($results as $row) {
@@ -61,7 +61,7 @@
                                     echo "<div>"; //List of releases
                                     if(!empty($song_releases)) {  
                                         foreach($song_releases as $row) {
-                                            echo "<p class='release'><a href='release?" . str_replace('\'', '%27', str_replace(' ', '_', $row->title_ro)) . "'>" . $row->title_ro . "</a></p>";                      
+                                            echo "<p class='release'><a href='release?" . str_replace('?', '%3F', str_replace('#', '%23', str_replace('&', '%26', str_replace('\'', '%27', str_replace(' ', '_', $row->title_ro))))) . "'>" . $row->title_ro . "</a></p>";                      
                                         }
                                     }
                                     echo "</div>";
@@ -82,55 +82,61 @@
                                 <input type="submit" class="btn btn-primary me-2 song-text-btn" name="fr" value="french">
                                 <input type="submit" class="btn btn-primary me-2 song-text-btn" name="de" value="german">
                                 <input type="submit" class="btn btn-primary me-2 song-text-btn" name="es" value="spanish">
-                                <input type="submit" class="btn btn-primary song-text-btn" name="pt" value="portuguese">
+                                <input type="submit" class="btn btn-primary me-2 song-text-btn" name="pt" value="portuguese">
+                                <input type="submit" class="btn btn-primary song-text-btn" name="ru" value="russian">
                             </form>
                             </div>
                             <?php
                                 if (array_key_exists('ja', $_POST)) {
-                                    getLyrics(ja);
+                                    getLyrics('ja');
                                 } elseif (array_key_exists('ro', $_POST)) {
-                                    getLyrics(ro);
+                                    getLyrics('ro');
                                 } elseif (array_key_exists('en', $_POST)) {
-                                    getLyrics(en);
+                                    getLyrics('en');
                                 } elseif (array_key_exists('fr', $_POST)) {
-                                    getLyrics(fr);
+                                    getLyrics('fr');
                                 } elseif (array_key_exists('de', $_POST)) {
-                                    getLyrics(de);
+                                    getLyrics('de');
                                 } elseif (array_key_exists('es', $_POST)) {
-                                    getLyrics(es);
+                                    getLyrics('es');
                                 } elseif (array_key_exists('pt', $_POST)) {
-                                    getLyrics(pt);
+                                    getLyrics('pt');
+                                } elseif (array_key_exists('ru', $_POST)) {
+                                    getLyrics('ru');
                                 }
                                 function getLyrics($lang) {
                                     global $title_parsed, $songdb;
                                     
-                                    $lyrics_results = $songdb->get_results( "SELECT * FROM lyrics WHERE song_id = (SELECT id FROM songs WHERE title_ro = '$title_parsed') AND lang = '$lang'" );
+                                    $lyrics_results = $songdb->get_results( "SELECT * FROM lyrics WHERE song_id = (SELECT id FROM songs WHERE title_ro = \"$title_parsed\") AND lang = \"$lang\"" );
                                     if(!empty($lyrics_results)) {
                                         foreach($lyrics_results as $row) {
                                             echo "<div id='song-text'>" . $row->text . "</div>";
                                         }
                                     } else {
                                         switch ($lang) {
-                                            case ja:
+                                            case 'ja':
                                                 $lang_full = 'Japanese';
                                                 break;
-                                            case ro:
+                                            case 'ro':
                                                 $lang_full = 'romaji';
                                                 break;
-                                            case en:
+                                            case 'en':
                                                 $lang_full = 'English';
                                                 break;
-                                            case fr:
+                                            case 'fr':
                                                 $lang_full = 'French';
                                                 break;
-                                            case de:
+                                            case 'de':
                                                 $lang_full = 'German';
                                                 break;
-                                            case es:
+                                            case 'es':
                                                 $lang_full = 'Spanish';
                                                 break;
-                                            case pt:
+                                            case 'pt':
                                                 $lang_full = 'Portuguese';
+                                                break;
+                                            case 'ru':
+                                                $lang_full = 'Russian';
                                                 break;
                                             default:
                                                 $lang_full = 'the selected language';

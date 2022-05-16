@@ -26,9 +26,9 @@ $url = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $title = parse_url($url, PHP_URL_QUERY); //Get a query
 $title_parsed = str_replace('_', ' ', $title); //Delete underscores if they exist
 $title_parsed = str_replace('%27', '\'', $title_parsed); //Change %27 to a single quote
-$title_parsed = str_replace('%26', '&', $title_parsed); //Cahnge %26 to an ampersand
-$title_parsed = str_replace('%23', '#', $title_parsed); //Cahnge %23 to a number sign
-$title_parsed = str_replace('%3F', '?', $title_parsed); //Cahnge %3F to a question mark
+$title_parsed = str_replace('%26', '&', $title_parsed); //Change %26 to an ampersand
+$title_parsed = str_replace('%23', '#', $title_parsed); //Change %23 to a number sign
+$title_parsed = str_replace('%3F', '?', $title_parsed); //Change %3F to a question mark
 ?>
 
 <div class="wrap">
@@ -163,17 +163,17 @@ $title_parsed = str_replace('%3F', '?', $title_parsed); //Cahnge %3F to a questi
 
     <?php
         if (isset($_POST['submit'])) {
-            $title_ja = $_POST['title_ja'];
-            $title_ro = $_POST['title_ro'];
-            $title_en = $_POST['title_en'];
-            $title_ru = $_POST['title_ru'];
-            $title_es = $_POST['title_es'];
-            $title_de = $_POST['title_de'];
-            $title_fr = $_POST['title_fr'];
-            $title_be = $_POST['title_be'];
-            $title_uk = $_POST['title_uk'];
-            $title_fi = $_POST['title_fi'];
-            $title_pt = $_POST['title_pt'];
+            $title_ja = stripslashes($_POST['title_ja']);
+            $title_ro = stripslashes($_POST['title_ro']);
+            $title_en = stripslashes($_POST['title_en']);
+            $title_ru = stripslashes($_POST['title_ru']);
+            $title_es = stripslashes($_POST['title_es']);
+            $title_de = stripslashes($_POST['title_de']);
+            $title_fr = stripslashes($_POST['title_fr']);
+            $title_be = stripslashes($_POST['title_be']);
+            $title_uk = stripslashes($_POST['title_uk']);
+            $title_fi = stripslashes($_POST['title_fi']);
+            $title_pt = stripslashes($_POST['title_pt']);
             $spotify_uri = $_POST['spotify_uri'];
 
             $song_id_arr = $discodb->get_results( "SELECT id FROM songs WHERE title_ro = \"$title_ro\";" );

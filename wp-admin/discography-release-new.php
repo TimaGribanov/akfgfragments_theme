@@ -144,17 +144,17 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
     error_reporting(E_ALL);
     ini_set('display_errors', 'on');
         if (isset($_POST['submit'])) {
-            $title_ja = $_POST['title_ja'];
-            $title_ro = $_POST['title_ro'];
-            $title_en = $_POST['title_en'];
-            $title_ru = $_POST['title_ru'];
-            $title_es = $_POST['title_es'];
-            $title_de = $_POST['title_de'];
-            $title_fr = $_POST['title_fr'];
-            $title_be = $_POST['title_be'];
-            $title_uk = $_POST['title_uk'];
-            $title_fi = $_POST['title_fi'];
-            $title_pt = $_POST['title_pt'];
+            $title_ja = stripslashes($_POST['title_ja']);
+            $title_ro = stripslashes($_POST['title_ro']);
+            $title_en = stripslashes($_POST['title_en']);
+            $title_ru = stripslashes($_POST['title_ru']);
+            $title_es = stripslashes($_POST['title_es']);
+            $title_de = stripslashes($_POST['title_de']);
+            $title_fr = stripslashes($_POST['title_fr']);
+            $title_be = stripslashes($_POST['title_be']);
+            $title_uk = stripslashes($_POST['title_uk']);
+            $title_fi = stripslashes($_POST['title_fi']);
+            $title_pt = stripslashes($_POST['title_pt']);
             $type = $_POST['type'];
             $date = $_POST['date'];
             $catalogue = $_POST['catalogue'];
