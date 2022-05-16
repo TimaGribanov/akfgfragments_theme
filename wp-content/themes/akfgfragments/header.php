@@ -45,6 +45,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri().'/style.css'; ?>">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap');
+    </style> 
 </head>
 
 <?php get_header(header); ?>
