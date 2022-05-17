@@ -16,12 +16,16 @@ $title       = __( 'Releases' );
 $this_file   = 'discography-release.php';
 $parent_file = 'discography-release.php';
 
-$url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $query = parse_url($url, PHP_URL_QUERY); //Get a $query
-$type_pre = substr($query, strpos($variable, "release_type=")); //Release type with name
-$type = substr($type_pre, 13); //Release type
-$search_pre = substr($query, strpos($variable, "search=")); //Search query with name
-$search = substr($search_pre, 7); //Search query
+if(strpos($query, "release_type=") !== false) {
+    $type_pre = substr($query, strpos($query, "release_type=")); //Release type with name
+    $type = substr($type_pre, 13); //Release type
+}
+if(strpos($query, "search=") !== false) {
+    $search_pre = substr($query, strpos($query, "search=")); //Search query with name
+    $search = substr($search_pre, 7); //Search query
+}
 
 require_once ABSPATH . 'wp-admin/admin-header.php';
 ?>
@@ -96,14 +100,14 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
         global $search;
 
         $discodb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
-        if(!$search) {
-            if (!$type) {
-                $results = $discodb->get_results( "SELECT r.title_ro, t.type, r.catalogue, r.date FROM releases r JOIN types t ON r.type = t.id;" );
-            } else {
-                $results = $discodb->get_results( "SELECT r.title_ro, t.type, r.catalogue, r.date FROM releases r JOIN types t ON r.type = t.id WHERE t.type = \"$type\";" );
-            }
-        } else {
+        if(!empty($search)) {
             $results = $discodb->get_results( "SELECT r.title_ro, t.type, r.catalogue, r.date FROM releases r JOIN types t ON r.type = t.id WHERE r.title_ro LIKE \"%$search%\";" );
+        } else {
+            if (!empty($type)) {
+                $results = $discodb->get_results( "SELECT r.title_ro, t.type, r.catalogue, r.date FROM releases r JOIN types t ON r.type = t.id WHERE t.type = \"$type\";" );
+            } else {
+                $results = $discodb->get_results( "SELECT r.title_ro, t.type, r.catalogue, r.date FROM releases r JOIN types t ON r.type = t.id;" );
+            }
         }
         
         echo "<table class='wp-list-table widefat fixed striped table-view-list pages'>";

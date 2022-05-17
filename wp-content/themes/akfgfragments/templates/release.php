@@ -46,7 +46,7 @@
                                         echo "</div>";
 
                                         echo "<div class='row'>"; //Release date
-                                            echo "<p id='release-type'>Release date: " . date("jS F, Y", strtotime("$row->date")) . "</span>";
+                                            echo "<p id='release-type'>Release date: " . date("jS F Y", strtotime("$row->date")) . "</span>";
                                         echo "</div>";
 
                                         echo "<div class='row'>"; //Tracklist
