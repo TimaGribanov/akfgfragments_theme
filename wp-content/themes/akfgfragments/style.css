@@ -136,6 +136,11 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0;
 }
 
+.main-btn-text {
+    margin-left: 5px;
+    color: #fff;
+}
+
 .main-socials {
     display: none;
 }
@@ -238,4 +243,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #ftr-left-block {
     text-align: left;
+}
+
+#ftr-socials i {
+    font-size: 20px;
 }

@@ -38,7 +38,7 @@
     <div id="main-discord" class="main-side-block text-center border border-light border-2 rounded-2">
         <h4>Join our Discord server!</h3>
         <p>We have interesting Asian Kung-Fu Generation related discussions there, and more!</p>
-        <button type="button" class="btn btn-discord mb-2"><i class="bi bi-discord"></i><a href="https://discord.gg/mQJ4TcjM3h">Join</a></button>
+        <a href="https://discord.gg/mQJ4TcjM3h" target="_blank"><button type="button" class="btn btn-discord mb-2"><i class="bi bi-discord"></i><span class="main-btn-text">Join</span></button></a>
     </div>
 
     <div id="main-socials-block" class="main-side-block text-center border border-light border-2 rounded-2">
