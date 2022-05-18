@@ -46,7 +46,11 @@
                                         echo "</div>";
 
                                         echo "<div class='row'>"; //Release date
-                                            echo "<p id='release-type'>Release date: " . date("jS F Y", strtotime("$row->date")) . "</span>";
+                                        if($row->date == "2000-01-01") {
+                                            echo "<p id='release-type'>Release date: " . date("Y", strtotime("$row->date")) . "</p>";
+                                        } else {
+                                            echo "<p id='release-type'>Release date: " . date("jS F Y", strtotime("$row->date")) . "</p>";
+                                        }
                                         echo "</div>";
 
                                         echo "<div class='row'>"; //Tracklist

@@ -27,7 +27,11 @@
                                     echo "</div>";
                                     echo "<div class='col'>";
                                     echo "<a href='/release?" . str_replace('?', '%3F', str_replace('#', '%23', str_replace('&', '%26', str_replace('\'', '%27', str_replace(' ', '_',$release->title_ro))))) . "' target='blank_'>" . $release->title_ro . "</a>";
-                                    echo "<p>" . date("jS F Y", strtotime("$release->date")) . "</p>";
+                                    if($release->date == "2000-01-01") {
+                                        echo "<p>" . date("Y", strtotime("$release->date")) . "</p>";
+                                    } else {
+                                        echo "<p>" . date("jS F Y", strtotime("$release->date")) . "</p>";
+                                    }
                                     echo "</div>";
                                     echo "</div>";
                                 }
