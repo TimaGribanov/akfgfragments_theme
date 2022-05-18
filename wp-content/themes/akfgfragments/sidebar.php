@@ -43,15 +43,19 @@
 
     <div id="main-socials-block" class="main-side-block text-center border border-light border-2 rounded-2">
         <div id="main-social-1" class="main-socials">
-            <a class="twitter-timeline" data-width="300" data-height="400" data-dnt="true" href="https://twitter.com/AKG_information?ref_src=twsrc%5Etfw">Tweets by AKG_information</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a class="twitter-timeline" data-width="300" data-height="400" data-dnt="true" href="https://twitter.com/AkfgfragmentsEn?ref_src=twsrc%5Etfw">Tweets by AkfgfragmentsEn</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
         </div>
         <div id="main-social-2" class="main-socials">
-            <a class="twitter-timeline" data-width="300" data-height="400" data-dnt="true" href="https://twitter.com/gotch_akg?ref_src=twsrc%5Etfw">Tweets by gotch_akg</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a class="twitter-timeline" data-width="300" data-height="400" data-dnt="true" href="https://twitter.com/AKG_information?ref_src=twsrc%5Etfw">Tweets by AKG_information</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
         <div id="main-social-3" class="main-socials">
+            <a class="twitter-timeline" data-width="300" data-height="400" data-dnt="true" href="https://twitter.com/gotch_akg?ref_src=twsrc%5Etfw">Tweets by gotch_akg</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <div id="main-social-4" class="main-socials">
             <a class="twitter-timeline" data-width="300" data-height="400" data-dnt="true" href="https://twitter.com/kiyoshiakg?ref_src=twsrc%5Etfw">Tweets by kiyoshiakg</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
         <div id="main-social-dots">
+            <span class="main-social-dot"></span>
             <span class="main-social-dot"></span>
             <span class="main-social-dot"></span>
             <span class="main-social-dot"></span>
