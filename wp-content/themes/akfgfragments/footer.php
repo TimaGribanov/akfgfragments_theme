@@ -36,6 +36,11 @@
                                         <i class="bi bi-discord"></i>
                                     </a>
                                 </li>
+                                <li class="nav-item me-3 me-lg-0">
+                                    <a class="nav-link" href="https://www.reddit.com/r/AsianKungFuGeneration" rel="nofollow" target="_blank" role="img" title="Reddit" aria-label="Reddit">
+                                        <i class="bi bi-reddit"></i>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
