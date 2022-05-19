@@ -43,6 +43,11 @@ a:hover, a:active {
     color: var(--link-hover-colour);
 }
 
+blockquote {
+    border-left: var(--header-colour) 3px solid;
+    margin-left: 5%;
+}
+
 .nav-link {
     color: var(--text-colour);
     cursor: pointer;

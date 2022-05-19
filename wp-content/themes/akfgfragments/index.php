@@ -18,6 +18,7 @@
                                 echo '</ul>';
                             }   
                         ?>
+                        <p>Written by <?php the_author(); ?></p>
                         <p><?php the_content(__('(more...)')); ?></p>
                     </div>
                     <?php endwhile; else: ?>
