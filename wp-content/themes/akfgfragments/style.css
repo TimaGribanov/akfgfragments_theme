@@ -102,6 +102,40 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
+@media (max-width: 991px) {
+    header.navbar {
+        height: 100px;
+    }
+    header .navbar-brand {
+        position: relative;
+        margin: 0 auto;
+        font-size: 8vw;
+    }
+}
+
+.ham-bars {
+    font-size: 8vw;
+    color: var(--text-colour);
+}
+
+#hamburgerMenu {
+    width: 100%;
+}
+#hamburgerMenu .navbar-nav {
+    min-height: 100vh;
+}
+#hamburgerMenu .nav-item:hover {
+    background-color: var(--block-border-colour);
+}
+#hamburgerMenu hr {
+    width: 40%;
+    margin: 0 auto;
+}
+#hamburgerMenu .ham-icon {
+    font-size: 20pt;
+    text-decoration: none;
+}
+
 /************************/
 /***** MAIN CONTENT *****/
 /************************/
@@ -111,13 +145,76 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 30px;
 }
 
+@media (max-width: 991px) {
+    #main {
+        margin: 0;
+    }
+    .pagination .nav-links {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .pagination .page-numbers {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border: 1px solid;
+        font-size: 1.5rem;
+        text-decoration: none;
+        text-align: center;
+    }
+}
+
 .main-post {
     margin-bottom: 30px;
+}
+
+.main-post-taglist {
+    font-size: 0.7rem;
 }
 
 .main-post-taglist li {
     display: inline;
     margin-right: 5px;
+}
+
+.main-post-taglist li:hover {
+    color: var(--bg-colour);
+}
+
+.main-post-mobile {
+    border-bottom: 1px solid;
+    width: 100%;
+    margin: auto;
+}
+
+[class~='main-post-mobile']:last-of-type {
+    border-bottom: none;
+}
+
+.main-title-mobile {
+    text-decoration: none;
+}
+
+.main-title-mobile h1 {
+    margin: 0;
+}
+
+.main-tag-mobile {
+    background-color: var(--link-hover-colour);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 3px;
+    line-height: 40px;
+    text-decoration: none;
+    color: var(--bg-colour);
+}
+
+.main-post-excerpt-mobile a {
+    text-decoration: none;
+}
+
+.main-post-excerpt-mobile a:hover {
+    color: var(--text-colour);
 }
 
 .wp-block-image img {
@@ -186,9 +283,35 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0.7;
 }
 
-/******************/
+/*****************/
+/***** DISCO *****/
+/*****************/
+
+.disco-list .disco-release img {
+    width: 50px;
+}
+
+@media (max-width: 991px) {
+    .disco-list .disco-release img {
+        width: 100px;
+    }
+
+    .disco-release>div {
+        width: auto;
+    }
+}
+
+/****************/
+/***** SONG *****/
+/****************/
+
+#open-hidden {
+    cursor: pointer;
+}
+
+/*******************/
 /***** RELEASE *****/
-/******************/
+/*******************/
 
 .main-tracklist {
     margin-left: 30px;
@@ -243,6 +366,12 @@ h1, h2, h3, h4, h5, h6 {
 /******************/
 /***** FOOTER *****/
 /******************/
+
+@media (max-width: 991px) {
+    #ftr-right-block {
+        display: none;
+    }
+}
 
 #main-footer {
     width: 100%;

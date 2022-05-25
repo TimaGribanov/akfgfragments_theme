@@ -6,7 +6,7 @@
     <main role="main">
         <div class="container">
             <div id="main" class="row">
-                <div id="content" class="col-lg-8 col-sm-8 col-md-8 col-xs-12">
+                <div id="content" class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                     <div class="row">
                         <?php
                             //THE FOLLOWING FOUR LINES ARE DOUBLED IN THE header-song.php!!! DO NOT FORGET TO MAKE CHANGES THERE AS WHERE!!!

@@ -34,7 +34,7 @@
     })( jQuery );
 </script>
 
-<div id="main-sidebar" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+<div id="main-sidebar" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 d-none d-lg-block d-xl-block d-xxl-block">
     <div id="main-discord" class="main-side-block text-center border border-light border-2 rounded-2">
         <h4>Join our Discord server!</h3>
         <p>We have interesting Asian Kung-Fu Generation related discussions there, and more!</p>

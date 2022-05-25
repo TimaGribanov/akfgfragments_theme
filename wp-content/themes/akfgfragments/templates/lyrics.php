@@ -5,7 +5,7 @@
     <main role="main">
         <div class="container">
             <div id="main" class="row">
-                <div id="content" class="col-lg-8 col-sm-8 col-md-8 col-xs-12">
+                <div id="content" class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                     <div class="row">
                         <?php
                             //Connect to another DB containing discography data

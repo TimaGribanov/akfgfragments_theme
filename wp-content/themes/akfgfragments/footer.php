@@ -1,7 +1,7 @@
 <footer id= "main-footer" class="mt-auto bg-light">
     <div class="main-wrapper">
         <div class="row justify-content-center">
-            <div class="col-7" id="ftr-left-block">
+            <div class="col-lg-7 col-xl-7 col-xxl-7" id="ftr-left-block">
                 <h6>akfgfragments.com</h6>
                 <p>Your guide to Asian Kung-Fu Generation <span class="ftr-crossed">world world</span> world</p>
             </div>

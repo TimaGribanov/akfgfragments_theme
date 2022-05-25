@@ -6,7 +6,7 @@
     <main role="main">
         <div class="container">
             <div id="main" class="row">
-                <div id="main-content" class="col-lg-8 col-sm-8 col-md-8 col-xs-12">
+                <div id="main-content" class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                     <div class="row">
                         <?php
                             //THE FOLLOWING FOUR LINES ARE DOUBLED IN THE header.php!!! DO NOT FORGET TO MAKE CHANGES THERE AS WELL!!!
@@ -75,14 +75,14 @@
                             <h3>Lyrics:</h3>
                             <div class="d-grid gap-2 d-md-block"> <!-- Buttons -->
                             <form method="post">
-                                <input type="submit" class="btn btn-primary me-2 song-text-btn" name="ja" value="japanese">
-                                <input type="submit" class="btn btn-primary me-2 song-text-btn" name="ro" value="romaji">
-                                <input type="submit" class="btn btn-primary me-2 song-text-btn" name="en" value="english">
-                                <input type="submit" class="btn btn-primary me-2 song-text-btn" name="fr" value="french">
-                                <input type="submit" class="btn btn-primary me-2 song-text-btn" name="de" value="german">
-                                <input type="submit" class="btn btn-primary me-2 song-text-btn" name="es" value="spanish">
-                                <input type="submit" class="btn btn-primary me-2 song-text-btn" name="pt" value="portuguese">
-                                <input type="submit" class="btn btn-primary song-text-btn" name="ru" value="russian">
+                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="ja" value="japanese">
+                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="ro" value="romaji">
+                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="en" value="english">
+                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="fr" value="french">
+                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="de" value="german">
+                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="es" value="spanish">
+                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="pt" value="portuguese">
+                                <input type="submit" class="btn btn-primary mb-2 song-text-btn" name="ru" value="russian">
                             </form>
                             </div>
                             <?php
