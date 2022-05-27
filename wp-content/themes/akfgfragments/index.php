@@ -19,6 +19,15 @@
                             }   
                         ?>
                         <p>Written by <?php the_author(); ?></p>
+                        <?php
+                        if ( has_post_thumbnail() ) {
+                            $post_thumbnail_id = get_post_thumbnail_id();
+                            $post_thumbnail_url = wp_get_attachment_url( $post_thumbnail_id );
+                            echo '<div class="post-image"><a href="';
+                            the_permalink();
+                            echo '" class="main-thumbnail-mobile"><img title="image title" alt="thumb image" class="wp-post-image" src="' . $post_thumbnail_url . '" style="width:100%; height:auto;"></a></div>';
+                        }
+                        ?>
                         <p><?php the_content(__('(more...)')); ?></p>
                     </div>
 
