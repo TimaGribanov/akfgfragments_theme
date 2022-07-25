@@ -6,22 +6,22 @@
                 <div class="collapse navbar-collapse ml-5">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="./discography">Discography</a>
+                            <a class="nav-link" href="./discography"><?php _e("Discography"); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./music-videos">Music Videos</a>
+                            <a class="nav-link" href="./music-videos"><?php _e("Music Videos"); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./lyrics">Lyrics</a>
+                            <a class="nav-link" href="./lyrics"><?php _e("Lyrics"); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="./interviews">Interviews</a>
+                            <a class="nav-link disabled" href="./interviews"><?php _e("Interviews"); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="./stuff">Stuff</a>
+                            <a class="nav-link disabled" href="./stuff"><?php _e("Stuff"); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="./side">Side Projects</a>
+                            <a class="nav-link disabled" href="./side"><?php _e("Side Projects"); ?></a>
                         </li>
                     </ul>
                 </div>
@@ -34,42 +34,42 @@
                 <div class="collapse" id="hamburgerMenu">
                     <ul class="navbar-nav mr-auto text-center vertical-menu">
                         <li class="nav-item">
-                            <a class="nav-link" href="./">Home</a>
+                            <a class="nav-link" href="./"><?php _e("Home"); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./discography">Discography</a>
+                            <a class="nav-link" href="./discography"><?php _e("Discography"); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./music-videos">Music Videos</a>
+                            <a class="nav-link" href="./music-videos"><?php _e("Music Videos"); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./lyrics">Lyrics</a>
+                            <a class="nav-link" href="./lyrics"><?php _e("Lyrics"); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="./interviews">Interviews</a>
+                            <a class="nav-link disabled" href="./interviews"><?php _e("Interviews"); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="./stuff">Stuff</a>
+                            <a class="nav-link disabled" href="./stuff"><?php _e("Stuff"); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="./side">Side Projects</a>
+                            <a class="nav-link disabled" href="./side"><?php _e("Side Projects"); ?></a>
                         </li>
                         <hr>
                         <li class="nav-item">
-                            <a class="nav-link" href="./about">About us</a>
+                            <a class="nav-link" href="./about"><?php _e("About us"); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./team">Team</a>
+                            <a class="nav-link" href="./team"><?php _e("Team"); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./thanks">Thanks</a>
+                            <a class="nav-link" href="./thanks"><?php _e("Thanks"); ?></a>
                         </li>
                         <hr>
                         <li class="nav-item">
                             <a class="nav-link" href="https://ajikanproject.com/" target="_blank">Ajikan Worldwide Project</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://discord.gg/mQJ4TcjM3h" target="_blank">Join our Discord</a>
+                            <a class="nav-link" href="https://discord.gg/mQJ4TcjM3h" target="_blank"><?php _e("Join our Discord"); ?></a>
                         </li>
                         <hr>
                         <li class="mt-2">
