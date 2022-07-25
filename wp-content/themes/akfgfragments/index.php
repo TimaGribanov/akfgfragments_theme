@@ -18,7 +18,7 @@
                                 echo '</ul>';
                             }   
                         ?>
-                        <p>Written by <?php the_author(); ?></p>
+                        <p><?php _e("Written by ") . the_author(); ?></p>
                         <?php
                         if ( has_post_thumbnail() ) {
                             $post_thumbnail_id = get_post_thumbnail_id();
