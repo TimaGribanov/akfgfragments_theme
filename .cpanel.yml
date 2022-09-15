@@ -1,0 +1,11 @@
+---
+deployment:
+  tasks:
+    - export THEMEPATH=../../public_html/wp-content/themes/akfgfragments
+    - expot THEMEBACKUPPATH==../../public_html/wp-content/themes/akfgfragments_bk
+    - export ADMINPATH=../../public_html/wp-admin
+    - export ADMINBACKUPPATH=../../public_html/wp-admin_bk
+    - /bin/cp -R $THEMEPATH $THEMEBACKUPPATH
+    - /bin/cp -R $ADMINPATH $ADMINBACKUPPATH
+    - /bin/cp -R wp-content $THEMEPATH
+    - /bin/cp -R wp-admin $ADMINPATH
