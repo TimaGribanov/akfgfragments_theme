@@ -121,7 +121,7 @@
                                                 $lang_full = __('Japanese');
                                                 break;
                                             case 'ro':
-                                                $lang_full = 'romaji';
+                                                $lang_full = __('romaji');
                                                 break;
                                             case 'en':
                                                 $lang_full = __('English');
@@ -145,7 +145,7 @@
                                                 $lang_full = __('the selected language');
                                         }
                                         echo "<div id='song-text'>";
-                                            _e("Sorry! This song's lyrics are not yet available in $lang_full.");
+                                            echo __("Sorry! This song's lyrics are not yet available in ") . $lang_full . ".";
                                         echo "</div>";
                                     }
                                 }
@@ -167,10 +167,10 @@
             $('#open-hidden').on('click', function() {
                 if($('#hidden-translations').is(':hidden')) {
                     $('#hidden-translations').show();
-                    $('#open-hidden').text('less...');
+                    $('#open-hidden').text('<?php _e("less..."); ?>');
                 } else {
                     $('#hidden-translations').hide();
-                    $('#open-hidden').text('more...');
+                    $('#open-hidden').text('<?php _e("more..."); ?>');
                 }
             })
 
