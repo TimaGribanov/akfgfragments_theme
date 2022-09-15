@@ -7,5 +7,5 @@ deployment:
     - export ADMINBACKUPPATH=../../public_html/wp-admin_bk
     - /bin/cp -R $THEMEPATH $THEMEBACKUPPATH
     - /bin/cp -R $ADMINPATH $ADMINBACKUPPATH
-    - /bin/cp -R wp-content $THEMEPATH
-    - /bin/cp -R wp-admin $ADMINPATH
+    - /bin/cp -R wp-content/themes/akfgfragments/* $THEMEPATH
+    - /bin/cp -R wp-admin/* $ADMINPATH
