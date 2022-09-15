@@ -41,21 +41,27 @@
                                             echo "</div>";
                                         echo "</div>"; //End of title translations
                                         
-                                        echo "<div class='row'>"; //Release type
-                                            echo "<p id='release-type'>Type of release: $row->type</span>";
-                                        echo "</div>";
+                                        echo "<div class='row'>"; //Release type ?>
+                                            <p id="release-type"><?php _e("Type of release: " . $row->type); ?></span>
+                                        <?php echo "</div>";
 
                                         echo "<div class='row'>"; //Release date
                                         if($row->date == "2000-01-01") {
-                                            echo "<p id='release-type'>Release date: " . date("Y", strtotime("$row->date")) . "</p>";
+                                        ?>
+                                            <p id="release-type"><?php _e("Release date: " . date("Y", strtotime("$row->date"))); ?></p>
+                                        <?php
                                         } else {
-                                            echo "<p id='release-type'>Release date: " . date("jS F Y", strtotime("$row->date")) . "</p>";
+                                        ?>
+                                            <p id="release-type"><?php _e("Release date: " . date("jS F Y", strtotime("$row->date"))); ?></p>
+                                        <?php
                                         }
                                         echo "</div>";
 
                                         echo "<div class='row'>"; //Tracklist
                                         $tracklist_length = count($tracklist);
-                                            echo "<h3>Tracklist:</h3>";
+                                        ?>
+                                            <h3><?php _e("Tracklist:") ?></h3>
+                                        <?php
                                             echo "<ol class='main-tracklist'>";
                                             for ($i = 0; $i < $tracklist_length; $i++) {
                                                 $track = $tracklist["$i"]->title_ro;

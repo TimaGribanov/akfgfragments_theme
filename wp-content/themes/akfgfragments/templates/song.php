@@ -30,7 +30,9 @@
                                     echo "<div class='col'>"; //The first col: Title translations, Credits
                                     echo "<div class='row'>"; //Title translations
                                     echo "<p class='title-trans'>" . $row->title_ja . ", " . $row->title_en . "</p>";
-                                    echo "<p class='title-trans' id='open-hidden'>more...</p>";
+                                    echo "<p class='title-trans' id='open-hidden'>";
+                                        _e("more...");
+                                    echo "</p>";
                                     echo "<div id='hidden-translations' style='display:none;'>";
                                     echo "<p class='title-trans'>" . $row->title_de . "</p>";
                                     echo "<p class='title-trans'>" . $row->title_es . "</p>";
@@ -56,7 +58,9 @@
                                     }
                                     echo "</div>";
                                     echo "<div class='row'>"; //Releases
-                                    echo "<h3>Part of the following releases:</h3>";
+                                    echo "<h3>";
+                                        _e("Part of the following releases:");
+                                    echo "</h3>";
                                     echo "<div>"; //List of releases
                                     if(!empty($song_releases)) {  
                                         foreach($song_releases as $row) {
@@ -72,17 +76,17 @@
                         ?>
 
                         <div class="row" id="lyrics-div"> <!-- The second row: Lyrics -->
-                            <h3>Lyrics:</h3>
+                            <h3><?php _e("Lyrics:") ?></h3>
                             <div class="d-grid gap-2 d-md-block"> <!-- Buttons -->
                             <form method="post">
-                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="ja" value="japanese">
-                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="ro" value="romaji">
-                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="en" value="english">
-                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="fr" value="french">
-                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="de" value="german">
-                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="es" value="spanish">
-                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="pt" value="portuguese">
-                                <input type="submit" class="btn btn-primary mb-2 song-text-btn" name="ru" value="russian">
+                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="ja" value="<?php _e("japanese"); ?>">
+                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="ro" value="<?php _e("romaji"); ?>">
+                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="en" value="<?php _e("english"); ?>">
+                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="fr" value="<?php _e("french"); ?>">
+                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="de" value="<?php _e("german"); ?>">
+                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="es" value="<?php _e("spanish"); ?>">
+                                <input type="submit" class="btn btn-primary me-2 mb-2 song-text-btn" name="pt" value="<?php _e("portuguese"); ?>">
+                                <input type="submit" class="btn btn-primary mb-2 song-text-btn" name="ru" value="<?php _e("russian"); ?>">
                             </form>
                             </div>
                             <?php
@@ -114,33 +118,35 @@
                                     } else {
                                         switch ($lang) {
                                             case 'ja':
-                                                $lang_full = 'Japanese';
+                                                $lang_full = __('Japanese');
                                                 break;
                                             case 'ro':
-                                                $lang_full = 'romaji';
+                                                $lang_full = __('romaji');
                                                 break;
                                             case 'en':
-                                                $lang_full = 'English';
+                                                $lang_full = __('English');
                                                 break;
                                             case 'fr':
-                                                $lang_full = 'French';
+                                                $lang_full = __('French');
                                                 break;
                                             case 'de':
-                                                $lang_full = 'German';
+                                                $lang_full = __('German');
                                                 break;
                                             case 'es':
-                                                $lang_full = 'Spanish';
+                                                $lang_full = __('Spanish');
                                                 break;
                                             case 'pt':
-                                                $lang_full = 'Portuguese';
+                                                $lang_full = __('Portuguese');
                                                 break;
                                             case 'ru':
-                                                $lang_full = 'Russian';
+                                                $lang_full = __('Russian');
                                                 break;
                                             default:
-                                                $lang_full = 'the selected language';
+                                                $lang_full = __('the selected language');
                                         }
-                                        echo "<div id='song-text'>Sorry! This song's lyrics are not yet available in $lang_full.</div>";
+                                        echo "<div id='song-text'>";
+                                            echo __("Sorry! This song's lyrics are not yet available in ") . $lang_full . ".";
+                                        echo "</div>";
                                     }
                                 }
                             ?>
@@ -161,10 +167,10 @@
             $('#open-hidden').on('click', function() {
                 if($('#hidden-translations').is(':hidden')) {
                     $('#hidden-translations').show();
-                    $('#open-hidden').text('less...');
+                    $('#open-hidden').text('<?php _e("less..."); ?>');
                 } else {
                     $('#hidden-translations').hide();
-                    $('#open-hidden').text('more...');
+                    $('#open-hidden').text('<?php _e("more..."); ?>');
                 }
             })
 

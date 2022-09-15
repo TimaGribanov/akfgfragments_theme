@@ -36,8 +36,8 @@
 
 <div id="main-sidebar" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 d-none d-lg-block d-xl-block d-xxl-block">
     <div id="main-discord" class="main-side-block text-center border border-light border-2 rounded-2">
-        <h4>Join our Discord server!</h3>
-        <p>We have interesting Asian Kung-Fu Generation related discussions there, and more!</p>
+        <h4><?php _e("Join our Discord server!"); ?></h3>
+        <p><?php _e("We have interesting Asian Kung-Fu Generation related discussions there, and more!"); ?></p>
         <a href="https://discord.gg/mQJ4TcjM3h" target="_blank"><button type="button" class="btn btn-discord mb-2"><i class="bi bi-discord"></i><span class="main-btn-text">Join</span></button></a>
     </div>
 

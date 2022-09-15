@@ -1,0 +1,196 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-07-25T13:49:02+03:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.6.0\n"
+
+#: footer.php:11
+msgid "Your guide to Asian Kung-Fu Generation world"
+msgstr ""
+
+#: footer.php:22
+#: header-header.php:59
+msgid "About us"
+msgstr ""
+
+#: footer.php:23
+#: header-header.php:62
+msgid "Team"
+msgstr ""
+
+#: footer.php:24
+#: header-header.php:65
+msgid "Thanks"
+msgstr ""
+
+#: header-header.php:9
+#: header-header.php:40
+msgid "Discography"
+msgstr ""
+
+#: header-header.php:12
+#: header-header.php:43
+msgid "Music Videos"
+msgstr ""
+
+#: header-header.php:15
+#: header-header.php:46
+msgid "Lyrics"
+msgstr ""
+
+#: header-header.php:18
+#: header-header.php:49
+msgid "Interviews"
+msgstr ""
+
+#: header-header.php:21
+#: header-header.php:52
+msgid "Stuff"
+msgstr ""
+
+#: header-header.php:24
+#: header-header.php:55
+msgid "Side Projects"
+msgstr ""
+
+#: header-header.php:37
+msgid "Home"
+msgstr ""
+
+#: header-header.php:72
+msgid "Join our Discord"
+msgstr ""
+
+#: index.php:21
+msgid "Written by "
+msgstr ""
+
+#: index.php:31
+#: index.php:59
+#: templates/blank.php:12
+#: templates/blank.php:16
+msgid "(more...)"
+msgstr ""
+
+#: index.php:65
+#: templates/blank.php:19
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: index.php:77
+msgid "Pagination"
+msgstr ""
+
+#: sidebar.php:39
+msgid "Join our Discord server!"
+msgstr ""
+
+#: sidebar.php:40
+msgid "We have interesting Asian Kung-Fu Generation related discussions there, and more!"
+msgstr ""
+
+#: templates/release.php:45
+msgid "Type of release: "
+msgstr ""
+
+#: templates/release.php:51
+#: templates/release.php:55
+msgid "Release date: "
+msgstr ""
+
+#: templates/release.php:63
+msgid "Tracklist:"
+msgstr ""
+
+#: templates/song.php:34
+#: templates/song.php:173
+msgid "more..."
+msgstr ""
+
+#: templates/song.php:62
+msgid "Part of the following releases:"
+msgstr ""
+
+#: templates/song.php:79
+msgid "Lyrics:"
+msgstr ""
+
+#: templates/song.php:82
+msgid "japanese"
+msgstr ""
+
+#: templates/song.php:83
+#: templates/song.php:124
+msgid "romaji"
+msgstr ""
+
+#: templates/song.php:84
+msgid "english"
+msgstr ""
+
+#: templates/song.php:85
+msgid "french"
+msgstr ""
+
+#: templates/song.php:86
+msgid "german"
+msgstr ""
+
+#: templates/song.php:87
+msgid "spanish"
+msgstr ""
+
+#: templates/song.php:88
+msgid "portuguese"
+msgstr ""
+
+#: templates/song.php:89
+msgid "russian"
+msgstr ""
+
+#: templates/song.php:121
+msgid "Japanese"
+msgstr ""
+
+#: templates/song.php:127
+msgid "English"
+msgstr ""
+
+#: templates/song.php:130
+msgid "French"
+msgstr ""
+
+#: templates/song.php:133
+msgid "German"
+msgstr ""
+
+#: templates/song.php:136
+msgid "Spanish"
+msgstr ""
+
+#: templates/song.php:139
+msgid "Portuguese"
+msgstr ""
+
+#: templates/song.php:142
+msgid "Russian"
+msgstr ""
+
+#: templates/song.php:145
+msgid "the selected language"
+msgstr ""
+
+#: templates/song.php:148
+msgid "Sorry! This song's lyrics are not yet available in "
+msgstr ""
+
+#: templates/song.php:170
+msgid "less..."
+msgstr ""
