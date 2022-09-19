@@ -89,6 +89,6 @@
     </script>
 
     <div id="main-ajikan-project" class="main-side-block text-center border border-light border-2 rounded-2">
-        <a href="https://ajikanproject.com" target="_blank"><img class="rounded-2" src="wp-content/themes/akfgfragments/assets/img/ajikan_project_logo.png" width="300px" height="300px"/></a>
+        <a href="https://ajikanproject.com" target="_blank"><img class="rounded-2" src="/wp-content/themes/akfgfragments/assets/img/ajikan_project_logo.png" width="300px" height="300px"/></a>
     </div>
 </div>
