@@ -113,7 +113,9 @@
                                     $lyrics_results = $songdb->get_results( "SELECT * FROM lyrics WHERE song_id = (SELECT id FROM songs WHERE title_ro = \"$title_parsed\") AND lang = \"$lang\"" );
                                     if(!empty($lyrics_results)) {
                                         foreach($lyrics_results as $row) {
-                                            echo "<div id='song-text'>" . $row->text . "</div>";
+                                            $text_db = $row->text;
+                                            $text_parsed = str_replace('\\\'', '\'', $text_db);
+                                            echo "<div id='song-text'>" . $text_parsed . "</div>";
                                         }
                                     } else {
                                         switch ($lang) {
