@@ -22,11 +22,11 @@
         $title_parsed = ucwords($title_parsed); //Capitalise each word
 
         $og_title = "";
-        if(!empty($post->post_title) && strcmp($post->post_title, "Release") !== 0 && strcmp($post->post_title, "Song") !== 0 && !(parse_url($url, PHP_URL_PATH) == "/")) {
+        if(!empty($post->post_title) && strcmp($post->post_title, "Release") !== 0 && strcmp($post->post_title, "Song") !== 0 && !(parse_url($url, PHP_URL_PATH) == "/") && !(str_contains(parse_url($url, PHP_URL_PATH), "/page"))) {
             $og_title = get_the_title();
         } else {
             if (!$title_parsed) {
-                if (!$slug) {
+                if (!$slug || str_contains(parse_url($url, PHP_URL_PATH), "/page")) {
                     $og_title = "Home";
                 } else {
                     $og_title = $slug;
