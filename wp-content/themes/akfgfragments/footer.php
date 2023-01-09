@@ -61,4 +61,5 @@
             <p class="mb-0">akfgfragments © <?php echo date('Y'); ?></p>
         </div>
     </div>
+    <?php wp_footer(); ?>
 </footer>
