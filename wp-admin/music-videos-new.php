@@ -23,35 +23,44 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
     <form action="" method="POST">
         <div style="display: flex; width: 500px;">
             <div style="flex: 1;">
+                <script type="text/javascript">
+                    (function($) {
+
+                        $(document).on('click', '.song-button', function() {
+                            $('#title_ro').val( $(this).find('.song-title').text() );
+                        })
+
+                    })( jQuery );
+                </script>
                 <label for="title_ro"><h3>Song*:</h3></label>
                 <input type="text" id="title_ro" name="title_ro">
+                <div id="song-search-list"></div>
                 <script type="text/javascript">
-                        document.getElementById('title_ro').addEventListener('keyup', findSongs);
+                    document.getElementById('title_ro').addEventListener('keyup', findSongs);
 
-                        function findSongs() {
-                            let queryParam = document.getElementById('title_ro').value;
-                            let searchString = 'param=' + queryParam;
+                    function findSongs() {
+                        let queryParam = document.getElementById('title_ro').value;
+                        let searchString = 'param=' + queryParam;
 
-                            //ADD RESULTS TO OTHER DIV AS FOR RELEASES 
-                            //AJAX to search for songs
-                            if (queryParam) {
-                                (function($) {
-                                    $.ajax({
-                                        type: "POST",
-                                        url: "/wp-admin/discography-release-new-query.php",
-                                        data: searchString,
-                                        cache: false,
-                                        success: function(html) {
-                                            document.getElementById('title_ro').innerHTML = html
-                                        }
-                                    });
-                                })( jQuery );
-                            } else {
-                                document.getElementById('title_ro').innerHTML = '';
-                            }
-                        
-                            return false;
+                        //AJAX to search for songs
+                        if (queryParam) {
+                            (function($) {
+                                $.ajax({
+                                    type: "POST",
+                                    url: "/wp-admin/discography-release-new-query.php",
+                                    data: searchString,
+                                    cache: false,
+                                    success: function(html) {
+                                        document.getElementById('song-search-list').innerHTML = html
+                                    }
+                                });
+                            })( jQuery );
+                        } else {
+                            document.getElementById('song-search-list').innerHTML = '';
                         }
+                        
+                        return false;
+                    }
                 </script>
 
                 <label for="director"><h3>Director:</h3></label>
@@ -70,7 +79,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
             $title_ro = stripslashes($_POST['title_ro']);
             $director = $_POST['director'];
             $date = $_POST['date'];
-            $url = $_POST['mv_url'];
+            $mv_url = $_POST['mv_url'];
 
             $mvdb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
             $mvdb->insert(
@@ -82,6 +91,8 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                     "url" => "$mv_url"
                 ) 
             );
+
+            echo "<meta http-equiv='refresh' content='0'>";
         };
     ?>
 </div>

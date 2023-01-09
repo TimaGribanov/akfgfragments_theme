@@ -34,6 +34,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                 echo "<th>Title</th>";
                 echo "<th>Director</th>";
                 echo "<th>Date</th>";
+                echo "<th>URL</th>";
                 echo "<th>Action</th>";
             echo "</tr>";
             echo "</thead>";
@@ -45,6 +46,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                     echo "<td><a href='/song?$title_parsed' target='_blank'>$row->title_ro</a></td>";
                     echo "<td>$row->director</td>";
                     echo "<td>$row->date</td>";
+                    echo "<td><a href='$row->url' target='_blank'>View</a></td>";
                     echo "<td><a href='/wp-admin/music-videos-edit.php?$title_parsed' target='_blank'>Edit</a> Delete</td>";
                 echo "</tr>";
             }

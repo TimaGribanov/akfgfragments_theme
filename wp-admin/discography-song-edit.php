@@ -196,6 +196,8 @@ $title_parsed = str_replace('%3F', '?', $title_parsed); //Change %3F to a questi
                 ),
                 array( "ID" => $song_id )
             );
+
+            echo "<meta http-equiv='refresh' content='0'>";
         }
 
         if (isset($_POST['submit-lyrics'])) {
@@ -233,8 +235,9 @@ $title_parsed = str_replace('%3F', '?', $title_parsed); //Change %3F to a questi
                         )
                     );
                 }
-                
             }
+
+            echo "<meta http-equiv='refresh' content='0'>";
         }
     ?>
 </div>
