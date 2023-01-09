@@ -1,22 +1,13 @@
 <?php /* Template Name: Akfgfragments Release */ ?>
 
 <?php get_header(); ?>
-<?php get_header(header); ?>
-
     <main role="main">
         <div class="container">
             <div id="main" class="row">
                 <div id="content" class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                     <div class="row">
                         <?php
-                            //THE FOLLOWING FOUR LINES ARE DOUBLED IN THE header-song.php!!! DO NOT FORGET TO MAKE CHANGES THERE AS WHERE!!!
-                            $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-                            $title = parse_url($url, PHP_URL_QUERY); //Get a query
-                            $title_parsed = str_replace('_', ' ', $title); //Delete underscores if they exist
-                            $title_parsed = str_replace('%27', '\'', $title_parsed); //Change %27 to a single quote
-                            $title_parsed = str_replace('%26', '&', $title_parsed); //Cahnge %26 to an ampersand
-                            $title_parsed = str_replace('%23', '#', $title_parsed); //Cahnge %26 to a number sign
-                            $title_parsed = str_replace('%3F', '?', $title_parsed); //Cahnge %26 to a question mark
+                            require( get_theme_root() . "/akfgfragments/parse_url.php" );
 
                             //Connect to another DB containing discography data
                             $releasedb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
@@ -28,31 +19,33 @@
                                     echo "<h1 class='song_title'>$row->title_ro</h1>"; //Release title
                                     echo "<div class='col'>"; //The first col: Title translations, Type of release, Release date, Tracklist, Credits
                                         echo "<div class='row'>"; //Title translations
-                                            echo "<p class='title-trans'>$row->title_ja, $row->title_en</p>";
-                                            echo "<p class='title-trans' id='open-hidden'>more...</p>";
+                                        echo "<p class='title-trans'><span title='日本語' lang='ja-jp'>" . $row->title_ja . "</span>, <span title='English'>" . $row->title_en . "</span></p>";
+                                        echo "<p class='title-trans' id='open-hidden'>";
+                                            _e( 'more...', 'akfgfragments' );
+                                        echo "</p>";
                                             echo "<div id='hidden-translations' style='display:none;'>";
-                                                echo "<p class='title-trans'>" . $row->title_de . "</p>";
-                                                echo "<p class='title-trans'>" . $row->title_es . "</p>";
-                                                echo "<p class='title-trans'>" . $row->title_fr . "</p>";
-                                                echo "<p class='title-trans'>" . $row->title_pt . "</p>";
-                                                echo "<p class='title-trans'>" . $row->title_ru . "</p>";
-                                                echo "<p class='title-trans'>" . $row->title_uk . "</p>";
-                                                echo "<p class='title-trans'>" . $row->title_be . "</p>";
+                                            if ($row->title_de != "") {echo "<p class='title-trans'><span title='Deutsche'>" . $row->title_de . "</span></p>";}
+                                            if ($row->title_es != "") {echo "<p class='title-trans'><span title='Español'>" . $row->title_es . "</span></p>";}
+                                            if ($row->title_fr != "") {echo "<p class='title-trans'><span title='Française'>" . $row->title_fr . "</span></p>";}
+                                            if ($row->title_pt != "") {echo "<p class='title-trans'><span title='Português'>" . $row->title_pt . "</span></p>";}
+                                            if ($row->title_ru != "") {echo "<p class='title-trans'><span title='Русский'>" . $row->title_ru . "</span></p>";}
+                                            if ($row->title_uk != "") {echo "<p class='title-trans'><span title='Українська'>" . $row->title_uk . "</span></p>";}
+                                            if ($row->title_be != "") {echo "<p class='title-trans'><span title='Беларуская'>" . $row->title_be . "</span></p>";}
                                             echo "</div>";
                                         echo "</div>"; //End of title translations
                                         
                                         echo "<div class='row'>"; //Release type ?>
-                                            <p id="release-type"><?php _e("Type of release: " . $row->type); ?></span>
+                                            <p id="release-type"><?php _e( 'Type of release:', 'akfgfragments' ) ?> <?php echo $row->type; ?></span>
                                         <?php echo "</div>";
 
                                         echo "<div class='row'>"; //Release date
                                         if($row->date == "2000-01-01") {
                                         ?>
-                                            <p id="release-type"><?php _e("Release date: " . date("Y", strtotime("$row->date"))); ?></p>
+                                            <p id="release-type"><?php _e( 'Release date:', 'akfgfragments' ) ?> <?php echo date("Y", strtotime("$row->date")); ?></p>
                                         <?php
                                         } else {
                                         ?>
-                                            <p id="release-type"><?php _e("Release date: " . date("jS F Y", strtotime("$row->date"))); ?></p>
+                                            <p id="release-type"><?php _e( 'Release date:', 'akfgfragments' ) ?> <?php echo date("jS F Y", strtotime("$row->date")); ?></p>
                                         <?php
                                         }
                                         echo "</div>";
@@ -60,12 +53,12 @@
                                         echo "<div class='row'>"; //Tracklist
                                         $tracklist_length = count($tracklist);
                                         ?>
-                                            <h3><?php _e("Tracklist:") ?></h3>
+                                            <h3><?php _e( 'Tracklist:', 'akfgfragments' ) ?></h3>
                                         <?php
                                             echo "<ol class='main-tracklist'>";
                                             for ($i = 0; $i < $tracklist_length; $i++) {
                                                 $track = $tracklist["$i"]->title_ro;
-                                                echo "<li><a class='main-traclist-link' href='song?" . str_replace('?', '%3F', str_replace('#', '%23', str_replace('&', '%26', str_replace('\'', '%27', str_replace(' ', '_',$track))))) . "'>" . $track . "</a></li>";
+                                                echo "<li><a class='main-tracklist-link' href='song?" . str_replace('?', '%3F', str_replace('#', '%23', str_replace('&', '%26', str_replace('\'', '%27', str_replace(' ', '_',$track))))) . "'>" . $track . "</a></li>";
                                             }
                                             echo "</ol>";
                                         echo "</div>";

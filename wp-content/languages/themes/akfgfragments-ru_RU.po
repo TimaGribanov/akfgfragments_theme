@@ -1,0 +1,201 @@
+# Copyright (C) 2022 akfgfragments
+# This file is distributed under the same license as the akfgfragments package.
+msgid ""
+msgstr ""
+"Project-Id-Version: akfgfragments\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-10-31 08:22+0000\n"
+"Project-Id-Version: undefined\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: akfgfragments\n"
+"X-Crowdin-Project-ID: 538230\n"
+"X-Crowdin-Language: ru\n"
+"X-Crowdin-File: akfgfragments.pot\n"
+"X-Crowdin-File-ID: 4\n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"PO-Revision-Date: 2022-10-31 08:23\n"
+
+#: footer.php:11
+msgid "Your guide to Asian Kung-Fu Generation world"
+msgstr "Твой путеводитель в мир Asian Kung-Fu Generation"
+
+#: footer.php:22, header-header.php:59
+msgid "About us"
+msgstr "О нас"
+
+#: footer.php:23, header-header.php:62
+msgid "Team"
+msgstr "Команда"
+
+#: footer.php:24, header-header.php:65
+msgid "Thanks"
+msgstr "Благодарности"
+
+#: header-header.php:9, header-header.php:40
+msgid "Discography"
+msgstr "Дискография"
+
+#: header-header.php:12, header-header.php:43
+msgid "Music Videos"
+msgstr "Видеоклипы"
+
+#: header-header.php:15, header-header.php:46
+msgid "Lyrics"
+msgstr "Тексты песен"
+
+#: header-header.php:18, header-header.php:49
+msgid "Interviews"
+msgstr "Интервью"
+
+#: header-header.php:21, header-header.php:52
+msgid "Stuff"
+msgstr "Атрибутика"
+
+#: header-header.php:24, header-header.php:55
+msgid "Side Projects"
+msgstr "Сторонние проекты"
+
+#: header-header.php:37, header.php:34
+msgid "Home"
+msgstr "Главная"
+
+#: header-header.php:72
+msgid "Join our Discord"
+msgstr "Добавляйтесь к нам в Discord"
+
+#: index.php:61, templates/blank.php:19
+msgid "Sorry, no posts matched your criteria."
+msgstr "К сожалению, по вашему поиску ничего не найдено."
+
+#: index.php:21
+msgid "Written by "
+msgstr "Автор: "
+
+#: index.php:31, index.php:57, templates/blank.php:12, templates/blank.php:16
+msgid "(more...)"
+msgstr "(больше...)"
+
+#: index.php:36
+msgid "Posted on"
+msgstr "Опубликовано"
+
+#: index.php:36
+msgid "by"
+msgstr ", автор:"
+
+#: index.php:73
+msgid "Pagination"
+msgstr "Пагинация"
+
+#: sidebar.php:39
+msgid "Join our Discord server!"
+msgstr "Заходите на наш сервер в Discord!"
+
+#: sidebar.php:40
+msgid "We have interesting Asian Kung-Fu Generation related discussions there, and more!"
+msgstr "У нас там интересные обсуждения по Asian Kung-Fu Generation, и не только!"
+
+#: templates/release.php:45
+msgid "Type of release:"
+msgstr "Тип издания:"
+
+#: templates/release.php:55, templates/release.php:51
+msgid "Release date:"
+msgstr "Дата выхода:"
+
+#: templates/release.php:63
+msgid "Tracklist:"
+msgstr "Список песен:"
+
+#: templates/song.php:34, templates/song.php:175
+msgid "more..."
+msgstr "больше..."
+
+#: templates/song.php:62
+msgid "Part of:"
+msgstr "Входит в:"
+
+#: templates/song.php:79
+msgid "Lyrics:"
+msgstr "Текст:"
+
+#: templates/song.php:82
+msgid "japanese"
+msgstr "японский"
+
+#: templates/song.php:83, templates/song.php:126
+msgid "romaji"
+msgstr "ромадзи"
+
+#: templates/song.php:84
+msgid "english"
+msgstr "английский"
+
+#: templates/song.php:85
+msgid "french"
+msgstr "французский"
+
+#: templates/song.php:86
+msgid "german"
+msgstr "немецкий"
+
+#: templates/song.php:87
+msgid "spanish"
+msgstr "испанский"
+
+#: templates/song.php:88
+msgid "portuguese"
+msgstr "португальский"
+
+#: templates/song.php:89
+msgid "russian"
+msgstr "русский"
+
+#: templates/song.php:123
+msgid "Japanese"
+msgstr "японском"
+
+#: templates/song.php:129
+msgid "English"
+msgstr "английском"
+
+#: templates/song.php:132
+msgid "French"
+msgstr "французском"
+
+#: templates/song.php:135
+msgid "German"
+msgstr "немецком"
+
+#: templates/song.php:138
+msgid "Spanish"
+msgstr "испанском"
+
+#: templates/song.php:141
+msgid "Portuguese"
+msgstr "португальском"
+
+#: templates/song.php:144
+msgid "Russian"
+msgstr "русском"
+
+#: templates/song.php:147
+msgid "the selected language"
+msgstr "выбранном языке"
+
+#: templates/song.php:150
+msgid "Sorry! This song's lyrics are not yet available in "
+msgstr "Извините! Текст этой песни ещё не переведён на "
+
+#: templates/song.php:172
+msgid "less..."
+msgstr "меньше..."
+

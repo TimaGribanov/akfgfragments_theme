@@ -9,14 +9,14 @@
                 <div class="row">
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                     <div class="row main-post border border-light border-2 rounded-2 d-none d-lg-block d-xl-block d-xxl-block">
-                        <p><?php the_content(__('(more...)')); ?></p>
+                        <p><?php the_content(__( '(more...)', 'akfgfragments' )); ?></p>
                     </div>
 
                     <div class="row main-post-mobile d-block d-md-block d-lg-none">
-                        <p><?php the_content(__('(more...)')); ?></p>
+                        <p><?php the_content(__( '(more...)', 'akfgfragments' )); ?></p>
                     </div>
                     <?php endwhile; else: ?>
-                    <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+                    <p><?php _e( 'Sorry, no posts matched your criteria.', 'akfgfragments' ); ?></p>
                     <?php endif; ?>                   
                 </div>
             </div>

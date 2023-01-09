@@ -1,66 +1,61 @@
+# Copyright (C) 2022 akfgfragments
+# This file is distributed under the same license as the akfgfragments package.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: akfgfragments\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-07-25T13:49:02+03:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.6.0\n"
+"POT-Creation-Date: 2022-10-31 08:22+0000\n"
+"Project-Id-Version: undefined\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: footer.php:11
 msgid "Your guide to Asian Kung-Fu Generation world"
 msgstr ""
 
-#: footer.php:22
-#: header-header.php:59
+#: footer.php:22, header-header.php:59
 msgid "About us"
 msgstr ""
 
-#: footer.php:23
-#: header-header.php:62
+#: footer.php:23, header-header.php:62
 msgid "Team"
 msgstr ""
 
-#: footer.php:24
-#: header-header.php:65
+#: footer.php:24, header-header.php:65
 msgid "Thanks"
 msgstr ""
 
-#: header-header.php:9
-#: header-header.php:40
+#: header-header.php:9, header-header.php:40
 msgid "Discography"
 msgstr ""
 
-#: header-header.php:12
-#: header-header.php:43
+#: header-header.php:12, header-header.php:43
 msgid "Music Videos"
 msgstr ""
 
-#: header-header.php:15
-#: header-header.php:46
+#: header-header.php:15, header-header.php:46
 msgid "Lyrics"
 msgstr ""
 
-#: header-header.php:18
-#: header-header.php:49
+#: header-header.php:18, header-header.php:49
 msgid "Interviews"
 msgstr ""
 
-#: header-header.php:21
-#: header-header.php:52
+#: header-header.php:21, header-header.php:52
 msgid "Stuff"
 msgstr ""
 
-#: header-header.php:24
-#: header-header.php:55
+#: header-header.php:24, header-header.php:55
 msgid "Side Projects"
 msgstr ""
 
-#: header-header.php:37
+#: header-header.php:37, header.php:34
 msgid "Home"
 msgstr ""
 
@@ -68,23 +63,27 @@ msgstr ""
 msgid "Join our Discord"
 msgstr ""
 
+#: index.php:61, templates/blank.php:19
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
 #: index.php:21
 msgid "Written by "
 msgstr ""
 
-#: index.php:31
-#: index.php:59
-#: templates/blank.php:12
-#: templates/blank.php:16
+#: index.php:31, index.php:57, templates/blank.php:12, templates/blank.php:16
 msgid "(more...)"
 msgstr ""
 
-#: index.php:65
-#: templates/blank.php:19
-msgid "Sorry, no posts matched your criteria."
+#: index.php:36
+msgid "Posted on"
 msgstr ""
 
-#: index.php:77
+#: index.php:36
+msgid "by"
+msgstr ""
+
+#: index.php:73
 msgid "Pagination"
 msgstr ""
 
@@ -97,25 +96,23 @@ msgid "We have interesting Asian Kung-Fu Generation related discussions there, a
 msgstr ""
 
 #: templates/release.php:45
-msgid "Type of release: "
+msgid "Type of release:"
 msgstr ""
 
-#: templates/release.php:51
-#: templates/release.php:55
-msgid "Release date: "
+#: templates/release.php:55, templates/release.php:51
+msgid "Release date:"
 msgstr ""
 
 #: templates/release.php:63
 msgid "Tracklist:"
 msgstr ""
 
-#: templates/song.php:34
-#: templates/song.php:173
+#: templates/song.php:34, templates/song.php:175
 msgid "more..."
 msgstr ""
 
 #: templates/song.php:62
-msgid "Part of the following releases:"
+msgid "Part of:"
 msgstr ""
 
 #: templates/song.php:79
@@ -126,8 +123,7 @@ msgstr ""
 msgid "japanese"
 msgstr ""
 
-#: templates/song.php:83
-#: templates/song.php:124
+#: templates/song.php:83, templates/song.php:126
 msgid "romaji"
 msgstr ""
 
@@ -155,42 +151,42 @@ msgstr ""
 msgid "russian"
 msgstr ""
 
-#: templates/song.php:121
+#: templates/song.php:123
 msgid "Japanese"
 msgstr ""
 
-#: templates/song.php:127
+#: templates/song.php:129
 msgid "English"
 msgstr ""
 
-#: templates/song.php:130
+#: templates/song.php:132
 msgid "French"
 msgstr ""
 
-#: templates/song.php:133
+#: templates/song.php:135
 msgid "German"
 msgstr ""
 
-#: templates/song.php:136
+#: templates/song.php:138
 msgid "Spanish"
 msgstr ""
 
-#: templates/song.php:139
+#: templates/song.php:141
 msgid "Portuguese"
 msgstr ""
 
-#: templates/song.php:142
+#: templates/song.php:144
 msgid "Russian"
 msgstr ""
 
-#: templates/song.php:145
+#: templates/song.php:147
 msgid "the selected language"
 msgstr ""
 
-#: templates/song.php:148
+#: templates/song.php:150
 msgid "Sorry! This song's lyrics are not yet available in "
 msgstr ""
 
-#: templates/song.php:170
+#: templates/song.php:172
 msgid "less..."
 msgstr ""

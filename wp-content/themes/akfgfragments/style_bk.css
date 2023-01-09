@@ -1,0 +1,409 @@
+/*
+Theme Name: akfgfragments
+Theme URI: https://github.com/TimaGribanov/akfgfragments_theme
+Author: Timofey Gribanov
+Author URI: https://github.com/TimaGribanov
+Description: A simple but effective WordPress theme for akfgfragments – international Asian Kung-Fu Generation fans project.
+Text Domain: akfgfragments
+*/
+
+/********************/
+/* COLOUR VARIABLES */
+/********************/
+
+:root {
+    --bg-colour: #fff;
+    --text-colour: #46413e;
+    --header-colour: #523233;
+    --link-hover-colour: #bc661d;
+    --block-border-colour: #dcb04f;
+    --btn-colour: #488888;
+    --btn-hover-colour: #5a6c9e;
+    --alpha-letter-colour: #bf6277;
+  }
+
+/*****************/
+/***** BASIC *****/
+/*****************/
+
+body {
+    background: var(--bg-colour);
+    text-align: left;
+    margin:0 auto;
+    color: var(--text-colour);
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 400;
+}
+
+.main-wrapper {
+    width: 85%;
+    margin:0 auto;
+}
+
+.block {
+    border-color: var(--block-border-colour);
+}
+
+a {
+    color: var(--text-colour);
+}
+
+a:hover, a:active {
+    color: var(--link-hover-colour);
+}
+
+blockquote {
+    border-left: var(--header-colour) 3px solid;
+    margin-left: 5%;
+}
+
+.nav-link {
+    color: var(--text-colour);
+    cursor: pointer;
+}
+
+.nav-link:hover, .nav-link:active {
+    color: var(--link-hover-colour);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--header-colour);
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 700;
+}
+
+dl, ol, ul {
+  margin-left: 2rem;
+}
+
+.btn-primary {
+    background-color: var(--btn-colour);
+    border: 0px;
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-hover-colour);
+}
+
+.btn-discord {
+    background-color:#5865f2;
+}
+
+.btn-discord>a, .btn-discord>i {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-discord>a {
+    margin-left: 10px;
+}
+
+/******************/
+/***** HEADER *****/
+/******************/
+
+#hdr-alpha-sign {
+    position: relative;
+    top: -0.5em;
+    font-size: 80%;
+    color: var(--alpha-letter-colour);
+}
+
+.title {
+    font-size: 11pt;
+    font-family: verdana;
+    font-weight: bold;
+}
+
+@media (max-width: 991px) {
+    header.navbar {
+        height: 100px;
+    }
+    header .navbar-brand {
+        position: relative;
+        margin: 0 auto;
+        font-size: 8vw;
+    }
+}
+
+.ham-bars {
+    font-size: 8vw;
+    color: var(--text-colour);
+}
+
+#hamburgerMenu {
+    width: 100%;
+}
+#hamburgerMenu .navbar-nav {
+    min-height: 100vh;
+}
+#hamburgerMenu .nav-item:hover {
+    background-color: var(--block-border-colour);
+}
+#hamburgerMenu hr {
+    width: 40%;
+    margin: 0 auto;
+}
+#hamburgerMenu .ham-icon {
+    font-size: 20pt;
+    text-decoration: none;
+}
+
+/************************/
+/***** MAIN CONTENT *****/
+/************************/
+
+#main {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 991px) {
+    #main {
+        margin: 0;
+    }
+    .pagination .nav-links {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .pagination .page-numbers {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border: 1px solid;
+        font-size: 1.5rem;
+        text-decoration: none;
+        text-align: center;
+    }
+}
+
+.main-post {
+    margin-bottom: 30px;
+}
+
+.main-post-taglist {
+    font-size: 0.7rem;
+}
+
+.main-post-taglist li {
+    display: inline;
+    margin-right: 5px;
+}
+
+.main-post-taglist li:hover {
+    color: var(--bg-colour);
+}
+
+.main-post-mobile {
+    border-bottom: 1px solid;
+    width: 100%;
+    margin: auto;
+}
+
+[class~='main-post-mobile']:last-of-type {
+    border-bottom: none;
+}
+
+.main-title-mobile {
+    text-decoration: none;
+}
+
+.main-title-mobile h1 {
+    margin: 0;
+}
+
+.main-tag-mobile {
+    background-color: var(--link-hover-colour);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 3px;
+    line-height: 40px;
+    text-decoration: none;
+    color: var(--bg-colour);
+}
+
+.main-post-excerpt-mobile a {
+    text-decoration: none;
+}
+
+.main-post-excerpt-mobile a:hover {
+    color: var(--text-colour);
+}
+
+.wp-block-image img {
+    width: 100%;
+    height: auto;
+}
+
+.wp-block-image figcaption {
+    text-align: center;
+    font-style: italic;
+    font-size: smaller;
+}
+
+.pagination div {
+    margin: 0 auto;
+}
+
+.pagination .screen-reader-text {
+    display: none;
+}
+
+/*******************/
+/***** SIDEBAR *****/
+/*******************/
+
+.main-side-block {
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+.main-side-block:last-of-type {
+    margin-bottom: 0;
+}
+
+.main-btn-text {
+    margin-left: 5px;
+    color: #fff;
+}
+
+.main-socials {
+    display: none;
+}
+
+.main-socials:first-of-type {
+    display: block;
+}
+
+.main-social-dot {
+    height: 20px;
+    width: 20px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.main-social-dot:hover {
+    background-color: var(--text-colour);
+}
+
+.main-social-dot:first-of-type {
+    background-color: var(--text-colour);
+}
+
+#main-ajikan-project img:hover {
+    opacity: 0.7;
+}
+
+/*****************/
+/***** DISCO *****/
+/*****************/
+
+.disco-list .disco-release img {
+    width: 50px;
+}
+
+@media (max-width: 991px) {
+    .disco-list .disco-release img {
+        width: 100px;
+    }
+
+    .disco-release>div {
+        width: auto;
+    }
+}
+
+/****************/
+/***** SONG *****/
+/****************/
+
+#open-hidden {
+    cursor: pointer;
+    color: var(--link-hover-colour);
+}
+
+/*******************/
+/***** RELEASE *****/
+/*******************/
+
+.main-tracklist {
+    margin-left: 30px;
+}
+
+.main-tracklist-link {
+    text-decoration: none;
+}
+
+.main-image-container {
+    position: relative;
+    text-align: center;
+    color: gray;
+    font-size: 30pt;
+    margin-bottom: 30px;
+}
+
+.main-double-image-arrows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main-double-image-arrow {
+    cursor: pointer;
+}
+
+.main-double-image-arrow:hover {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+}
+
+.main-double-image-arrow-left {
+    position: absolute;
+    left: 5%;
+    display: none;
+}
+
+.main-double-image-arrow-right {
+    position: absolute;
+    right: 5%;
+}
+
+.main-double-image {
+    display: none;
+}
+
+.main-double-image:first-of-type {
+    display: block;
+}
+
+/******************/
+/***** FOOTER *****/
+/******************/
+
+@media (max-width: 991px) {
+    #ftr-right-block {
+        display: none;
+    }
+}
+
+#main-footer {
+    width: 100%;
+    text-align: center;
+}
+
+#main-footer.main-wrapper {
+    padding-left: 20px;
+}
+
+.ftr-crossed {
+    text-decoration-line: line-through;
+}
+
+#ftr-left-block {
+    text-align: left;
+}
+
+#ftr-socials i {
+    font-size: 20px;
+}

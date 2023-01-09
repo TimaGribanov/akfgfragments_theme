@@ -1,0 +1,36 @@
+/*
+Theme Name: akfgfragments
+Theme URI: https://github.com/TimaGribanov/akfgfragments_theme
+Author: Timofey Gribanov
+Author URI: https://github.com/TimaGribanov
+Description: A simple but effective WordPress theme for akfgfragments – international Asian Kung-Fu Generation fans project.
+Text Domain: akfgfragments
+*/
+
+@font-face {
+    font-family: 'Shippori Mincho Regular';
+    src: url('assets/fonts/Shippori_Mincho/ShipporiMincho-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Shippori Mincho Bold';
+    src: url('assets/fonts/Shippori_Mincho/ShipporiMincho-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Zen Kaku Gothic New Regular';
+    src: url('assets/fonts/Zen_Kaku_Gothic_New/ZenKakuGothicNew-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Zen Kaku Gothic NewBold';
+    src: url('assets/fonts/Zen_Kaku_Gothic_New/ZenKakuGothicNew-Bold.ttf');
+    font-weight: 700;
+}
+
+body {
+    font-family: 'Shippori Mincho Regular', sans-serif;
+}

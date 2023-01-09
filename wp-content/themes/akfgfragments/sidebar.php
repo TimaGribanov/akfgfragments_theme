@@ -34,25 +34,27 @@
     })( jQuery );
 </script>
 
-<div id="main-sidebar" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 d-none d-lg-block d-xl-block d-xxl-block">
-    <div id="main-discord" class="main-side-block text-center border border-light border-2 rounded-2">
-        <h4><?php _e("Join our Discord server!"); ?></h3>
-        <p><?php _e("We have interesting Asian Kung-Fu Generation related discussions there, and more!"); ?></p>
+<div id="main-sidebar" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 d-none d-lg-block d-xl-block d-xxl-block">
+    <div id="main-discord" class="main-side-block text-center">
+        <h4><?php _e( 'Join our Discord server!', 'akfgfragments' ); ?></h3>
+        <p><?php _e( 'We have interesting Asian Kung-Fu Generation related discussions there, and more!', 'akfgfragments' ); ?></p>
         <a href="https://discord.gg/mQJ4TcjM3h" target="_blank"><button type="button" class="btn btn-discord mb-2"><i class="bi bi-discord"></i><span class="main-btn-text">Join</span></button></a>
     </div>
 
-    <div id="main-socials-block" class="main-side-block text-center border border-light border-2 rounded-2">
+    <hr class="block-separator" />
+
+    <div id="main-socials-block" class="main-side-block text-center">
         <div id="main-social-1" class="main-socials">
-            <a class="twitter-timeline" data-width="300" data-height="400" data-dnt="true" href="https://twitter.com/AkfgfragmentsEn?ref_src=twsrc%5Etfw">Tweets by AkfgfragmentsEn</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+            <a class="twitter-timeline" data-width="300" data-height="450" data-dnt="true" href="https://twitter.com/AkfgfragmentsEn?ref_src=twsrc%5Etfw">Tweets by AkfgfragmentsEn</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
         </div>
         <div id="main-social-2" class="main-socials">
-            <a class="twitter-timeline" data-width="300" data-height="400" data-dnt="true" href="https://twitter.com/AKG_information?ref_src=twsrc%5Etfw">Tweets by AKG_information</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a class="twitter-timeline" data-width="300" data-height="450" data-dnt="true" href="https://twitter.com/AKG_information?ref_src=twsrc%5Etfw">Tweets by AKG_information</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
         <div id="main-social-3" class="main-socials">
-            <a class="twitter-timeline" data-width="300" data-height="400" data-dnt="true" href="https://twitter.com/gotch_akg?ref_src=twsrc%5Etfw">Tweets by gotch_akg</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a class="twitter-timeline" data-width="300" data-height="450" data-dnt="true" href="https://twitter.com/gotch_akg?ref_src=twsrc%5Etfw">Tweets by gotch_akg</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
         <div id="main-social-4" class="main-socials">
-            <a class="twitter-timeline" data-width="300" data-height="400" data-dnt="true" href="https://twitter.com/kiyoshiakg?ref_src=twsrc%5Etfw">Tweets by kiyoshiakg</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a class="twitter-timeline" data-width="300" data-height="450" data-dnt="true" href="https://twitter.com/kiyoshiakg?ref_src=twsrc%5Etfw">Tweets by kiyoshiakg</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
         <div id="main-social-dots">
             <span class="main-social-dot"></span>
@@ -88,7 +90,9 @@
         })( jQuery );
     </script>
 
-    <div id="main-ajikan-project" class="main-side-block text-center border border-light border-2 rounded-2">
-        <a href="https://ajikanproject.com" target="_blank"><img class="rounded-2" src="/wp-content/themes/akfgfragments/assets/img/ajikan_project_logo.png" width="300px" height="300px"/></a>
+    <hr class="block-separator" />
+
+    <div id="main-ajikan-project" class="main-side-block text-center">
+        <a href="https://ajikanproject.com" target="_blank"><img src="/wp-content/themes/akfgfragments/assets/img/ajikan_project_logo.png" width="300px" height="300px"/></a>
     </div>
 </div>
