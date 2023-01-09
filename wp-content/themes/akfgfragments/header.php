@@ -9,6 +9,7 @@
 
 <head>
     <?php
+        require( get_theme_root() . "/akfgfragments/set_cookie.php" );
         require( get_theme_root() . "/akfgfragments/parse_url.php" );
         
         $og_title = "";

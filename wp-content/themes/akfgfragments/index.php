@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<?php require( get_theme_root() . "/akfgfragments/set_cookie.php" ); ?>
 <main role="main">
     <div class="container-lg">
         <div id="main" class="row">
