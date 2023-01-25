@@ -120,4 +120,4 @@
     </style> 
 </head>
 
-<?php get_header(header); ?>
+<?php get_header("header"); ?>
