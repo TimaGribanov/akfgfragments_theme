@@ -1,7 +1,6 @@
 <?php /* Template Name: Akfgfragments Song */ ?>
 
 <?php get_header(); ?>
-<?php get_header(header); ?>
 
     <main role="main">
         <div class="container">
