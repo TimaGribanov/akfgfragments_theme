@@ -16,18 +16,45 @@ $title       = __( 'Songs' );
 $this_file   = 'discography-song.php';
 $parent_file = 'discography-song.php';
 
+$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$query = parse_url($url, PHP_URL_QUERY); //Get a $query
+if(strpos($query, "search=") !== false) {
+    $search_pre = substr($query, strpos($query, "search=")); //Search query with name
+    $search = substr($search_pre, 7); //Search query
+}
+
 require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
 
 <div class="wrap">
     <h1 class="wp-heading-inline"><?php esc_html_e( 'Songs' ); ?></h1>
     <a class="page-title-action" href="/wp-admin/discography-song-new.php">Add new</a>
     <hr class="wp-header-end">
-    <h2 class="screen-reader-text">Filter releases list</h2>
+    <h2 class="screen-reader-text">Filter songs list</h2>
+
+    <form action="" method="POST">
+        <label class="screen-reader-text" for="song-search-input">Search songs:</label>
+        <input id="song-search-input" type="search" name="search-song" value="">
+        <input id="search-submit" class="button" type="submit" value="Search songs" name="search-song-btn">
+    </form>
+    <?php 
+    global $url;
+    if (isset($_POST['search-song-btn'])) {
+        $url_path = parse_url($url, PHP_URL_PATH);
+        $search_query = $_POST['search-song'];
+        echo "<script type='text/javascript'>window.open('$url_path?search=$search_query','_self');</script>";
+    }
+    ?>
     
     <div>
     <?php
+        global $search;
+
         $discodb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
-        $results = $discodb->get_results( "SELECT title_ro, title_ja, title_en FROM songs ORDER BY title_ro ASC;" );
+        if(!empty($search)) {
+            $results = $discodb->get_results( "SELECT title_ro, title_ja, title_en FROM songs WHERE title_ro LIKE \"%$search%\" ORDER BY title_ro ASC;" );
+        } else {
+            $results = $discodb->get_results("SELECT title_ro, title_ja, title_en FROM songs ORDER BY title_ro ASC;");
+        }
         
         echo "<table class='wp-list-table widefat fixed striped table-view-list pages'>";
             echo "<thead>";

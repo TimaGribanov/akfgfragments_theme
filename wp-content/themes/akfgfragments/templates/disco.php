@@ -1,22 +1,7 @@
 <?php /* Template Name: Akfgfragments Discography List */ ?>
 
-<?php 
-function normaliseTitle($title) {
-    $title_parsed = str_replace('?', '%3F', 
-        str_replace('#', '%23', 
-            str_replace('&', '%26', 
-                str_replace('\'', '%27', 
-                    str_replace(' ', '_', $title)
-                )
-            )
-        )
-    );
-
-    return $title_parsed;
-}
-?>
-
 <?php get_header(); ?>
+<?php require( get_theme_root() . "/akfgfragments/normalise_title.php"); ?>
 
     <main role="main">
         <div class="container">

@@ -644,6 +644,30 @@ strong {
     display: block;
 }
 
+
+/******************/
+/******* MV *******/
+/******************/
+
+.mv-page-local {
+    width: 100%;
+    height: auto;
+}
+
+.mv-page-youtube {
+    width: 100%;
+    height: calc(942px * 9 / 16);
+}
+
+.mv-link {
+    text-decoration: none;
+}
+
+.mv-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
 /******************/
 /***** FOOTER *****/
 /******************/
@@ -701,4 +725,25 @@ strong {
 
 #ftr-socials i {
     font-size: 20px;
+}
+
+
+/******************/
+/**** FEEDBACK ****/
+/******************/
+
+.feedback-btn,
+.feedback-btn:active,
+.feedback-btn:focus {
+    background-color: var(--btn-colour);
+    color: var(--text-colour);
+    padding: 5px 10px;
+    border: 3px var(--border-colour) solid;
+    border-radius: 5px;
+}
+
+.feedback-btn:hover {
+    background-color: var(--btn-hover-colour);
+    color: var(--btn-hover-text-colour);
+    border: 3px var(--border-colour) solid;
 }

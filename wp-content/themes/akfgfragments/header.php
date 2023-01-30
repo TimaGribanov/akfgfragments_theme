@@ -10,13 +10,13 @@
 <head>
     <?php
         require( get_theme_root() . "/akfgfragments/set_cookie.php" );
-        require( get_theme_root() . "/akfgfragments/parse_url.php" );
+        require_once( get_theme_root() . "/akfgfragments/parse_url.php" );
         
         $og_title = "";
 
         $curr_locale = get_locale();
 
-        if(!empty($post->post_title) && strcmp($post->post_title, "Release") !== 0 && strcmp($post->post_title, "Song") !== 0 && !(parse_url($url, PHP_URL_PATH) == "/") && !(str_contains(parse_url($url, PHP_URL_PATH), "/page"))) {
+        if(!empty($post->post_title) && strcmp($post->post_title, "MV") !== 0 && strcmp($post->post_title, "Release") !== 0 && strcmp($post->post_title, "Song") !== 0 && !(parse_url($url, PHP_URL_PATH) == "/") && !(str_contains(parse_url($url, PHP_URL_PATH), "/page"))) {
             $og_title = get_the_title();
         } else {
             if (!$title_parsed) {
@@ -30,7 +30,11 @@
                     $og_title = $slug;
                 }
             } else {
-                $og_title = $title_parsed;
+                if (strcmp($post->post_title, "MV") === 0) {
+                    $og_title = "$title_parsed MV";
+                } else {
+                    $og_title = $title_parsed;
+                }
             }
         }
 
@@ -102,8 +106,14 @@
     <meta name="twitter:description" content="Your ultimate guide to Asian Kung-Fu Generation world." />
     <meta name="twitter:image" content="https://akfgfragments.com/wp-content/uploads/2022/05/akfgfragments_meta_image.png" />
 
+    <!--  FOR TESTBED ONLY -->
+    <meta name="robots" content="noindex" />
+    
+    <!-- FOR PRODUCTION -->
+    <!--
     <meta name="google-site-verification" content="l0FRBaDseDjdiy5dTC3vsNiG0DbxBRPsuYxf29BDv8Y" />
     <meta name="msvalidate.01" content="A6B2545E3F1222DC6899B9CDDBF4591B" />
+    -->
 
     <title>
     <?php echo $og_title; ?>

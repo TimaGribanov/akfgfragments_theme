@@ -45,7 +45,17 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                 <label for="date"><h3>Date:</h3></label>
                 <input type="date" id="date" name="date" value="<?php echo $row->date; ?>"><br>
                 <label for="mv_url"><h3>MV URL:</h3></label>
-                <input type="text" id="mv_url" name="mv_url" value="<?php echo $row->url ?>"><br><br>
+                <input type="text" id="mv_url" name="mv_url" value="<?php echo $row->url; ?>"><br>
+                <label for="mv_type"><h3>Type:</h3></label>
+                <select id="mv_type" name="mv_type">
+                    <?php 
+                    if ($row->type == "youtube") {
+                        echo "<option value='youtube' selected>YouTube</option><option value='local'>Local Video</option>";
+                    } else {
+                        echo "<option value='youtube'>YouTube</option><option value='local' selected>Local Video</option>";
+                    }
+                    ?>
+                </select><br><br>
                 <?php
                 }
                 ?>

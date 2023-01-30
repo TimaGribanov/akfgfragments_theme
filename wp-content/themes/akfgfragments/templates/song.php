@@ -9,6 +9,7 @@
                     <div class="row">
                         <?php
                             require( get_theme_root() . "/akfgfragments/parse_url.php" );
+                            require( get_theme_root() . "/akfgfragments/normalise_title.php");
 
                             //Connect to another DB containing discography data
                             $songdb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
@@ -56,7 +57,7 @@
                                     echo "<div>"; //List of releases
                                     if(!empty($song_releases)) {  
                                         foreach($song_releases as $row) {
-                                            echo "<p class='song-releases'><a href='release?" . str_replace('?', '%3F', str_replace('#', '%23', str_replace('&', '%26', str_replace('\'', '%27', str_replace(' ', '_', $row->title_ro))))) . "'>" . $row->title_ro . "</a></p>";                      
+                                            echo "<p class='song-releases'><a href='release?" . normaliseTitle($row->title_ro) . "'>" . $row->title_ro . "</a></p>";                      
                                         }
                                     }
                                     echo "</div>";

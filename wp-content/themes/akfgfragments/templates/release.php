@@ -8,6 +8,7 @@
                     <div class="row">
                         <?php
                             require( get_theme_root() . "/akfgfragments/parse_url.php" );
+                            require( get_theme_root() . "/akfgfragments/normalise_title.php");
 
                             //Connect to another DB containing discography data
                             $releasedb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );

@@ -68,7 +68,12 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                 <label for="date"><h3>Date:</h3></label>
                 <input type="date" id="date" name="date"><br>
                 <label for="mv_url"><h3>MV URL:</h3></label>
-                <input type="text" id="mv_url" name="mv_url"><br><br>
+                <input type="text" id="mv_url" name="mv_url"><br>
+                <label for="mv_type"><h3>Type:</h3></label>
+                <select id="mv_type" name="mv_type">
+                    <option value="youtube">YouTube</option>
+                    <option value="local">Local Video</option>
+                </select><br><br>
             </div>
         </div>
         <input type="submit" name="submit" value="Add music video">
@@ -80,6 +85,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
             $director = $_POST['director'];
             $date = $_POST['date'];
             $mv_url = $_POST['mv_url'];
+            $mv_type = $_POST['mv_type'];
 
             $mvdb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
             $mvdb->insert(
@@ -88,7 +94,8 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                     "title_ro" => "$title_ro",
                     "director" => "$director",
                     "date" => "$date",
-                    "url" => "$mv_url"
+                    "url" => "$mv_url",
+                    "type" => "$mv_type"
                 ) 
             );
 

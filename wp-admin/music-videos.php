@@ -43,7 +43,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
             foreach ($results as $row) {
                 $title_parsed = str_replace('?', '%3F', str_replace('#', '%23', str_replace('&', '%26', str_replace('\'', '%27', str_replace(' ', '_',$row->title_ro)))));
                 echo "<tr>";
-                    echo "<td><a href='/song?$title_parsed' target='_blank'>$row->title_ro</a></td>";
+                    echo "<td><a href='/mv?$title_parsed' target='_blank'>$row->title_ro</a></td>";
                     echo "<td>$row->director</td>";
                     echo "<td>$row->date</td>";
                     echo "<td><a href='$row->url' target='_blank'>View</a></td>";

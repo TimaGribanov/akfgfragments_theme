@@ -6,8 +6,8 @@
     let timezone = getTimeZone()
     document.cookie = `local_timezone=${timezone};SameSite=Lax`
 
-    if (localStorage.getItem('reloaded') === false || localStorage.getItem('reloaded') === null) {
+    if (sessionStorage.getItem('reloaded') === false || sessionStorage.getItem('reloaded') === null) {
         location.reload()
-        localStorage.setItem('reloaded', true)
+        sessionStorage.setItem('reloaded', true)
     }
 </script>

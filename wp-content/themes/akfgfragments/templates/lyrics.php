@@ -1,6 +1,7 @@
 <?php /* Template Name: Akfgfragments Lyrics List */ ?>
 
 <?php get_header(); ?>
+<?php require( get_theme_root() . "/akfgfragments/normalise_title.php"); ?>
 
     <main role="main">
         <div class="container">
