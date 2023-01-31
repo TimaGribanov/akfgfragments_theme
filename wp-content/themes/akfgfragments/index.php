@@ -5,16 +5,7 @@
             <div id="main-content" class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                 <div class="row">
                     <?php
-                    $args = array(
-                        'post_type' => 'post',
-                        'post_status' => 'publish',
-                        'category__not_in' => array( get_cat_ID( 'interview' ) ),
-                        'posts_per_page' => 10,
-                    );
-                        
-                    $arr_posts = new WP_Query( $args );
-
-                    if ( $arr_posts->have_posts() ) : while ( $arr_posts->have_posts() ) : $arr_posts->the_post();
+                    if ( have_posts() ) : while ( have_posts() ) : the_post();
                     require( get_theme_root() . "/akfgfragments/posts.php" );
                     ?>
 
