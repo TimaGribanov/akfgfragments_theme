@@ -434,6 +434,13 @@ strong {
     height: calc(942px * 9 / 16);
 }
 
+@media (max-width: 991px) {
+    .wp-block-embed-youtube iframe {
+        width: 100%;
+        height: revert-layer;
+    }
+}
+
 .pagination div {
     margin: 0 auto;
 }
@@ -657,6 +664,13 @@ strong {
 .mv-page-youtube {
     width: 100%;
     height: calc(942px * 9 / 16);
+}
+
+@media (max-width: 991px) {
+    .mv-page-youtube {
+        width: 100%;
+        height: revert-layer;
+    }
 }
 
 .mv-link {
