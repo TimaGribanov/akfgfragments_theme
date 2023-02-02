@@ -120,7 +120,8 @@ a {
     color: var(--text-colour);
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
     color: var(--link-hover-colour);
 }
 
@@ -146,7 +147,8 @@ blockquote cite {
     cursor: pointer;
 }
 
-.nav-link:hover, .nav-link:active {
+.nav-link:hover,
+.nav-link:active {
     color: var(--link-hover-colour);
 }
 
@@ -174,17 +176,25 @@ h6 {
     font-size: 0.75rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--header-colour);
     font-family: 'Lora Semi Bold', sans-serif;
     font-weight: 600;
 }
 
-dl, ol, ul {
-  margin-left: 2rem;
+dl,
+ol,
+ul {
+    margin-left: 2rem;
 }
 
-em, i {
+em,
+i {
     font-family: 'Lora Regular', sans-serif;
 }
 
@@ -194,10 +204,11 @@ strong {
 
 .btn-discord,
 .btn-discord:hover {
-    background-color:#5865f2;
+    background-color: #5865f2;
 }
 
-.btn-discord>a, .btn-discord>i {
+.btn-discord>a,
+.btn-discord>i {
     color: #fff;
     text-decoration: none;
 }
@@ -254,6 +265,7 @@ strong {
     header.navbar {
         height: 100px;
     }
+
     header .navbar-brand {
         position: relative;
         margin: 0 auto;
@@ -276,16 +288,20 @@ strong {
 #hamburgerMenu {
     width: 100%;
 }
+
 #hamburgerMenu .navbar-nav {
     min-height: 100vh;
 }
+
 #hamburgerMenu .nav-item:hover {
     background-color: var(--block-border-colour);
 }
+
 #hamburgerMenu hr {
     width: 40%;
     margin: 0 auto;
 }
+
 #hamburgerMenu .ham-icon {
     font-size: 20pt;
     text-decoration: none;
@@ -299,10 +315,12 @@ strong {
     #main {
         margin: 0;
     }
+
     .pagination .nav-links {
         margin-top: 10px;
         margin-bottom: 10px;
     }
+
     .pagination .page-numbers {
         display: inline-block;
         width: 40px;
@@ -572,6 +590,14 @@ strong {
     }
 }
 
+#top-btn {
+    font-size: 30pt;
+    z-index: 1;
+    position: fixed;
+    bottom: 10%;
+    left: 35px;
+}
+
 /****************/
 /***** SONG *****/
 /****************/
@@ -713,6 +739,7 @@ strong {
     padding: 20px;
     background-color: var(--footer-bg-colour);
     color: var(--footer-text-colour);
+    z-index: 2;
 }
 
 #main-footer .nav-link {
@@ -753,25 +780,4 @@ strong {
 
 #ftr-socials i {
     font-size: 20px;
-}
-
-
-/******************/
-/**** FEEDBACK ****/
-/******************/
-
-.feedback-btn,
-.feedback-btn:active,
-.feedback-btn:focus {
-    background-color: var(--btn-colour);
-    color: var(--text-colour);
-    padding: 5px 10px;
-    border: 3px var(--border-colour) solid;
-    border-radius: 5px;
-}
-
-.feedback-btn:hover {
-    background-color: var(--btn-hover-colour);
-    color: var(--btn-hover-text-colour);
-    border: 3px var(--border-colour) solid;
 }
