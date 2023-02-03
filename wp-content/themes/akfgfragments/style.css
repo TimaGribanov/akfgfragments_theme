@@ -208,13 +208,21 @@ strong {
 }
 
 .btn-discord>a,
-.btn-discord>i {
+.btn-discord>i,
+.btn-twitter>a,
+.btn-twitter>i {
     color: #fff;
     text-decoration: none;
 }
 
-.btn-discord>a {
+.btn-discord>a,
+.btn-twitter>a {
     margin-left: 10px;
+}
+
+.btn-twitter,
+.btn-twitter:hover {
+    background-color: #00acee;
 }
 
 .block-separator {
@@ -521,38 +529,14 @@ strong {
     color: #fff;
 }
 
-#main-socials-block {
-    height: 500px;
+.main-latest-release-link {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
 }
 
-.main-socials {
-    display: none;
-}
-
-.main-socials:first-of-type {
-    display: block;
-}
-
-#main-social-dots {
-    margin-top: 15px;
-    max-height: 20px;
-}
-
-.main-social-dot {
-    height: 20px;
-    width: 20px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.main-social-dot:hover {
-    background-color: var(--text-colour);
-}
-
-.main-social-dot:first-of-type {
-    background-color: var(--text-colour);
+.main-latest-release-link:hover {
+    background-color: var(--btn-hover-colour);
+    color: var(--btn-hover-text-colour);
 }
 
 #main-ajikan-project img:hover {
