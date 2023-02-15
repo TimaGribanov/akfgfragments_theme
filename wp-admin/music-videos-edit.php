@@ -1,6 +1,6 @@
 <?php
 /**
- * Discography Songs Administration Screen.
+ * Music Videos Edit Administration Screen.
  *
  * If accessed directly in a browser this page shows a list of actions which can be done.
  *
@@ -36,16 +36,14 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                 $results = $mvdb->get_results( "SELECT * FROM music_videos WHERE title_ro = \"$title_parsed\";" );
                 foreach ($results as $row) {
                 ?>
-                
-                          
                 <label for="title_ro"><h3>Song:</h3></label>
                 <input type="text" id="title_ro" name="title_ro" value="<?php echo $row->title_ro; ?>" disabled>
                 <label for="director"><h3>Director:</h3></label>
                 <input type="text" id="director" name="director" value="<?php echo $row->director; ?>"><br>
-                <label for="date"><h3>Date:</h3></label>
-                <input type="date" id="date" name="date" value="<?php echo $row->date; ?>"><br>
+                <label for="date"><h3>Year:</h3></label>
+                <input type="text" id="date" name="date" minlength="4" maxlength="4" value="<?php echo substr($row->date, 0, 4); ?>"><br>
                 <label for="mv_url"><h3>MV URL:</h3></label>
-                <input type="text" id="mv_url" name="mv_url" value="<?php echo $row->url; ?>"><br>
+                <input type="text" id="mv_url" name="mv_url" value="<?php if (isset($row->url)) {echo $row->url;} else {echo "";} ?>"><br>
                 <label for="mv_type"><h3>Type:</h3></label>
                 <select id="mv_type" name="mv_type">
                     <?php 
@@ -67,8 +65,10 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
     <?php
         if (isset($_POST['submit'])) {
             $director = $_POST['director'];
-            $date = $_POST['date'];
+            $strdate = $_POST['date'];
             $mv_url = $_POST['mv_url'];
+
+            $date = "$strdate-01-01";
 
             $mvdb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
             $mv_id_arr = $mvdb->get_results( "SELECT id FROM music_videos WHERE title_ro = \"$title_parsed\";" );

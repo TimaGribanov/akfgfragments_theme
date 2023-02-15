@@ -1,4 +1,4 @@
-<?php require(get_theme_root() . "/akfgfragments/normalise_title.php"); ?>
+<?php require_once(get_theme_root() . "/akfgfragments/normalise_title.php"); ?>
 
 <div id="main-sidebar" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 d-none d-lg-block d-xl-block d-xxl-block">
     <div id="main-discord" class="main-side-block text-center">

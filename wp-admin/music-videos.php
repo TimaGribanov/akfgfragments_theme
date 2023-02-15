@@ -1,6 +1,6 @@
 <?php
 /**
- * Discography Administration Screen.
+ * Music Videos Administration Screen.
  *
  * If accessed directly in a browser this page shows a list of actions which can be done.
  *
@@ -33,7 +33,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
             echo "<tr>"; //Header
                 echo "<th>Title</th>";
                 echo "<th>Director</th>";
-                echo "<th>Date</th>";
+                echo "<th>Year</th>";
                 echo "<th>URL</th>";
                 echo "<th>Action</th>";
             echo "</tr>";
@@ -45,7 +45,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                 echo "<tr>";
                     echo "<td><a href='/mv?$title_parsed' target='_blank'>$row->title_ro</a></td>";
                     echo "<td>$row->director</td>";
-                    echo "<td>$row->date</td>";
+                    echo "<td>" . substr($row->date, 0, 4) . "</td>";
                     echo "<td><a href='$row->url' target='_blank'>View</a></td>";
                     echo "<td><a href='/wp-admin/music-videos-edit.php?$title_parsed' target='_blank'>Edit</a> Delete</td>";
                 echo "</tr>";
