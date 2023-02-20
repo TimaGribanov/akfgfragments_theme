@@ -5,7 +5,7 @@ CREATE TABLE `music_videos` (
     `director` int(11) DEFAULT NULL COMMENT 'Director''s name',
     `date` date DEFAULT NULL COMMENT 'Date of release',
     `url` text NOT NULL COMMENT 'Link to the video',
-    `type` varchar(10) NOT NULL COMMENT 'Type of the video source: youtue or local',
+    `type` varchar(10) NOT NULL COMMENT 'Type of the video source: youtube or local',
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
@@ -27,6 +27,24 @@ CREATE TABLE `catalogue` (
   `info` longtext DEFAULT NULL COMMENT 'Info about the version',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Table for storing additional info of different versions of releases';
+
+-- Create interviews table
+CREATE TABLE `interviews` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cover` varchar(256) DEFAULT NULL COMMENT 'URL to an interview cover pic',
+  `year` date DEFAULT NULL COMMENT 'Date of an interview',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Table to store basic info about interviews';
+
+-- Create interviews_text table
+CREATE TABLE `interviews_text` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `interview_id` int(11) NOT NULL COMMENT 'An ID of an entity from interviews table',
+  `lang` varchar(2) NOT NULL COMMENT 'Locale of the current text',
+  `title` varchar(256) NOT NULL COMMENT 'A title of the interview',
+  `text` text NOT NULL COMMENT 'Text of an interview',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='A table to store texts of interviews in different languages';
 
 -- Enhance the length of the cataogue column in releases table
 ALTER TABLE `releases`
