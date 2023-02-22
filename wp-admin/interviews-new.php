@@ -90,10 +90,13 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                     <h3>Title in selected language*:</h3>
                 </label>
                 <input type="text" id="title" name="title" required>
-                <label for="text">
+                <label for="text-div">
                     <h3>Text*:</h3>
                 </label>
-                <textarea id="text" name="text" style="width: 900px; height: 424px;" required></textarea>
+                <h5>Just paste the whole formatted text of the interview.</h5>
+                <h6>Unfortunately, it's not yet possible to edit text here.</h6>
+                <div id="text-div" style="width: 900px; height: 450px; background-color: white; border: 1px black solid;"></div>
+                <textarea id="text" name="text" hidden></textarea>
 
                 <script type="text/javascript">
                     function loadTitle(slug, lang) {
@@ -136,21 +139,39 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                                     data: searchString,
                                     cache: false,
                                     success: function (text) {
-                                        document.getElementById('text').innerHTML = text
+                                        document.getElementById('text-div').innerHTML = text
                                     }
                                 });
-                            })(jQuery);
+                            })(jQuery)
                         } else {
-                            document.getElementById('text').innerHTML = '';
+                            document.getElementById('text-div').innerHTML = ''
                         }
 
-                        return false;
+                        return false
+                    }
+
+                    document.addEventListener('paste', function(e) {
+                        e.preventDefault();
+        
+                        let pastedText = ''
+
+                        if (window.clipboardData && window.clipboardData.getData) { // IE
+                            pastedText = window.clipboardData.getData('Text')
+                        } else if (e.clipboardData && e.clipboardData.getData) {
+                            pastedText = e.clipboardData.getData('text/html')
+                        }
+
+                        document.getElementById('text-div').innerHTML = pastedText
+                    })
+
+                    function submitForm() {
+                        document.getElementById('text').innerText = document.getElementById('text-div').innerHTML
                     }
                 </script>
             </div>
         </div>
         <br>
-        <input type="submit" name="submit" value="Add/edit an interview">
+        <input type="submit" name="submit" onclick="submitForm()" value="Add/edit an interview">
     </form>
 
     <?php
