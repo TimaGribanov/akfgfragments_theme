@@ -582,6 +582,19 @@ strong {
     left: 35px;
 }
 
+/******************/
+/***** LYRICS *****/
+/******************/
+
+.lyrics-link {
+    text-decoration: none;
+}
+
+.lyrics-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
 /****************/
 /***** SONG *****/
 /****************/
