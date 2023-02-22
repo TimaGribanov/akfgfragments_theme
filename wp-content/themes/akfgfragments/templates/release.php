@@ -86,15 +86,17 @@
                             //echo "</div>"; //End of credits
                     
                             echo "<div class='row'>"; //Versions of releases
-                            ?>
-                            <h3><?php _e('Versions', 'akfgfragments'); ?></h3>
-                            <?php
                             $catalogue_nums = explode(",", $row->catalogue);
-                            foreach ($catalogue_nums as $num) {
-                                echo "<div class='row mb-2'>";
-                                echo "<input type='submit' class='rel-ver-btn' name='$num' value='$num'>";
-                                echo "<div id='version-info-$num' style='display: none;' class='ms-3'></div>";
-                                echo "</div>";
+                            if ($catalogue_nums[0] !== "") {
+                            ?>
+                            <h3><?php _e('Versions:', 'akfgfragments'); ?></h3>
+                            <?php
+                                foreach ($catalogue_nums as $num) {
+                                    echo "<div class='row mb-2'>";
+                                    echo "<input type='submit' class='rel-ver-btn' name='$num' value='$num'>";
+                                    echo "<div id='version-info-$num' style='display: none;' class='ms-3'></div>";
+                                    echo "</div>";
+                                }
                             }
                             ?>
                             <script type="text/javascript">
