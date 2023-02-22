@@ -17,7 +17,7 @@
                 if (!empty($results)) {
                     foreach ($results as $row) {
                         echo "<div class='row'>";
-                        echo "<h3><a href='/interview?slug=" . $row->slug . "&lang=" . $locale . "' target='_blank'>$row->title</a></h3>";
+                        echo "<h3><a class='interviews-links' href='/interview?slug=" . $row->slug . "&lang=" . $locale . "' target='_blank'>$row->title</a></h3>";
                         echo "</div>";
                     }
                 }
