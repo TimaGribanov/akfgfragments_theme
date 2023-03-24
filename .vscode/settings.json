@@ -1,0 +1,16 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "test.akfgfragments.com",
+            "port": 3306,
+            "driver": "MariaDB",
+            "name": "akfgfragments-test",
+            "database": "rllsetmy_AKFGFRAGMENTS-DATA",
+            "username": "rllsetmy_ajikan"
+        }
+    ]
+}

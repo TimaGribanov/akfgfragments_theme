@@ -750,6 +750,26 @@ strong {
     text-decoration-thickness: 2px;
 }
 
+/****************/
+/***** TABS *****/
+/****************/
+
+.tabs-btn,
+.tabs-btn:active,
+.tabs-btn:focus {
+    background-color: var(--btn-colour);
+    color: var(--text-colour);
+    padding: 5px 10px;
+    border: 3px var(--border-colour) solid;
+    border-radius: 5px;
+}
+
+.tabs-btn:hover {
+    background-color: var(--btn-hover-colour);
+    color: var(--btn-hover-text-colour);
+    border: 3px var(--border-colour) solid;
+}
+
 /******************/
 /***** FOOTER *****/
 /******************/

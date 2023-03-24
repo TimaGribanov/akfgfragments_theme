@@ -49,3 +49,23 @@ CREATE TABLE `interviews_text` (
 -- Enhance the length of the cataogue column in releases table
 ALTER TABLE `releases`
 MODIFY COLUMN catalogue varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL NULL COMMENT 'Catalogue number';
+
+-- Create a table for tabulatures's types
+CREATE TABLE IF NOT EXISTS `tab_types` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `type` varchar(50) NOT NULL COMMENT 'Guitar Pro, MuseScore',
+    PRIMARY KEY(`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+INSERT INTO tab_types (id, type)
+VALUES (default, 'Guitar Pro'),
+    (default, 'MuseScore');
+
+-- Create a table for tabulatures
+CREATE TABLE IF NOT EXISTS `tabs` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `song_id` int NOT NULL COMMENT 'Id of a song based on songs table',
+    `type` int NOT NULL COMMENT 'Id of a tab type based on tab_types table',
+    `file` varchar(100) NOT NULL COMMENT 'Name of the file',
+    PRIMARY KEY(`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
