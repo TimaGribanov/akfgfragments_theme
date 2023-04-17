@@ -18,6 +18,9 @@
                             <a class="nav-link" href="./lyrics"><?php _e( 'Lyrics', 'akfgfragments' ); ?></a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="./tablatures"><?php _e( 'Tablatures', 'akfgfragments' ); ?></a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="./interviews"><?php _e( 'Interviews', 'akfgfragments' ); ?></a>
                         </li>
                         <li class="nav-item">
@@ -85,6 +88,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./lyrics"><?php _e( 'Lyrics', 'akfgfragments' ); ?></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./tablatures"><?php _e( 'Tablatures', 'akfgfragments' ); ?></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./interviews"><?php _e( 'Interviews', 'akfgfragments' ); ?></a>

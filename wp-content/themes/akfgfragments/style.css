@@ -756,7 +756,13 @@ strong {
 
 .tabs-btn,
 .tabs-btn:active,
-.tabs-btn:focus {
+.tabs-btn:focus,
+.tabs-pdf-btn,
+.tabs-pdf-btn:active,
+.tabs-pdf-btn:focus,
+#tabs-pdf-pages button,
+#tabs-pdf-pages button:active,
+#tabs-pdf-pages button:focus {
     background-color: var(--btn-colour);
     color: var(--text-colour);
     padding: 5px 10px;
@@ -764,10 +770,20 @@ strong {
     border-radius: 5px;
 }
 
-.tabs-btn:hover {
+.tabs-btn:hover,
+.tabs-pdf-btn:hover,
+#tabs-pdf-pages button:hover {
     background-color: var(--btn-hover-colour);
     color: var(--btn-hover-text-colour);
     border: 3px var(--border-colour) solid;
+}
+
+.tabs-btn:hover a {
+    color: var(--btn-hover-text-colour);
+}
+
+.tabs-btn a {
+    text-decoration: none;
 }
 
 /******************/

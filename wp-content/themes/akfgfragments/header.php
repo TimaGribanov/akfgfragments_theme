@@ -16,7 +16,7 @@ $html_locale = str_replace('_', '-', $html_locale);
 
     $curr_locale = get_locale();
 
-    if (!empty($post->post_title) && strcmp($post->post_title, "MV") !== 0 && strcmp($post->post_title, "Tabulatures") !== 0 && strcmp($post->post_title, "Interview") !== 0 && strcmp($post->post_title, "Release") !== 0 && strcmp($post->post_title, "Song") !== 0 && !(parse_url($url, PHP_URL_PATH) == "/") && !(str_contains(parse_url($url, PHP_URL_PATH), "/page"))) {
+    if (!empty($post->post_title) && strcmp($post->post_title, "MV") !== 0 && strcmp($post->post_title, "Tabs per song") !== 0 && strcmp($post->post_title, "Interview") !== 0 && strcmp($post->post_title, "Release") !== 0 && strcmp($post->post_title, "Song") !== 0 && !(parse_url($url, PHP_URL_PATH) == "/") && !(str_contains(parse_url($url, PHP_URL_PATH), "/page"))) {
         $og_title = get_the_title();
     } else {
         if (!$title_parsed) {
@@ -32,7 +32,7 @@ $html_locale = str_replace('_', '-', $html_locale);
         } else {
             if (strcmp($post->post_title, "MV") === 0) {
                 $og_title = "$title_parsed MV";
-            } elseif (strcmp($post->post_title, "Tabulatures") === 0) {
+            } elseif (strcmp($post->post_title, "Tabs per song") === 0) {
                 $og_title = "$title_parsed Tabs";
             }elseif (strcmp($post->post_title, "Interview") === 0) {
                 $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
