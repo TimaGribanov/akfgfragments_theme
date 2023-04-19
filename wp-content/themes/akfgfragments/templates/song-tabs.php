@@ -18,6 +18,9 @@
 
                     <h1 class="song_title"><?php echo $title_parsed; ?></h1>
                     <div class="row">
+                        <p><a href="/song?<?php echo $title; ?>"><?php _e('Information about the song', 'akfgfragments'); ?></a></p>
+                    </div>
+                    <div class="row mt-3">
                         <h2>Download</h2>
 
                         <?php
@@ -102,12 +105,12 @@
 
     function hidePrev() {
         document.getElementById('tabs-pdf-pages-prev').style = 'display: none'
-    }   
+    }
 
     function showPrev() {
         document.getElementById('tabs-pdf-pages-prev').style = 'display: inline'
     }
-    
+
     function checkPrev() {
         if (currentPage == 1) {
             hidePrev()
@@ -122,7 +125,7 @@
         if (el) {
             el.remove()
         }
-        
+
     }
 
     let url = ''
@@ -173,7 +176,7 @@
 
             let pageNumber = currentPage;
 
-            if (currentPage = 1) {}
+            if (currentPage = 1) { }
 
             getPage(pageNumber);
         }, function (reason) {
