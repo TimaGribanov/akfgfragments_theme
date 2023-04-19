@@ -51,6 +51,7 @@
                                     if(strpos($row->spotify_uri, ",") === false) {
                                         echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/" . $row->spotify_uri . "?utm_source=generator' width='60%' height='80' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
                                     } else {
+                                        $spotify_uri_arr = explode(",", $row->spotify_uri);
                                         foreach($spotify_uri_arr as &$uri) {
                                             echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/" . $uri . "?utm_source=generator' width='60%' height='80' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
                                         }
