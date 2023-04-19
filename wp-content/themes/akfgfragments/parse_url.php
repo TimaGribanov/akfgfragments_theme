@@ -14,5 +14,12 @@ $title_parsed = str_replace('/', '', $title_parsed); //Delete slashes if they ex
 $title_parsed = str_replace('%26', '&', $title_parsed); //Change %26 to an ampersand
 $title_parsed = str_replace('%23', '#', $title_parsed); //Change %26 to a number sign
 $title_parsed = str_replace('%3F', '?', $title_parsed); //Change %26 to a question mark
-$title_parsed = ucwords($title_parsed); //Capitalise each word
+$title_split = explode(" ", $title_parsed);
+$particles_list = array("no", "wo", "de", "wa", "ni", "ga", "e", "mo", "kara", "made", "yo", "ne", "ka", "ya", "to");
+foreach ($title_split as $part) {
+    if (!in_array($part, $particles_list)) {
+        $part = ucwords($part);
+    }
+}
+$title_parsed = implode(" ", $title_split); //Capitalise each word
 ?>
