@@ -151,6 +151,19 @@ $html_locale = str_replace('_', '-', $html_locale);
     <meta name="twitter:site" content="@AkfgfragmentsEn" />
     <meta name="twitter:creator" content="@tima_akg" />
     <meta name="twitter:title" content="<?php echo $meta_title; ?>" />
+    <?php
+    if ($curr_locale == 'en_GB') {
+        ?>
+        <meta name="twitter:description"
+            content="Your ultimate guide to Asian Kung-Fu Generation world.">
+        <?php
+    } else {
+        ?>
+        <meta name="twitter:description"
+            content="<?php _e('Your ultimate guide to Asian Kung-Fu Generation world.', 'akfgfragments'); ?>">
+        <?php
+    }
+    ?>
     <meta name="twitter:description" content="Your ultimate guide to Asian Kung-Fu Generation world." />
     <meta name="twitter:image"
         content="https://akfgfragments.com/wp-content/uploads/2022/05/akfgfragments_meta_image.png" />
