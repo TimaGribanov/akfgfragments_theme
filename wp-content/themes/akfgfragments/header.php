@@ -33,8 +33,12 @@ $html_locale = str_replace('_', '-', $html_locale);
             if (strcmp($post->post_title, "MV") === 0) {
                 $og_title = "$title_parsed MV";
             } elseif (strcmp($post->post_title, "Tabs per song") === 0) {
-                $og_title = "$title_parsed Tabs";
-            }elseif (strcmp($post->post_title, "Interview") === 0) {
+                if ($curr_locale != 'en_GB') {
+                    $og_title = __('$title_parsed Tabs', 'akfgfragments');
+                } else {
+                    $og_title = "$title_parsed Tabs";
+                }
+            } elseif (strcmp($post->post_title, "Interview") === 0) {
                 $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
                 $slug = parse_url($url, PHP_URL_PATH);
@@ -50,7 +54,11 @@ $html_locale = str_replace('_', '-', $html_locale);
                 $intdb = new wpdb(DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST);
                 $results = $intdb->get_results("SELECT it.title AS `title` FROM interviews i JOIN interviews_text it ON i.id = it.interview_id WHERE i.slug = \"$int_slug\" AND it.lang = \"$lang\";");
 
-                $og_title = "Interview: " . $results[0]->title;
+                if ($curr_locale != 'en_GB') {
+                    $og_title = __('Interview: ', 'akfgfragments') . $results[0]->title;
+                } else {
+                    $og_title = "Interview: " . $results[0]->title;
+                }
             } else {
                 $og_title = $title_parsed;
             }
@@ -107,8 +115,22 @@ $html_locale = str_replace('_', '-', $html_locale);
     ?>
 
     <meta charset="utf-8">
-    <meta name="description" content="Your ultimate guide to Asian Kung-Fu Generation world.">
+    <?php
+    if ($curr_locale == 'en_GB') {
+        ?>
+        <meta name="description"
+            content="Your ultimate guide to Asian Kung-Fu Generation world. News, discography, lyrics, tabs, interviews, music videos – all in one place!">
+        <?php
+    } else {
+        ?>
+        <meta name="description"
+            content="<?php _e('Your ultimate guide to Asian Kung-Fu Generation world. News, discography, lyrics, tabs, interviews, music videos – all in one place!', 'akfgfragments'); ?>">
+        <?php
+    }
+    ?>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="keywords"
+        content="Asian Kung-Fu Generation, asian, kung-fu, generation, j-rock, j-pop, music, japanese, rock, pop, indie, sony, kioon, lyrics, news, tabs, gotch, masafumi gotoh, kensuke kita, takahiro yamada, kiyoshi ijichi, yusuke nakamura, naruto, boruto, bleach, fullmetal alchemist, solanin, haruka kanata, after dark, rewrite, interview, cd, lp, ep, AKG, アジアンカンフージェネレーション, アジカン, 後藤正文, 喜多建介, 山田貴洋, 伊地知潔, ゴッチ, наруто, боруто, ナルト, ボルト, 鋼の錬金術師, ソラニン, стальной алхимик">
 
     <meta property="og:image"
         content="https://akfgfragments.com/wp-content/uploads/2022/05/akfgfragments_meta_image.png">
@@ -117,17 +139,17 @@ $html_locale = str_replace('_', '-', $html_locale);
     <meta property="og:image:alt" content="<?php echo $meta_title; ?>">
     <meta property="og:title" content="<?php echo $meta_title; ?>">
     <meta property="og:type" content="<?php echo wp_post_type(); ?>">
-    <meta property="og:url"
-        content="<?php if ($og_title === "Home") {
-            echo "https://akfgfragments.com";
-        } else {
-            echo $url;
-        } ?>">
+    <meta property="og:url" content="<?php if ($og_title === "Home") {
+        echo "https://akfgfragments.com";
+    } else {
+        echo $url;
+    } ?>">
     <meta property="og:site_name" content="akfgfragments">
     <meta property="og:locale" content="<?php echo get_locale(); ?>" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@AkfgfragmentsEn" />
+    <meta name="twitter:creator" content="@tima_akg" />
     <meta name="twitter:title" content="<?php echo $meta_title; ?>" />
     <meta name="twitter:description" content="Your ultimate guide to Asian Kung-Fu Generation world." />
     <meta name="twitter:image"
@@ -148,20 +170,20 @@ $html_locale = str_replace('_', '-', $html_locale);
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() . '/style.css'; ?>">
-    <?php
+    <!--?php
     if ($curr_locale == 'ja_JP') {
         echo '<link rel="stylesheet" href="';
         echo get_stylesheet_directory_uri() . '/style-ja.css';
         echo '">';
     }
-    ?>
+    ?-->
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 </head>
 
