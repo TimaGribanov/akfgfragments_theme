@@ -16,55 +16,59 @@ $html_locale = str_replace('_', '-', $html_locale);
 
     $curr_locale = get_locale();
 
-    if (!empty($post->post_title) && strcmp($post->post_title, "MV") !== 0 && strcmp($post->post_title, "Tabs per song") !== 0 && strcmp($post->post_title, "Interview") !== 0 && strcmp($post->post_title, "Release") !== 0 && strcmp($post->post_title, "Song") !== 0 && !(parse_url($url, PHP_URL_PATH) == "/") && !(str_contains(parse_url($url, PHP_URL_PATH), "/page"))) {
-        $og_title = get_the_title();
+    if (is_404()) {
+        $og_title = '404';
     } else {
-        if (!$title_parsed) {
-            if (!$slug || str_contains(parse_url($url, PHP_URL_PATH), "/page")) {
-                if ($curr_locale != 'en_GB') {
-                    $og_title = __('Home', 'akfgfragments');
-                } else {
-                    $og_title = 'Home';
-                }
-            } else {
-                $og_title = $slug;
-            }
+        if (!empty($post->post_title) && strcmp($post->post_title, "MV") !== 0 && strcmp($post->post_title, "Tabs per song") !== 0 && strcmp($post->post_title, "Interview") !== 0 && strcmp($post->post_title, "Release") !== 0 && strcmp($post->post_title, "Song") !== 0 && !(parse_url($url, PHP_URL_PATH) == "/") && !(str_contains(parse_url($url, PHP_URL_PATH), "/page"))) {
+            $og_title = get_the_title();
         } else {
-            if (strcmp($post->post_title, "MV") === 0) {
-                $og_title = "$title_parsed MV";
-            } elseif (strcmp($post->post_title, "Tabs per song") === 0) {
-                if ($curr_locale != 'en_GB') {
-                    $og_title = __('$title_parsed Tabs', 'akfgfragments');
+            if (!$title_parsed) {
+                if (!$slug || str_contains(parse_url($url, PHP_URL_PATH), "/page")) {
+                    if ($curr_locale != 'en_GB') {
+                        $og_title = __('Home', 'akfgfragments');
+                    } else {
+                        $og_title = 'Home';
+                    }
                 } else {
-                    $og_title = "$title_parsed Tabs";
-                }
-            } elseif (strcmp($post->post_title, "Interview") === 0) {
-                $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
-                $slug = parse_url($url, PHP_URL_PATH);
-                $slug = str_replace('/', '', $slug);
-                $slug = str_replace('_', ' ', $slug);
-                $slug = ucwords($slug);
-
-                $query = parse_url($url, PHP_URL_QUERY); //Get a query
-                parse_str($query, $query_arr);
-                $int_slug = $query_arr['slug'];
-                $lang = $query_arr['lang'];
-
-                $intdb = new wpdb(DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST);
-                $results = $intdb->get_results("SELECT it.title AS `title` FROM interviews i JOIN interviews_text it ON i.id = it.interview_id WHERE i.slug = \"$int_slug\" AND it.lang = \"$lang\";");
-
-                if ($curr_locale != 'en_GB') {
-                    $og_title = __('Interview: ', 'akfgfragments') . $results[0]->title;
-                } else {
-                    $og_title = "Interview: " . $results[0]->title;
+                    $og_title = $slug;
                 }
             } else {
-                $og_title = $title_parsed;
+                if (strcmp($post->post_title, "MV") === 0) {
+                    $og_title = "$title_parsed MV";
+                } elseif (strcmp($post->post_title, "Tabs per song") === 0) {
+                    if ($curr_locale != 'en_GB') {
+                        $og_title = __('$title_parsed Tabs', 'akfgfragments');
+                    } else {
+                        $og_title = "$title_parsed Tabs";
+                    }
+                } elseif (strcmp($post->post_title, "Interview") === 0) {
+                    $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    
+                    $slug = parse_url($url, PHP_URL_PATH);
+                    $slug = str_replace('/', '', $slug);
+                    $slug = str_replace('_', ' ', $slug);
+                    $slug = ucwords($slug);
+    
+                    $query = parse_url($url, PHP_URL_QUERY); //Get a query
+                    parse_str($query, $query_arr);
+                    $int_slug = $query_arr['slug'];
+                    $lang = $query_arr['lang'];
+    
+                    $intdb = new wpdb(DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST);
+                    $results = $intdb->get_results("SELECT it.title AS `title` FROM interviews i JOIN interviews_text it ON i.id = it.interview_id WHERE i.slug = \"$int_slug\" AND it.lang = \"$lang\";");
+    
+                    if ($curr_locale != 'en_GB') {
+                        $og_title = __('Interview: ', 'akfgfragments') . $results[0]->title;
+                    } else {
+                        $og_title = "Interview: " . $results[0]->title;
+                    }
+                } else {
+                    $og_title = $title_parsed;
+                }
             }
         }
     }
-
+    
     $og_title = "$og_title — akfgfragments";
 
     //https://wordpress.stackexchange.com/questions/83887/return-current-page-type

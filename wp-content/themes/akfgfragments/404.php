@@ -4,9 +4,9 @@
     <div class="container-lg">
         <div id="main" class="row">
             <div id="main-content" class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-                <div class="row">
-                    <p><?php _e('Oops!', 'akfgfragments'); ?></p>
-                    <p><?php _e('It seems that this page doesn\'t exist', 'akfgfragments'); ?></p>
+                <div class="row text-center">
+                    <h1 class="mt-5"><?php _e('Oops!', 'akfgfragments'); ?></h1>
+                    <p class="mt-5"><?php _e('It seems that this page doesn\'t exist.', 'akfgfragments'); ?></p>
                     <p>
                         <?php
                         $args = array('numberposts' => '1');
