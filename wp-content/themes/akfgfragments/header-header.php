@@ -57,7 +57,7 @@
                         if ($langs[$i][1] == $curr_locale_short)
                             echo "<button class='btn btn-langs dropdown-toggle' type='button' data-bs-toggle='dropdown' aria-expanded='false'>{$langs[$i][0]}</button>";
                     }
-                    echo "<ul class='dropdown-menu'>";
+                    echo "<ul class='dropdown-menu dropdown-menu-end'>";
                     for ($i=0; $i < sizeof($langs); $i++) {
                         if ($langs[$i][1] != $curr_locale_short) {
                             if ($langs[$i][1] == "en")
