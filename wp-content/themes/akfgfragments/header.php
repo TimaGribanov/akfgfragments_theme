@@ -43,20 +43,20 @@ $html_locale = str_replace('_', '-', $html_locale);
                     }
                 } elseif (strcmp($post->post_title, "Interview") === 0) {
                     $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    
+
                     $slug = parse_url($url, PHP_URL_PATH);
                     $slug = str_replace('/', '', $slug);
                     $slug = str_replace('_', ' ', $slug);
                     $slug = ucwords($slug);
-    
+
                     $query = parse_url($url, PHP_URL_QUERY); //Get a query
                     parse_str($query, $query_arr);
                     $int_slug = $query_arr['slug'];
                     $lang = $query_arr['lang'];
-    
+
                     $intdb = new wpdb(DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST);
                     $results = $intdb->get_results("SELECT it.title AS `title` FROM interviews i JOIN interviews_text it ON i.id = it.interview_id WHERE i.slug = \"$int_slug\" AND it.lang = \"$lang\";");
-    
+
                     if ($curr_locale != 'en_GB') {
                         $og_title = __('Interview: ', 'akfgfragments') . $results[0]->title;
                     } else {
@@ -68,7 +68,7 @@ $html_locale = str_replace('_', '-', $html_locale);
             }
         }
     }
-    
+
     $og_title = "$og_title — akfgfragments";
 
     //https://wordpress.stackexchange.com/questions/83887/return-current-page-type
@@ -158,8 +158,7 @@ $html_locale = str_replace('_', '-', $html_locale);
     <?php
     if ($curr_locale == 'en_GB') {
         ?>
-        <meta name="twitter:description"
-            content="Your ultimate guide to Asian Kung-Fu Generation world.">
+        <meta name="twitter:description" content="Your ultimate guide to Asian Kung-Fu Generation world.">
         <?php
     } else {
         ?>
@@ -187,12 +186,12 @@ $html_locale = str_replace('_', '-', $html_locale);
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() . '/style.css'; ?>">
     <!--?php
     if ($curr_locale == 'ja_JP') {

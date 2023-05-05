@@ -20,5 +20,6 @@ function normaliseTitle($input_title)
     );
 
     return $result_title;
-};
+}
+;
 ?>

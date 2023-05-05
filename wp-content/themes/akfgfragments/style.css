@@ -269,8 +269,8 @@ strong {
     height: 50px;
 }
 
-@media (max-width: 991px) {
-    header.navbar {
+@media (max-width: 1020px) {
+    header .navbar {
         height: 100px;
     }
 
@@ -278,6 +278,12 @@ strong {
         position: relative;
         margin: 0 auto;
         font-size: 8vw;
+    }
+}
+
+@media (max-width: 1120px) {
+    header > .navbar > .main-wrapper > .header-lang-selector {
+        display: none;
     }
 }
 
