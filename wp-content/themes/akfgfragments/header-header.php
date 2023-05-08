@@ -80,7 +80,7 @@ function buildLangSelector()
                 <?php buildLangSelector(); ?>
 
                 <!-- Hamburger menu -->
-                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#hamburgerMenu"
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hamburgerMenu"
                     aria-controls="hamburgerMenu" aria-expanded="false" aria-controls="Toggle navigation">
                     <span class="ham-bars"><i class="bi bi-list"></i></span>
                 </button>

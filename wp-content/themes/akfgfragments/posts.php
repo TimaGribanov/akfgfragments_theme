@@ -35,8 +35,8 @@ if (is_single() && 'post' == get_post_type()) { ?>
             <p><?php the_content(); ?></p>
         </div>
     </div>
-<?php
-// FOR FEED
+    <?php
+    // FOR FEED
 } else { ?>
     <div class="row main-post d-none d-lg-block d-xl-block d-xxl-block">
         <div class="row">
@@ -86,8 +86,12 @@ if (is_single() && 'post' == get_post_type()) { ?>
     <a class="main-title-mobile" href="<?php the_permalink(); ?>">
         <h1><?php the_title(); ?></h1>
     </a>
-    <h6><?php _e('Posted on', 'akfgfragments'); ?>
-        <?php wp_date(get_option('date_format'), get_post_timestamp()); ?></h6>
+    <h6><?php
+    $date_format = get_option('date_format');
+    $time_format = get_option('time_format');
+    $timezone = $_COOKIE["local_timezone"];
+    echo wp_date("{$date_format} {$time_format}", get_post_timestamp(), new DateTimeZone($timezone));
+    ?></h6>
     <?php
     $post_tags = get_the_tags();
     if (!empty($post_tags)) {
