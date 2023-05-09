@@ -16,17 +16,17 @@
                     foreach ($results as $row) {
                         echo "<h1 class='song_title'>$row->title_ro</h1>";
                         if ($row->type == "youtube") {
-                            echo "<iframe class='mv-page-youtube'
+                            echo "<div class='ratio ratio-16x9'><iframe
                             src='$row->url' title='$row->title_ro'
-                            frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>";
+                            frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe></div>";
                         } else {
                             echo "<video controls class='mv-page-local'>
                             <source src='$row->url' type='video/mp4'>
                             </video>";
                         }
-                        echo "<p><strong>" . __( 'Director', 'akfgfragments' ) . ":</strong> $row->director</p>";
-                        echo "<p><strong>" . __( 'Year', 'akfgfragments' ) . ":</strong> " . date("Y", strtotime("$row->date")) . "</p>";
-                        echo "<p><strong><a class='mv-link' href='/song?" . normaliseTitle($title_parsed) . "' target='_blank'>Info about the song</a></strong></p>";
+                        echo "<p class='mt-3 mb-1'><strong>" . __( 'Director', 'akfgfragments' ) . ":</strong> $row->director</p>";
+                        echo "<p class='mt-1 mb-1'><strong>" . __( 'Year', 'akfgfragments' ) . ":</strong> " . date("Y", strtotime("$row->date")) . "</p>";
+                        echo "<p class='mt-1'><strong><a class='mv-link' href='/song?" . normaliseTitle($title_parsed) . "' target='_blank'>Info about the song</a></strong></p>";
                     }
                 }
                 ?>

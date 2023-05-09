@@ -734,18 +734,6 @@ strong {
     height: auto;
 }
 
-.mv-page-youtube {
-    width: 100%;
-    height: calc(942px * 9 / 16);
-}
-
-@media (max-width: 991px) {
-    .mv-page-youtube {
-        width: 100%;
-        height: revert-layer;
-    }
-}
-
 .mv-link {
     text-decoration: none;
 }
