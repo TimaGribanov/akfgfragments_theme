@@ -10,7 +10,7 @@ $title = parse_url($url, PHP_URL_QUERY); //Get a query
 
 $title_parsed = str_replace('_', ' ', $title); //Delete underscores if they exist
 $title_parsed = str_replace('%27', '\'', $title_parsed); //Change %27 to a single quote
-$title_parsed = str_replace('/', '', $title_parsed); //Delete slashes if they exist
+#$title_parsed = str_replace('/', '', $title_parsed); //Delete slashes if they exist
 $title_parsed = str_replace('%26', '&', $title_parsed); //Change %26 to an ampersand
 $title_parsed = str_replace('%23', '#', $title_parsed); //Change %26 to a number sign
 $title_parsed = str_replace('%3F', '?', $title_parsed); //Change %26 to a question mark

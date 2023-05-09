@@ -1,5 +1,103 @@
 <?php /* Template Name: Akfgfragments Release */?>
 
+<?php
+function printCover($img)
+{
+    echo "<div class='row main-image-container'>"; //Album cover
+
+    if (strpos($img, ",") === false) {
+        echo "<img src='$img' />";
+    } else {
+        $img_uri_arr = explode(",", $img);
+
+        foreach ($img_uri_arr as &$img) {
+            echo "<img class='main-double-image' src='$img' />";
+        }
+
+        echo "<div class='main-double-image-arrows'>
+            <i class='bi bi-chevron-left main-double-image-arrow main-double-image-arrow-left'></i>
+            <i class='bi bi-chevron-right main-double-image-arrow main-double-image-arrow-right'></i>
+            </div>";
+    }
+
+    echo "</div>";
+}
+
+function printReleaseType($type)
+{
+    echo "<div class='row'><p id='release-type'>";
+    _e('Type of release:', 'akfgfragments');
+    echo " " . $type . "</p></div>";
+}
+
+function dateBlock($format, $date)
+{
+    if ($format == "full") {
+        $formatString = "jS F Y";
+    } else {
+        $formatString = "Y";
+    }
+
+    echo "<p id='release-date'>";
+    _e('Release date:', 'akfgfragments');
+    echo " " . date($formatString, strtotime("$date"));
+    echo "</p>";
+}
+
+function printReleaseDate($date)
+{
+
+
+    echo "<div class='row'>";
+
+    if ($date == "2000-01-01") {
+        dateBlock("short", $date);
+    } else {
+        dateBlock("full", $date);
+    }
+    echo "</div>";
+}
+
+function printTracklist($tracklist)
+{
+    echo "<div class='row'>"; //Tracklist
+
+    $tracklist_length = count($tracklist);
+
+    echo "<h3>";
+    _e('Tracklist:', 'akfgfragments');
+    echo "</h3>";
+
+    echo "<ol class='main-tracklist'>";
+
+    for ($i = 0; $i < $tracklist_length; $i++) {
+        $track = $tracklist["$i"]->title_ro;
+        echo "<li><a class='main-tracklist-link' href='song?" . normaliseTitle($track) . "'>" . $track . "</a></li>";
+    }
+
+    echo "</ol>";
+
+    echo "</div>";
+}
+
+function printSpotify($url)
+{
+    echo "<div class='row'>"; //Spotify
+
+    if (strpos($url, ",") === false) {
+        echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/album/" . $url . "?utm_source=generator' width='60%' height='380' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
+    } else {
+        $spotify_uri_arr = explode(",", $url);
+
+        foreach ($spotify_uri_arr as &$uri) {
+            echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/album/" . $uri . "?utm_source=generator' width='60%' height='380' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
+        }
+    }
+
+    echo "</div>";
+}
+?>
+
 <?php get_header(); ?>
 <main role="main">
     <div class="container">
@@ -23,7 +121,9 @@
                     if (!empty($results)) {
                         foreach ($results as $row) {
                             echo "<h1 class='song_title'>$row->title_ro</h1>"; //Release title
+                    
                             echo "<div class='col'>"; //The first col: Title translations, Type of release, Release date, Tracklist, Credits
+                    
                             echo "<div class='row'>"; //Title translations
                             echo "<p class='title-trans'><span title='日本語' lang='ja-jp'>" . $row->title_ja . "</span>, <span title='English'>" . $row->title_en . "</span></p>";
                             echo "<p class='title-trans' id='open-hidden'>";
@@ -54,38 +154,12 @@
                             echo "</div>";
                             echo "</div>"; //End of title translations
                     
-                            echo "<div class='row'>"; //Release type ?>
-                            <p id="release-type"><?php _e('Type of release:', 'akfgfragments') ?>
-                                <?php echo $row->type; ?></span>
-                                <?php echo "</div>";
-
-                                echo "<div class='row'>"; //Release date
-                                if ($row->date == "2000-01-01") {
-                                    ?>
-                                <p id="release-fate"><?php _e('Release date:', 'akfgfragments') ?>
-                                    <?php echo date("Y", strtotime("$row->date")); ?></p>
-                                <?php
-                                } else {
-                                    ?>
-                                <p id="release-fate"><?php _e('Release date:', 'akfgfragments') ?>
-                                    <?php echo date("jS F Y", strtotime("$row->date")); ?></p>
-                                <?php
-                                }
-                                echo "</div>";
-
-                                echo "<div class='row'>"; //Tracklist
-                                $tracklist_length = count($tracklist);
-                                ?>
-                            <h3><?php _e('Tracklist:', 'akfgfragments') ?></h3>
-                            <?php
-                            echo "<ol class='main-tracklist'>";
-                            for ($i = 0; $i < $tracklist_length; $i++) {
-                                $track = $tracklist["$i"]->title_ro;
-                                echo "<li><a class='main-tracklist-link' href='song?" . normaliseTitle($track) . "'>" . $track . "</a></li>";
-                            }
-                            echo "</ol>";
-                            echo "</div>";
-
+                            printReleaseType($row->type); //Release type
+                    
+                            printReleaseDate($row->date); //Release date
+                    
+                            printTracklist($tracklist); //Tracklist
+                    
                             //echo "<div class='row'>"; //Credits
                             //echo "<h3>Credits:</h3>";
                             //echo "</div>"; //End of credits
@@ -93,9 +167,9 @@
                             echo "<div class='row'>"; //Versions of releases
                             $catalogue_nums = explode(",", $row->catalogue);
                             if ($catalogue_nums[0] !== "") {
-                            ?>
-                            <h3><?php _e('Versions:', 'akfgfragments'); ?></h3>
-                            <?php
+                                ?>
+                                <h3><?php _e('Versions:', 'akfgfragments'); ?></h3>
+                                <?php
                                 foreach ($catalogue_nums as $num) {
                                     echo "<div class='row mb-2'>";
                                     echo "<input type='submit' class='rel-ver-btn' name='$num' value='$num'>";
@@ -103,56 +177,17 @@
                                     echo "</div>";
                                 }
                             }
-                            ?>
-                            <script type="text/javascript">
-                                $('.rel-ver-btn').click(function () {
-                                    const cat = $(this).attr('name')
 
-                                    if ($(`#version-info-${cat}`).css('display') == 'none') {
-                                        $.ajax({
-                                            url: `/wp-content/themes/akfgfragments/get_catalogue_info.php?cat=${cat}`,
-                                            success: function (response) {
-                                                $(`#version-info-${cat}`).html(response)
-                                                $(`#version-info-${cat}`).css({ display: "block" })
-                                            }
-                                        })
-                                    }
-                                    else {
-                                        $(`#version-info-${cat}`).css({ display: "none" })
-                                    }
-
-                                })
-                            </script>
-                            <?php
                             echo "</div>"; //End of versions
                     
                             echo "</div>"; //End of the first col
                     
                             echo "<div class='col'>"; //The second col: Album cover, Spotify
-                            echo "<div class='row main-image-container'>"; //Album cover
-                            if (strpos($row->img_uri, ",") === false) {
-                                echo "<img src='$row->img_uri' />";
-                            } else {
-                                $img_uri_arr = explode(",", $row->img_uri);
-                                foreach ($img_uri_arr as &$img) {
-                                    echo "<img class='main-double-image' src='$img' />";
-                                }
-                                echo "<div class='main-double-image-arrows'>";
-                                echo "<i class='bi bi-chevron-left main-double-image-arrow main-double-image-arrow-left'></i>";
-                                echo "<i class='bi bi-chevron-right main-double-image-arrow main-double-image-arrow-right'></i>";
-                                echo "</div>";
-                            }
-                            echo "</div>";
-                            echo "<div class='row'>"; //Spotify
-                            if (strpos($row->spotify_uri, ",") === false) {
-                                echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/album/" . $row->spotify_uri . "?utm_source=generator' width='60%' height='380' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
-                            } else {
-                                $spotify_uri_arr = explode(",", $row->spotify_uri);
-                                foreach ($spotify_uri_arr as &$uri) {
-                                    echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/album/" . $uri . "?utm_source=generator' width='60%' height='380' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
-                                }
-                            }
-                            echo "</div>";
+                    
+                            printCover($row->img_uri); //Album cover
+                    
+                            printSpotify($row->spotify_uri); //Spotify
+                    
                             echo "</div>"; //End of the second col
                         }
                     }
@@ -161,8 +196,9 @@
             </div>
 
             <!-- ON MOBILE -->
-            <div id="content-mobile" class="col-lg-8 col-md-12 col-sm-12 col-xs-12 d-block d-sm-block d-md-block">
-            <div class="row">
+            <div id="content-mobile"
+                class="col-lg-8 col-md-12 col-sm-12 col-xs-12 d-lg-none d-xl-none d-xxl-none d-block d-sm-block d-md-block">
+                <div class="row">
                     <?php
                     global $results;
                     global $tracklist;
@@ -170,24 +206,11 @@
                     if (!empty($results)) {
                         foreach ($results as $row) {
                             echo "<h1 class='song_title'>$row->title_ro</h1>"; //Release title
-
+                    
                             echo "<div class='col'>"; //The first col: Title translations, Type of release, Release date, Tracklist, Credits
-
-                            echo "<div class='row main-image-container'>"; //Album cover
-                            if (strpos($row->img_uri, ",") === false) {
-                                echo "<img src='$row->img_uri' />";
-                            } else {
-                                $img_uri_arr = explode(",", $row->img_uri);
-                                foreach ($img_uri_arr as &$img) {
-                                    echo "<img class='main-double-image' src='$img' />";
-                                }
-                                echo "<div class='main-double-image-arrows'>";
-                                echo "<i class='bi bi-chevron-left main-double-image-arrow main-double-image-arrow-left'></i>";
-                                echo "<i class='bi bi-chevron-right main-double-image-arrow main-double-image-arrow-right'></i>";
-                                echo "</div>";
-                            }
-                            echo "</div>";
-
+                    
+                            printCover($row->img_uri); //Album cover
+                    
                             echo "<div class='row mb-2'>"; //Title translations
                             echo "<p class='title-trans mb-1'><span title='日本語' lang='ja-jp'>" . $row->title_ja . "</span></p>";
                             echo "<p class='title-trans mt-1 mb-1'><span title='English'>" . $row->title_en . "</span></p>";
@@ -214,38 +237,12 @@
                             }
                             echo "</div>"; //End of title translations
                     
-                            echo "<div class='row'>"; //Release type ?>
-                            <p id="release-type-mobile"><?php _e('Type of release:', 'akfgfragments') ?>
-                                <?php echo $row->type; ?></span>
-                                <?php echo "</div>";
-
-                                echo "<div class='row'>"; //Release date
-                                if ($row->date == "2000-01-01") {
-                                    ?>
-                                <p id="release-date-mobile"><?php _e('Release date:', 'akfgfragments') ?>
-                                    <?php echo date("Y", strtotime("$row->date")); ?></p>
-                                <?php
-                                } else {
-                                    ?>
-                                <p id="release-date-mobile"><?php _e('Release date:', 'akfgfragments') ?>
-                                    <?php echo date("jS F Y", strtotime("$row->date")); ?></p>
-                                <?php
-                                }
-                                echo "</div>";
-
-                                echo "<div class='row'>"; //Tracklist
-                                $tracklist_length = count($tracklist);
-                                ?>
-                            <h3><?php _e('Tracklist:', 'akfgfragments') ?></h3>
-                            <?php
-                            echo "<ol class='main-tracklist'>";
-                            for ($i = 0; $i < $tracklist_length; $i++) {
-                                $track = $tracklist["$i"]->title_ro;
-                                echo "<li><a class='main-tracklist-link' href='song?" . normaliseTitle($track) . "'>" . $track . "</a></li>";
-                            }
-                            echo "</ol>";
-                            echo "</div>";
-
+                            printReleaseType($row->type); //Release type
+                    
+                            printReleaseDate($row->date); //Release date
+                    
+                            printTracklist($tracklist); //Tracklist
+                    
                             //echo "<div class='row'>"; //Credits
                             //echo "<h3>Credits:</h3>";
                             //echo "</div>"; //End of credits
@@ -253,9 +250,9 @@
                             echo "<div class='row'>"; //Versions of releases
                             $catalogue_nums = explode(",", $row->catalogue);
                             if ($catalogue_nums[0] !== "") {
-                            ?>
-                            <h3><?php _e('Versions:', 'akfgfragments'); ?></h3>
-                            <?php
+                                ?>
+                                <h3><?php _e('Versions:', 'akfgfragments'); ?></h3>
+                                <?php
                                 foreach ($catalogue_nums as $num) {
                                     echo "<div class='row mb-2'>";
                                     echo "<input type='submit' class='rel-ver-btn' name='$num' value='$num'>";
@@ -263,40 +260,11 @@
                                     echo "</div>";
                                 }
                             }
-                            ?>
-                            <script type="text/javascript">
-                                $('.rel-ver-btn').click(function () {
-                                    const cat = $(this).attr('name')
 
-                                    if ($(`#version-info-${cat}-mobile`).css('display') == 'none') {
-                                        $.ajax({
-                                            url: `/wp-content/themes/akfgfragments/get_catalogue_info.php?cat=${cat}`,
-                                            success: function (response) {
-                                                $(`#version-info-${cat}-mobile`).html(response)
-                                                $(`#version-info-${cat}-mobile`).css({ display: "block" })
-                                            }
-                                        })
-                                    }
-                                    else {
-                                        $(`#version-info-${cat}-mobile`).css({ display: "none" })
-                                    }
-
-                                })
-                            </script>
-                            <?php
                             echo "</div>"; //End of versions
-
-                            echo "<div class='row'>"; //Spotify
-                            if (strpos($row->spotify_uri, ",") === false) {
-                                echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/album/" . $row->spotify_uri . "?utm_source=generator' width='60%' height='380' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
-                            } else {
-                                $spotify_uri_arr = explode(",", $row->spotify_uri);
-                                foreach ($spotify_uri_arr as &$uri) {
-                                    echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/album/" . $uri . "?utm_source=generator' width='60%' height='380' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
-                                }
-                            }
-                            echo "</div>";
-
+                    
+                            printSpotify($row->spotify_uri); //Spotify
+                    
                             echo "</div>"; //End of the first col
                         }
                     }
@@ -306,51 +274,6 @@
             <?php get_sidebar(); ?>
         </div>
     </div>
-
-    <script type="text/javascript">
-            //Click through images
-            (function ($) {
-
-                $('.main-double-image-arrow-left').on('click', function () {
-                    var images = $('.main-image-container').find('.main-double-image');
-
-                    var currentIndex;
-                    images.each(function () {
-                        if ($(this).is(':visible')) {
-                            currentIndex = $(images).index(this);
-                        }
-                    });
-
-                    $(images[currentIndex]).hide();
-                    $(images[currentIndex - 1]).show();
-                    $('.main-double-image-arrow-right').show();
-                    if (currentIndex - 1 == 0) {
-                        $('.main-double-image-arrow-left').hide();
-                    }
-                });
-
-                $('.main-double-image-arrow-right').on('click', function () {
-                    var images = $('.main-image-container').find('.main-double-image');
-
-                    var currentIndex;
-
-                    images.each(function () {
-                        if ($(this).is(':visible')) {
-                            currentIndex = $(images).index(this);
-                        }
-                    });
-
-                    $(images[currentIndex]).hide();
-                    $(images[currentIndex + 1]).show();
-                    $('.main-double-image-arrow-left').show();
-                    if (currentIndex == images.length - 2) {
-                        $('.main-double-image-arrow-right').hide();
-                    }
-                });
-
-            })(jQuery);
-    </script>
-
 </main>
 
 <?php get_footer(); ?>
@@ -370,6 +293,86 @@
         })
 
     })(jQuery);
+
+    //Click through images
+    (function ($) {
+
+        $('.main-double-image-arrow-left').on('click', function () {
+            var images = $('.main-image-container').find('.main-double-image');
+
+            var currentIndex;
+            images.each(function () {
+                if ($(this).is(':visible')) {
+                    currentIndex = $(images).index(this);
+                }
+            });
+
+            $(images[currentIndex]).hide();
+            $(images[currentIndex - 1]).show();
+            $('.main-double-image-arrow-right').show();
+            if (currentIndex - 1 == 0) {
+                $('.main-double-image-arrow-left').hide();
+            }
+        });
+
+        $('.main-double-image-arrow-right').on('click', function () {
+            var images = $('.main-image-container').find('.main-double-image');
+
+            var currentIndex;
+
+            images.each(function () {
+                if ($(this).is(':visible')) {
+                    currentIndex = $(images).index(this);
+                }
+            });
+
+            $(images[currentIndex]).hide();
+            $(images[currentIndex + 1]).show();
+            $('.main-double-image-arrow-left').show();
+            if (currentIndex == images.length - 2) {
+                $('.main-double-image-arrow-right').hide();
+            }
+        });
+
+    })(jQuery);
+
+    //Versions desktop
+    $('.rel-ver-btn').click(function () {
+        const cat = $(this).attr('name')
+
+        if ($(`#version-info-${cat}`).css('display') == 'none') {
+            $.ajax({
+                url: `/wp-content/themes/akfgfragments/get_catalogue_info.php?cat=${cat}`,
+                success: function (response) {
+                    $(`#version-info-${cat}`).html(response)
+                    $(`#version-info-${cat}`).css({ display: "block" })
+                }
+            })
+        }
+        else {
+            $(`#version-info-${cat}`).css({ display: "none" })
+        }
+
+    })
+
+    //Versions mobile
+    $('.rel-ver-btn').click(function () {
+        const cat = $(this).attr('name')
+
+        if ($(`#version-info-${cat}-mobile`).css('display') == 'none') {
+            $.ajax({
+                url: `/wp-content/themes/akfgfragments/get_catalogue_info.php?cat=${cat}`,
+                success: function (response) {
+                    $(`#version-info-${cat}-mobile`).html(response)
+                    $(`#version-info-${cat}-mobile`).css({ display: "block" })
+                }
+            })
+        }
+        else {
+            $(`#version-info-${cat}-mobile`).css({ display: "none" })
+        }
+
+    })
 </script>
 </body>
 
