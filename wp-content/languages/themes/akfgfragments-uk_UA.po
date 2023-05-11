@@ -1,201 +1,347 @@
-# Copyright (C) 2022 akfgfragments
-# This file is distributed under the same license as the akfgfragments package.
+# Copyright (C) 2023 Timofey Gribanov
+# This file is distributed under the .
 msgid ""
 msgstr ""
 "Project-Id-Version: akfgfragments\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/akfgfragments\n"
+"Last-Translator: \n"
+"Language-Team: Ukrainian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-10-31 08:22+0000\n"
-"Project-Id-Version: undefined\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.js\n"
-"X-Poedit-SourceCharset: UTF-8\n"
+"POT-Creation-Date: 2023-05-11T16:07:38+02:00\n"
+"PO-Revision-Date: 2023-05-11 14:10\n"
+"X-Generator: WP-CLI 2.7.1\n"
+"X-Domain: akfgfragments\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
 "X-Crowdin-Project: akfgfragments\n"
 "X-Crowdin-Project-ID: 538230\n"
 "X-Crowdin-Language: uk\n"
 "X-Crowdin-File: akfgfragments.pot\n"
 "X-Crowdin-File-ID: 4\n"
-"Language-Team: Ukrainian\n"
 "Language: uk_UA\n"
-"PO-Revision-Date: 2022-11-15 09:40\n"
+
+#: 404.php:8
+msgid "Oops!"
+msgstr "Йой!"
+
+#: 404.php:9
+msgid "It seems that this page doesn't exist."
+msgstr "Здається, такої сторонкі не існує."
+
+#: 404.php:17
+msgid "Go to our <a href=\"https://akfgfragments.com\">home page</a> or check the <a href=\"%s\">latest material</a> we've written."
+msgstr "Перейдіть до нашої <a href=\"https://akfgfragments.com\">домашньої сторінкі</a> або перевірте наш <a href=\"%s\">останній матеріал</a>."
 
 #: footer.php:11
 msgid "Your guide to Asian Kung-Fu Generation world"
 msgstr "Ваш провідник у світ Asian Kung-Fu Generation"
 
-#: footer.php:22, header-header.php:59
+#: footer.php:25
+#: header-header.php:118
 msgid "About us"
 msgstr "Про нас"
 
-#: footer.php:23, header-header.php:62
+#: footer.php:27
+#: header-header.php:121
 msgid "Team"
 msgstr "Команда"
 
-#: footer.php:24, header-header.php:65
+#: footer.php:29
+#: header-header.php:124
 msgid "Thanks"
 msgstr "Подяки"
 
-#: header-header.php:9, header-header.php:40
+#: get_catalogue_info.php:39
+msgid "Sorry! There's no information about this version."
+msgstr "Вибачте! Немає інформації про цю версію."
+
+#: header-header.php:56
+#: header-header.php:95
 msgid "Discography"
 msgstr "Дискографія"
 
-#: header-header.php:12, header-header.php:43
+#: header-header.php:59
+#: header-header.php:98
 msgid "Music Videos"
 msgstr "Відеокліпи"
 
-#: header-header.php:15, header-header.php:46
+#: header-header.php:62
+#: header-header.php:101
 msgid "Lyrics"
 msgstr "Тексти пісень"
 
-#: header-header.php:18, header-header.php:49
+#: header-header.php:65
+#: header-header.php:104
+msgid "Tablatures"
+msgstr "Табулатури"
+
+#: header-header.php:68
+#: header-header.php:107
 msgid "Interviews"
 msgstr "Інтерв'ю"
 
-#: header-header.php:21, header-header.php:52
+#: header-header.php:71
+#: header-header.php:110
 msgid "Stuff"
 msgstr "Речі"
 
-#: header-header.php:24, header-header.php:55
+#: header-header.php:75
+#: header-header.php:114
 msgid "Side Projects"
 msgstr "Сайд-проекти"
 
-#: header-header.php:37, header.php:34
+#: header-header.php:92
+#: header.php:28
 msgid "Home"
 msgstr "Головна"
 
-#: header-header.php:72
+#: header-header.php:133
 msgid "Join our Discord"
 msgstr "Приєднайтеся до нашого серверу у Discord"
 
-#: index.php:61, templates/blank.php:19
+#: header.php:40
+msgid "Tabs"
+msgstr "таби"
+
+#: header.php:61
+msgid "Interview: "
+msgstr "Інтерв'ю: "
+
+#: header.php:131
+msgid "Your ultimate guide to Asian Kung-Fu Generation world. News, discography, lyrics, tabs, interviews, music videos – all in one place!"
+msgstr "Ваш провідник у світ Asian Kung-Fu Generation. Новини, дискографія, тексти пісень, таби, інтерв'ю, відеокліпи — все в одному місці!"
+
+#: header.php:166
+msgid "Your ultimate guide to Asian Kung-Fu Generation world."
+msgstr "Ваш провідник у світ Asian Kung-Fu Generation."
+
+#: index.php:17
+#: templates/blank.php:19
 msgid "Sorry, no posts matched your criteria."
 msgstr "На жаль, немає публікацій, що відповідають вашим критеріям."
 
-#: index.php:21
-msgid "Written by "
-msgstr "Автор:"
-
-#: index.php:31, index.php:57, templates/blank.php:12, templates/blank.php:16
-msgid "(more...)"
-msgstr "(більше...)"
-
-#: index.php:36
-msgid "Posted on"
-msgstr "Опубліковано"
-
-#: index.php:36
-msgid "by"
-msgstr ", автор: "
-
-#: index.php:73
+#: index.php:30
 msgid "Pagination"
 msgstr "Пагінація"
 
-#: sidebar.php:39
-msgid "Join our Discord server!"
-msgstr "Приєднайтеся до нашого серверу у Discord!"
-
-#: sidebar.php:40
-msgid "We have interesting Asian Kung-Fu Generation related discussions there, and more!"
-msgstr "Там ми маємо цікаві розмови об Asian Kung-Fu Generation, та багато іншого!"
-
-#: templates/release.php:45
-msgid "Type of release:"
-msgstr "Тип видання:"
-
-#: templates/release.php:55, templates/release.php:51
-msgid "Release date:"
-msgstr "Дата випуску:"
-
-#: templates/release.php:63
-msgid "Tracklist:"
-msgstr "Треклист:"
-
-#: templates/song.php:34, templates/song.php:175
-msgid "more..."
-msgstr "більше..."
-
-#: templates/song.php:62
-msgid "Part of:"
-msgstr "Частина:"
-
-#: templates/song.php:79
-msgid "Lyrics:"
-msgstr "Текст пісні:"
-
-#: templates/song.php:82
-msgid "japanese"
-msgstr "японська"
-
-#: templates/song.php:83, templates/song.php:126
-msgid "romaji"
-msgstr "ромадзі"
-
-#: templates/song.php:84
-msgid "english"
-msgstr "англійська"
-
-#: templates/song.php:85
-msgid "french"
-msgstr "французька"
-
-#: templates/song.php:86
-msgid "german"
-msgstr "німецька"
-
-#: templates/song.php:87
-msgid "spanish"
-msgstr "іспанська"
-
-#: templates/song.php:88
-msgid "portuguese"
-msgstr "португальська"
-
-#: templates/song.php:89
-msgid "russian"
-msgstr "російська"
-
-#: templates/song.php:123
+#: load_lyrics.php:47
 msgid "Japanese"
 msgstr "японською"
 
-#: templates/song.php:129
+#: load_lyrics.php:50
+#: templates/song.php:200
+msgid "romaji"
+msgstr "ромадзі"
+
+#: load_lyrics.php:53
 msgid "English"
 msgstr "англійською"
 
-#: templates/song.php:132
+#: load_lyrics.php:56
 msgid "French"
 msgstr "французькою"
 
-#: templates/song.php:135
+#: load_lyrics.php:59
 msgid "German"
 msgstr "німецькою"
 
-#: templates/song.php:138
+#: load_lyrics.php:62
 msgid "Spanish"
 msgstr "іспанською"
 
-#: templates/song.php:141
+#: load_lyrics.php:65
 msgid "Portuguese"
 msgstr "португальською"
 
-#: templates/song.php:144
+#: load_lyrics.php:68
 msgid "Russian"
 msgstr "російською"
 
-#: templates/song.php:147
+#: load_lyrics.php:71
+msgid "Ukrainian"
+msgstr "Українська"
+
+#: load_lyrics.php:74
+msgid "Belarusian"
+msgstr "Білоруська"
+
+#: load_lyrics.php:77
 msgid "the selected language"
 msgstr "вибраною мовою"
 
-#: templates/song.php:150
+#: load_lyrics.php:80
 msgid "Sorry! This song's lyrics are not yet available in "
 msgstr "Вибачте! Текст цієї пісні ще не доступний "
 
-#: templates/song.php:172
+#: posts.php:78
+#: templates/blank.php:12
+#: templates/blank.php:16
+msgid "(more...)"
+msgstr "(більше...)"
+
+#: sidebar.php:5
+msgid "Join our Discord server!"
+msgstr "Приєднайтеся до нашого серверу у Discord!"
+
+#: sidebar.php:6
+msgid "We have interesting Asian Kung-Fu Generation related discussions there, and more!"
+msgstr "Там ми маємо цікаві розмови об Asian Kung-Fu Generation, та багато іншого!"
+
+#: sidebar.php:15
+msgid "Follow us on Twitter!"
+msgstr "Підписатись на наш Twitter!"
+
+#: sidebar.php:16
+msgid "All the news are there!"
+msgstr "Всі новини там!"
+
+#: sidebar.php:25
+msgid "The latest release"
+msgstr "Останній реліз"
+
+#: sidebar.php:36
+msgid "Release date: "
+msgstr "Дата релізу: "
+
+#: sidebar.php:38
+msgid "Type: "
+msgstr "Тип: "
+
+#: sidebar.php:40
+msgid "More about this release"
+msgstr "Детальніше про цей реліз"
+
+#: templates/disco.php:81
+msgid "Jump to:"
+msgstr "Перейти до:"
+
+#: templates/disco.php:82
+msgid "albums"
+msgstr "альбомів"
+
+#: templates/disco.php:83
+msgid "singles"
+msgstr "синглів"
+
+#: templates/disco.php:84
+msgid "compilations"
+msgstr "збірок"
+
+#: templates/disco.php:85
+msgid "indies"
+msgstr "інді"
+
+#: templates/interview.php:28
+msgid "Date of the interview"
+msgstr "Дата інтерв'ю"
+
+#: templates/music-videos.php:41
+#: templates/mv.php:28
+msgid "Year"
+msgstr "Рік"
+
+#: templates/music-videos.php:42
+#: templates/mv.php:27
+msgid "Director"
+msgstr "Режисер"
+
+#: templates/release.php:29
+msgid "Type of release:"
+msgstr "Тип видання:"
+
+#: templates/release.php:42
+msgid "Release date:"
+msgstr "Дата випуску:"
+
+#: templates/release.php:68
+msgid "Tracklist:"
+msgstr "Треклист:"
+
+#: templates/release.php:130
+#: templates/song.php:84
+#: templates/song.php:240
+msgid "more..."
+msgstr "більше..."
+
+#: templates/release.php:171
+#: templates/release.php:254
+msgid "Versions:"
+msgstr "Версії:"
+
+#: templates/song-tabs.php:21
+msgid "Information about the song"
+msgstr "Інформація про пісню"
+
+#: templates/song-tabs.php:53
+msgid "Full Band Score"
+msgstr "Все частки"
+
+#: templates/song-tabs.php:55
+msgid "Rhythm Guitar (Gotoh)"
+msgstr "Ритм-гітара (Ґото)"
+
+#: templates/song-tabs.php:57
+msgid "Lead Guitar (Kita)"
+msgstr "Лід-гітара (Кіта)"
+
+#: templates/song-tabs.php:59
+msgid "Bass (Yamada)"
+msgstr "Бас (Ямада)"
+
+#: templates/song-tabs.php:61
+msgid "Drums (Ijichi)"
+msgstr "Ударні (Ідзіті)"
+
+#: templates/song.php:29
+msgid "Part of:"
+msgstr "Частина:"
+
+#: templates/song.php:45
+msgid "Tabs:"
+msgstr "Таби:"
+
+#: templates/song.php:194
+msgid "Lyrics:"
+msgstr "Текст пісні:"
+
+#: templates/song.php:198
+msgid "japanese"
+msgstr "японська"
+
+#: templates/song.php:202
+msgid "english"
+msgstr "англійська"
+
+#: templates/song.php:204
+msgid "french"
+msgstr "французька"
+
+#: templates/song.php:206
+msgid "german"
+msgstr "німецька"
+
+#: templates/song.php:208
+msgid "spanish"
+msgstr "іспанська"
+
+#: templates/song.php:210
+msgid "portuguese"
+msgstr "португальська"
+
+#: templates/song.php:212
+msgid "russian"
+msgstr "російська"
+
+#: templates/song.php:214
+msgid "ukrainian"
+msgstr "українська"
+
+#: templates/song.php:216
+msgid "belarusian"
+msgstr "білоруська"
+
+#: templates/song.php:237
 msgid "less..."
 msgstr "менше..."
 

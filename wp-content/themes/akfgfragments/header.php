@@ -37,7 +37,7 @@ $html_locale = str_replace('_', '-', $html_locale);
                     $og_title = "$title_parsed MV";
                 } elseif (strcmp($post->post_title, "Tabs per song") === 0) {
                     if ($curr_locale != 'en_GB') {
-                        $og_title = __('$title_parsed Tabs', 'akfgfragments');
+                        $og_title = $title_parsed . " " . __('Tabs', 'akfgfragments');
                     } else {
                         $og_title = "$title_parsed Tabs";
                     }

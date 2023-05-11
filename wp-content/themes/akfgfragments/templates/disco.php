@@ -78,7 +78,7 @@ function capitaiseFirstLetter($input) {
             <div id="content" class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                 <div class="row disco-list">
                     <div class="row mb-3">
-                        <div class="col">Jump to:</div>
+                        <div class="col"><?php _e('Jump to:', 'akfgfragments') ?></div>
                         <div class="col"><a href="#albums"><?php _e( 'albums', 'akfgfragments' ) ?></a></div>
                         <div class="col"><a href="#singles"><?php _e( 'singles', 'akfgfragments' ) ?></a></div>
                         <div class="col"><a href="#compilations"><?php _e( 'compilations', 'akfgfragments' ) ?></a></div>
