@@ -63,7 +63,7 @@
                             </div>
 
                             <div id="tabs-pdf-div">
-                                <canvas id="tabs-pdf"></canvas>
+                                <canvas id="tabs-pdf" class="w-100"></canvas>
                             </div>
 
                             <div id="tabs-pdf-pages" class="row">
