@@ -112,7 +112,7 @@ function printSpotify($url)
             $tracklist = $releasedb->get_results("SELECT s.title_ro FROM rel_songs rs JOIN releases r ON r.id = rs.release_id JOIN songs s ON s.id = rs.song_id WHERE r.title_ro = \"$title_parsed\" ORDER BY rs.release_pos ASC;");
             ?>
             <!-- ON DESKTOP -->
-            <div id="content" class="col-lg-8 col-md-12 col-sm-12 col-xs-12 d-none d-lg-block d-xl-block d-xxl-block">
+            <div id="content" class="col-lg-9 col-md-12 col-sm-12 col-xs-12 d-none d-lg-block d-xl-block d-xxl-block">
                 <div class="row">
                     <?php
                     global $results;

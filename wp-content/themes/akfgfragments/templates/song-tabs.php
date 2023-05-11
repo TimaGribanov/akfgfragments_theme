@@ -5,7 +5,7 @@
 <main role="main">
     <div class="container">
         <div id="main" class="row">
-            <div id="main-content" class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+            <div id="main-content" class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                 <div class="row">
                     <?php
                     require(get_theme_root() . "/akfgfragments/parse_url.php");
