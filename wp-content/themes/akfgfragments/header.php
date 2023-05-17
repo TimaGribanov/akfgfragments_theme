@@ -172,13 +172,13 @@ $html_locale = str_replace('_', '-', $html_locale);
         content="https://akfgfragments.com/wp-content/uploads/2022/05/akfgfragments_meta_image.png" />
 
     <!--  FOR TESTBED ONLY -->
+    <!--
     <meta name="robots" content="noindex" />
+    -->
 
     <!-- FOR PRODUCTION -->
-    <!--
     <meta name="google-site-verification" content="l0FRBaDseDjdiy5dTC3vsNiG0DbxBRPsuYxf29BDv8Y" />
     <meta name="msvalidate.01" content="A6B2545E3F1222DC6899B9CDDBF4591B" />
-    -->
 
     <title>
         <?php echo $og_title; ?>
@@ -193,13 +193,6 @@ $html_locale = str_replace('_', '-', $html_locale);
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() . '/style.css'; ?>">
-    <!--?php
-    if ($curr_locale == 'ja_JP') {
-        echo '<link rel="stylesheet" href="';
-        echo get_stylesheet_directory_uri() . '/style-ja.css';
-        echo '">';
-    }
-    ?-->
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 </head>
 
