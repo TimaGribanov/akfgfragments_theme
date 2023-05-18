@@ -19,24 +19,62 @@
                 $int_slug = $query_arr['slug'];
                 $lang = $query_arr['lang'];
 
-                $intdb = new wpdb(DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST);
-                $results = $intdb->get_results("SELECT i.date AS `date`, i.cover AS `cover`, it.title AS `title`, it.text AS `text` FROM interviews i JOIN interviews_text it ON i.id = it.interview_id WHERE i.slug = \"$int_slug\" AND it.lang = \"$lang\";");
+                echo "<div class='dropdown'>";
+                echo "<button class='btn btn-langs dropdown-toggle' type='button' data-bs-toggle='dropdown' aria-expanded='false'>Change the interview's language</button>";
+                echo "<ul class='dropdown-menu dropdown-menu-end'>";
+                echo "<li class='dropdown-item lang-list' lang='en'>";
+                _e('English', 'akfgfragments');
+                echo "</li>";
+                echo "<li class='dropdown-item lang-list' lang='de'>";
+                _e('German', 'akfgfragments');
+                echo "</li>";
+                echo "<li class='dropdown-item lang-list' lang='es'>";
+                _e('Spanish', 'akfgfragments');
+                echo "</li>";
+                echo "<li class='dropdown-item lang-list' lang='fr'>";
+                _e('French', 'akfgfragments');
+                echo "</li>";
+                echo "<li class='dropdown-item lang-list' lang='ru'>";
+                _e('Russian', 'akfgfragments');
+                echo "</li>";
+                // echo "<li class='dropdown-item lang-list' lang='uk'>";
+                // _e('Ukrainian', 'akfgfragments');
+                // echo "</li>";
+                // echo "<li class='dropdown-item lang-list' lang='be'>";
+                // _e('Belarusian', 'akfgfragments');
+                // echo "</li>";
+                echo "</ul>";
+                echo "</div>";
 
-                if (!empty($results)) {
-                    foreach ($results as $row) {
-                        echo "<h1 class='interview_title'>$row->title</h1>";
-                        echo "<p><strong>" . __( 'Date of the interview', 'akfgfragments' ) . ":</strong> " . date("Y", strtotime("$row->date")) . "</p>";
-                        $text_parsed = str_replace('\\\'', '\'', $row->text);
-                        $text_parsed = str_replace('\"', '"', $text_parsed);
-                        echo "<div id='interview_text'>$text_parsed</div>";
-                    }
-                }
+                echo "<div id='interview-text'></div>";
                 ?>
             </div>
             <?php get_sidebar(); ?>
         </div>
     </div>
 </main>
+
+<script type="text/javascript">
+    //load interviews
+    $('.lang-list').click(function () {
+        const lang = $(this).attr('lang')
+        $.ajax({
+            url: `/wp-content/themes/akfgfragments/get_interviews.php?slug=<?php global $int_slug; echo $int_slug; ?>&lang=${lang}`,
+            success: function (response) {
+                $('#interview-text').html(response)
+            }
+        })
+    })
+
+    $(function () {
+        $.ajax({
+            url: `/wp-content/themes/akfgfragments/get_interviews.php?slug=<?php global $int_slug; echo $int_slug; ?>&lang=<?php global $lang; echo $lang; ?>`,
+            success: function (response) {
+                $('#interview-text').html(response)
+            }
+        })
+    })
+</script>
 
 <?php get_footer(); ?>
 
