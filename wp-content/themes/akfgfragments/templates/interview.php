@@ -20,7 +20,9 @@
                 $lang = $query_arr['lang'];
 
                 echo "<div class='dropdown'>";
-                echo "<button class='btn btn-langs dropdown-toggle' type='button' data-bs-toggle='dropdown' aria-expanded='false'>Change the interview's language</button>";
+                echo "<button class='btn btn-langs dropdown-toggle' type='button' data-bs-toggle='dropdown' aria-expanded='false'>";
+                _e('Change the interview\'s language', 'akfgfragments');
+                echo "</button>";
                 echo "<ul class='dropdown-menu dropdown-menu-end'>";
                 echo "<li class='dropdown-item lang-list' lang='en'>";
                 _e('English', 'akfgfragments');

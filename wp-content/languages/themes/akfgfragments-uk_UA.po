@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-05-11T16:07:38+02:00\n"
-"PO-Revision-Date: 2023-05-11 14:10\n"
+"POT-Creation-Date: 2023-05-18T15:20:38+02:00\n"
+"PO-Revision-Date: 2023-05-18 13:30\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: akfgfragments\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
@@ -55,6 +55,10 @@ msgstr "Подяки"
 #: get_catalogue_info.php:39
 msgid "Sorry! There's no information about this version."
 msgstr "Вибачте! Немає інформації про цю версію."
+
+#: get_interviews.php:54
+msgid "Date of the interview"
+msgstr "Дата інтерв'ю"
 
 #: header-header.php:56
 #: header-header.php:95
@@ -135,18 +139,26 @@ msgid "romaji"
 msgstr "ромадзі"
 
 #: load_lyrics.php:53
+#: templates/interview.php:28
+#: templates/interviews.php:21
 msgid "English"
 msgstr "англійською"
 
 #: load_lyrics.php:56
+#: templates/interview.php:37
+#: templates/interviews.php:30
 msgid "French"
 msgstr "французькою"
 
 #: load_lyrics.php:59
+#: templates/interview.php:31
+#: templates/interviews.php:24
 msgid "German"
 msgstr "німецькою"
 
 #: load_lyrics.php:62
+#: templates/interview.php:34
+#: templates/interviews.php:27
 msgid "Spanish"
 msgstr "іспанською"
 
@@ -155,6 +167,8 @@ msgid "Portuguese"
 msgstr "португальською"
 
 #: load_lyrics.php:68
+#: templates/interview.php:40
+#: templates/interviews.php:33
 msgid "Russian"
 msgstr "російською"
 
@@ -232,17 +246,21 @@ msgstr "збірок"
 msgid "indies"
 msgstr "інді"
 
-#: templates/interview.php:28
-msgid "Date of the interview"
-msgstr "Дата інтерв'ю"
+#: templates/interview.php:24
+msgid "Change the interview's language"
+msgstr "Змінити мову інтерв'ю"
 
-#: templates/music-videos.php:41
-#: templates/mv.php:28
+#: templates/interviews.php:17
+msgid "Change interviews' language"
+msgstr "Змінити мову інтерв'ю"
+
+#: templates/music-videos.php:26
+#: templates/mv.php:35
 msgid "Year"
 msgstr "Рік"
 
-#: templates/music-videos.php:42
-#: templates/mv.php:27
+#: templates/music-videos.php:27
+#: templates/mv.php:34
 msgid "Director"
 msgstr "Режисер"
 

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-05-11T16:07:38+02:00\n"
+"POT-Creation-Date: 2023-05-18T15:20:38+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: akfgfragments\n"
@@ -47,6 +47,10 @@ msgstr ""
 
 #: get_catalogue_info.php:39
 msgid "Sorry! There's no information about this version."
+msgstr ""
+
+#: get_interviews.php:54
+msgid "Date of the interview"
 msgstr ""
 
 #: header-header.php:56
@@ -128,18 +132,26 @@ msgid "romaji"
 msgstr ""
 
 #: load_lyrics.php:53
+#: templates/interview.php:28
+#: templates/interviews.php:21
 msgid "English"
 msgstr ""
 
 #: load_lyrics.php:56
+#: templates/interview.php:37
+#: templates/interviews.php:30
 msgid "French"
 msgstr ""
 
 #: load_lyrics.php:59
+#: templates/interview.php:31
+#: templates/interviews.php:24
 msgid "German"
 msgstr ""
 
 #: load_lyrics.php:62
+#: templates/interview.php:34
+#: templates/interviews.php:27
 msgid "Spanish"
 msgstr ""
 
@@ -148,6 +160,8 @@ msgid "Portuguese"
 msgstr ""
 
 #: load_lyrics.php:68
+#: templates/interview.php:40
+#: templates/interviews.php:33
 msgid "Russian"
 msgstr ""
 
@@ -225,17 +239,21 @@ msgstr ""
 msgid "indies"
 msgstr ""
 
-#: templates/interview.php:28
-msgid "Date of the interview"
+#: templates/interview.php:24
+msgid "Change the interview's language"
 msgstr ""
 
-#: templates/music-videos.php:41
-#: templates/mv.php:28
+#: templates/interviews.php:17
+msgid "Change interviews' language"
+msgstr ""
+
+#: templates/music-videos.php:26
+#: templates/mv.php:35
 msgid "Year"
 msgstr ""
 
-#: templates/music-videos.php:42
-#: templates/mv.php:27
+#: templates/music-videos.php:27
+#: templates/mv.php:34
 msgid "Director"
 msgstr ""
 
