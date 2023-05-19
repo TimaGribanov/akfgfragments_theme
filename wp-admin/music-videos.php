@@ -10,6 +10,7 @@
 
 /** WordPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
+require(get_theme_root() . "/akfgfragments/get_people.php");
 
 // Used in the HTML title tag.
 $title       = __( 'Music Videos' );
@@ -42,9 +43,10 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
             echo "<tbody id='the-list'>";
             foreach ($results as $row) {
                 $title_parsed = str_replace('?', '%3F', str_replace('#', '%23', str_replace('&', '%26', str_replace('\'', '%27', str_replace(' ', '_',$row->title_ro)))));
+                $dir = getName($row->director, 'en_GB');
                 echo "<tr>";
                     echo "<td><a href='/mv?$title_parsed' target='_blank'>$row->title_ro</a></td>";
-                    echo "<td>$row->director</td>";
+                    echo "<td>$dir</td>";
                     echo "<td>" . substr($row->date, 0, 4) . "</td>";
                     echo "<td><a href='$row->url' target='_blank'>View</a></td>";
                     echo "<td><a href='/wp-admin/music-videos-edit.php?$title_parsed' target='_blank'>Edit</a> Delete</td>";
