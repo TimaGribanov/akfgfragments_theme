@@ -1,75 +1,64 @@
-<?php /* Template Name: Akfgfragments nterviews' List */?>
+<?php /* Template Name: Akfgfragments Interviews' List */
 
-<?php get_header(); ?>
+get_header(); 
 
-<?php require_once(get_theme_root() . "/akfgfragments/normalise_title.php"); ?>
+function printInterviews()
+{
+$args = array(
+    'post_type' => 'interview',
+    'post_status' => 'publish'
+);
+
+$interviews = new WP_Query($args);
+
+if ($interviews->have_posts()) {
+    while ($interviews->have_posts()) {
+        $interviews->the_post();
+        ?>
+        <div class="row interview-post">
+            <div class="col-4">
+                <?php
+                if (has_post_thumbnail()) {
+                    $post_thumbnail_id = get_post_thumbnail_id();
+                    $post_thumbnail_url = wp_get_attachment_url($post_thumbnail_id);
+                    echo '<div class="post-image"><a href="';
+                    the_permalink();
+                    echo '" class="main-thumbnail"><img title="';
+                    the_title();
+                    echo '" alt="';
+                    the_title();
+                    echo '" class="wp-post-image" src="' . $post_thumbnail_url . '"></a></div>';
+                }
+                ?>
+            </div>
+            <div class="col-8 main-post-right">
+                <a href="<?php the_permalink(); ?>">
+                    <h1><?php the_title(); ?></h1>
+                </a>
+                <p><?php the_excerpt(); ?></p>
+            </div>
+        </div>
+        <?php
+    }
+
+    wp_reset_postdata();
+} else {
+    printf("No data");
+}
+}
+
+?>
 
 <main role="main">
     <div class="container">
         <div id="main" class="row">
             <div id="main-content" class="col-lg-9 col-sm-12 col-md-12 col-xs-12">
-                <?php
-                $curr_locale = get_locale();
-                $locale = substr($curr_locale, 0, 2);
-
-                echo "<div class='dropdown'>";
-                echo "<button class='btn btn-langs dropdown-toggle' type='button' data-bs-toggle='dropdown' aria-expanded='false'>";
-                _e('Change interviews\' language', 'akfgfragments');
-                echo "</button>";
-                echo "<ul class='dropdown-menu dropdown-menu-end'>";
-                echo "<li class='dropdown-item lang-list' lang='en'>";
-                _e('English', 'akfgfragments');
-                echo "</li>";
-                echo "<li class='dropdown-item lang-list' lang='de'>";
-                _e('German', 'akfgfragments');
-                echo "</li>";
-                echo "<li class='dropdown-item lang-list' lang='es'>";
-                _e('Spanish', 'akfgfragments');
-                echo "</li>";
-                echo "<li class='dropdown-item lang-list' lang='fr'>";
-                _e('French', 'akfgfragments');
-                echo "</li>";
-                echo "<li class='dropdown-item lang-list' lang='ru'>";
-                _e('Russian', 'akfgfragments');
-                echo "</li>";
-                // echo "<li class='dropdown-item lang-list' lang='uk'>";
-                // _e('Ukrainian', 'akfgfragments');
-                // echo "</li>";
-                // echo "<li class='dropdown-item lang-list' lang='be'>";
-                // _e('Belarusian', 'akfgfragments');
-                // echo "</li>";
-                echo "</ul>";
-                echo "</div>";
-
-                echo "<div id='interviews-list'></div>";
-                ?>
+                <?php printInterviews(); ?>
             </div>
             <?php get_sidebar(); ?>
         </div>
     </div>
 </main>
-
-<script type="text/javascript">
-    //load interviews
-    $('.lang-list').click(function () {
-        const lang = $(this).attr('lang')
-        $.ajax({
-            url: `/wp-content/themes/akfgfragments/get_interviews.php?slug=&lang=${lang}`,
-            success: function (response) {
-                $('#interviews-list').html(response)
-            }
-        })
-    })
-
-    $(function () {
-        $.ajax({
-            url: `/wp-content/themes/akfgfragments/get_interviews.php?slug=&lang=<?php global $locale; echo $locale; ?>`,
-            success: function (response) {
-                $('#interviews-list').html(response)
-            }
-        })
-    })
-</script>
 
 <?php get_footer(); ?>
 

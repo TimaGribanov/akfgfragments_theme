@@ -747,13 +747,12 @@ strong {
 /***** INTERVIEWS *****/
 /**********************/
 
-.interviews-links {
-    text-decoration: none;
+.interview-post .wp-post-image {
+    width: 300px;
 }
 
-.interviews-links:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
+.post-image>img {
+    width: 100%;
 }
 
 /****************/

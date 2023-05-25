@@ -53,26 +53,26 @@ function buildLangSelector()
                 <div class="collapse navbar-collapse ml-5">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="./discography"><?php _e('Discography', 'akfgfragments'); ?></a>
+                            <a class="nav-link" href="/discography"><?php _e('Discography', 'akfgfragments'); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./music-videos"><?php _e('Music Videos', 'akfgfragments'); ?></a>
+                            <a class="nav-link" href="/music-videos"><?php _e('Music Videos', 'akfgfragments'); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./lyrics"><?php _e('Lyrics', 'akfgfragments'); ?></a>
+                            <a class="nav-link" href="/lyrics"><?php _e('Lyrics', 'akfgfragments'); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./tablatures"><?php _e('Tablatures', 'akfgfragments'); ?></a>
+                            <a class="nav-link" href="/tablatures"><?php _e('Tablatures', 'akfgfragments'); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./interviews"><?php _e('Interviews', 'akfgfragments'); ?></a>
+                            <a class="nav-link" href="/interviews"><?php _e('Interviews', 'akfgfragments'); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="./stuff"><?php _e('Stuff', 'akfgfragments'); ?></a>
+                            <a class="nav-link disabled" href="/stuff"><?php _e('Stuff', 'akfgfragments'); ?></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled"
-                                href="./side"><?php _e('Side Projects', 'akfgfragments'); ?></a>
+                                href="/side"><?php _e('Side Projects', 'akfgfragments'); ?></a>
                         </li>
                     </ul>
                 </div>
@@ -89,39 +89,39 @@ function buildLangSelector()
                     <ul class="navbar-nav mr-auto text-center vertical-menu">
                         <?php buildLangSelector(); ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="./"><?php _e('Home', 'akfgfragments'); ?></a>
+                            <a class="nav-link" href="/"><?php _e('Home', 'akfgfragments'); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./discography"><?php _e('Discography', 'akfgfragments'); ?></a>
+                            <a class="nav-link" href="/discography"><?php _e('Discography', 'akfgfragments'); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./music-videos"><?php _e('Music Videos', 'akfgfragments'); ?></a>
+                            <a class="nav-link" href="/music-videos"><?php _e('Music Videos', 'akfgfragments'); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./lyrics"><?php _e('Lyrics', 'akfgfragments'); ?></a>
+                            <a class="nav-link" href="/lyrics"><?php _e('Lyrics', 'akfgfragments'); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./tablatures"><?php _e('Tablatures', 'akfgfragments'); ?></a>
+                            <a class="nav-link" href="/tablatures"><?php _e('Tablatures', 'akfgfragments'); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./interviews"><?php _e('Interviews', 'akfgfragments'); ?></a>
+                            <a class="nav-link" href="/interviews"><?php _e('Interviews', 'akfgfragments'); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="./stuff"><?php _e('Stuff', 'akfgfragments'); ?></a>
+                            <a class="nav-link disabled" href="/stuff"><?php _e('Stuff', 'akfgfragments'); ?></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled"
-                                href="./side"><?php _e('Side Projects', 'akfgfragments'); ?></a>
+                                href="/side"><?php _e('Side Projects', 'akfgfragments'); ?></a>
                         </li>
                         <hr>
                         <li class="nav-item">
-                            <a class="nav-link" href="./about"><?php _e('About us', 'akfgfragments'); ?></a>
+                            <a class="nav-link" href="/about"><?php _e('About us', 'akfgfragments'); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./team"><?php _e('Team', 'akfgfragments'); ?></a>
+                            <a class="nav-link" href="/team"><?php _e('Team', 'akfgfragments'); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./thanks"><?php _e('Thanks', 'akfgfragments'); ?></a>
+                            <a class="nav-link" href="/thanks"><?php _e('Thanks', 'akfgfragments'); ?></a>
                         </li>
                         <hr>
                         <li class="nav-item">
