@@ -106,6 +106,7 @@ error_reporting(E_ALL);
         $song_id = $song_id_arr["0"]->id;
 
         $title_parsed = str_replace('?', '%3F', str_replace('#', '%23', str_replace('&', '%26', str_replace('\'', '%27', str_replace(' ', '_', $title)))));
+        $title_parsed = str_replace('_/_', '_', $title_parsed);
 
         if ($gp == true) {
             $filename = $title_parsed . ".gp";

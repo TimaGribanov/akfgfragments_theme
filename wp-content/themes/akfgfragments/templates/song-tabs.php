@@ -135,6 +135,9 @@
     function loadPdf(title, part) {
         currentPage = 1
 
+        if (title.includes('_/_'))
+            title = title.replace('_/_', '_')
+
         switch (part) {
             case 'full':
                 filename = title;
