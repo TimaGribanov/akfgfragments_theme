@@ -9,17 +9,17 @@ function buildLangSelector()
         //array('Français', 'fr'),
         //array('Español', 'es'),
         //array('Português', 'pt'),
-        array('Русский', 'ru'),
-        array('Українська', 'uk'),
-        array('Беларуская', 'be'),
+        //array('Русский', 'ru'),
+        //array('Українська', 'uk'),
+        //array('Беларуская', 'be'),
         //array('Suomi', 'fi'),
         array('日本語', 'ja')
     );
     $scheme = parse_url($url, PHP_URL_SCHEME);
     //TESTBED
-    $domain = 'test.akfgfragments.com';
+    #$domain = 'test.akfgfragments.com';
     //PROD
-    #$domain = 'akfgfragments.com';
+    $domain = 'akfgfragments.com';
     $curr_locale = get_locale();
     $curr_locale_short = substr($curr_locale, 0, 2);
 
