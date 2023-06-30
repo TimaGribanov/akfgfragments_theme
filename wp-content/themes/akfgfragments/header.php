@@ -195,5 +195,5 @@ $html_locale = str_replace('_', '-', $html_locale);
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() . '/style.css'; ?>">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 </head>
-
+  
 <?php get_header('header'); ?>
