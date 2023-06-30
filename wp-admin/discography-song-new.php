@@ -94,7 +94,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                         <option value="be">Belarusian</option>
                         <option value="uk">Ukrainian</option>
                         <option value="fi">Finnish</option>
-                        <option value="py">Portuguese</option>
+                        <option value="pt">Portuguese</option>
                     </select><br>
                     -->
                     <textarea name="lyrics-text" style="width: 400px; height: 424px;"></textarea>

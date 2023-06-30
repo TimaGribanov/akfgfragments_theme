@@ -3,25 +3,107 @@ Theme Name: akfgfragments
 Theme URI: https://github.com/TimaGribanov/akfgfragments_theme
 Author: Timofey Gribanov
 Author URI: https://github.com/TimaGribanov
-Description: A simple but effective WordPress theme for akfgfragments – international Asian Kung-Fu Generation fans project.
+Description: A simple but effective WordPress theme for akfgfragments – international Asian Kung-Fu Generation fan project.
 Text Domain: akfgfragments
-Version: 0.1.62-alpha
+Version: 0.2.1-beta
 */
 
-/********************/
-/* COLOUR VARIABLES */
-/********************/
+/*************/
+/* VARIABLES */
+/*************/
 
 :root {
     --bg-colour: #fff;
-    --text-colour: #46413e;
-    --header-colour: #523233;
-    --link-hover-colour: #bc661d;
-    --block-border-colour: #dcb04f;
-    --btn-colour: #488888;
-    --btn-hover-colour: #5a6c9e;
-    --alpha-letter-colour: #bf6277;
-  }
+    --text-colour: #000;
+    --header-colour: #000;
+    --link-hover-colour: #000;
+    --footer-bg-colour: #000;
+    --footer-text-colour: #fff;
+    --border-colour: #000;
+    --btn-colour: #fff;
+    --btn-hover-colour: #000;
+    --btn-hover-text-colour: #fff;
+}
+
+/*********/
+/* FONTS */
+/*********/
+
+@font-face {
+    font-family: 'Lora Regular';
+    src: url('assets/fonts/Lora/Lora-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Lora Italic';
+    src: url('assets/fonts/Lora/Lora-Italic.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Lora Semi Bold';
+    src: url('assets/fonts/Lora/Lora-SemiBold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Lora Semi Bold Italic';
+    src: url('assets/fonts/Lora/Lora-SemiBoldItalic.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Nunito Regular';
+    src: url('assets/fonts/Nunito/Nunito-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Nunito Italic';
+    src: url('assets/fonts/Nunito/Nunito-Italic.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Nunito Semi Bold';
+    src: url('assets/fonts/Nunito/Nunito-SemiBold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Nunito Semi Bold Italic';
+    src: url('assets/fonts/Nunito/Nunito-SemiBoldItalic.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Shippori Mincho Regular';
+    src: url('assets/fonts/Shippori_Mincho/ShipporiMincho-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Shippori Mincho Bold';
+    src: url('assets/fonts/Shippori_Mincho/ShipporiMincho-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Zen Kaku Gothic New Regular';
+    src: url('assets/fonts/Zen_Kaku_Gothic_New/ZenKakuGothicNew-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Zen Kaku Gothic NewBold';
+    src: url('assets/fonts/Zen_Kaku_Gothic_New/ZenKakuGothicNew-Bold.ttf');
+    font-weight: 700;
+}
+
+:lang(ja-jp) {
+    font-family: 'Shippori Mincho Regular', sans-serif;
+}
 
 /*****************/
 /***** BASIC *****/
@@ -30,32 +112,35 @@ Version: 0.1.62-alpha
 body {
     background: var(--bg-colour);
     text-align: left;
-    margin:0 auto;
+    margin: 0 auto;
     color: var(--text-colour);
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-weight: 400;
-}
-
-.main-wrapper {
-    width: 85%;
-    margin:0 auto;
-}
-
-.block {
-    border-color: var(--block-border-colour);
+    font-family: 'Lora Regular', sans-serif;
 }
 
 a {
     color: var(--text-colour);
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
     color: var(--link-hover-colour);
 }
 
 blockquote {
     border-left: var(--header-colour) 3px solid;
-    margin-left: 5%;
+    width: 70%;
+    margin: 0 auto;
+    padding: 5px;
+    background-color: #e7e7e7;
+}
+
+blockquote p {
+    font-family: 'Lora Italic', sans-serif;
+}
+
+blockquote cite {
+    font-family: 'Lora Semi Bold', sans-serif;
+    font-style: normal;
 }
 
 .nav-link {
@@ -63,68 +148,141 @@ blockquote {
     cursor: pointer;
 }
 
-.nav-link:hover, .nav-link:active {
+.nav-link:hover,
+.nav-link:active {
     color: var(--link-hover-colour);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 0.75rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--header-colour);
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-weight: 700;
+    font-family: 'Lora Semi Bold', sans-serif;
+    font-weight: 600;
 }
 
-dl, ol, ul {
-  margin-left: 2rem;
+dl,
+ol,
+ul {
+    margin-left: 2rem;
 }
 
-.btn-primary {
-    background-color: var(--btn-colour);
-    border: 0px;
+em,
+i {
+    font-family: 'Lora Regular', sans-serif;
 }
 
-.btn-primary:hover {
-    background-color: var(--btn-hover-colour);
+strong {
+    font-family: 'Lora Semi Bold', sans-serif;
 }
 
-.btn-discord {
-    background-color:#5865f2;
+.block-separator {
+    width: 40%;
+    color: var(--border-colour);
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.btn-discord>a, .btn-discord>i {
-    color: #fff;
-    text-decoration: none;
-}
-
-.btn-discord>a {
-    margin-left: 10px;
+.block-separator:last-of-type {
+    display: none;
 }
 
 /******************/
 /***** HEADER *****/
 /******************/
 
-#hdr-alpha-sign {
-    position: relative;
-    top: -0.5em;
-    font-size: 80%;
-    color: var(--alpha-letter-colour);
+#main-header {
+    margin: 20px;
+    border: 3px var(--border-colour) solid;
+    background-color: var(--bg-colour);
+    font-family: 'Nunito Regular';
 }
 
-.title {
-    font-size: 11pt;
-    font-family: verdana;
-    font-weight: bold;
+#main-header li a {
+    font-size: 14pt;
+    font-variant-caps: all-small-caps;
+    font-family: 'Nunito Semi Bold';
 }
 
-@media (max-width: 991px) {
-    header.navbar {
+#main-header li a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.navbar-brand {
+    font-size: 25pt;
+    font-family: 'Nunito Semi Bold';
+}
+
+.navbar-brand img {
+    width: 50px;
+    height: 50px;
+}
+
+@media (min-width: 992px) {
+    header .navbar {
         height: 100px;
     }
+}
+
+@media (max-width: 992px) {
     header .navbar-brand {
         position: relative;
         margin: 0 auto;
         font-size: 8vw;
     }
+}
+
+@media (max-width: 1120px) {
+    header > .navbar > .main-wrapper > .header-lang-selector {
+        display: none;
+    }
+}
+
+@media (max-width: 420px) {
+    header .navbar-brand img {
+        display: none;
+    }
+}
+
+#hamburgerMenu .header-lang-selector {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.btn-langs,
+.btn-langs:hover {
+    background-color: var(--bg-colour);
+    border: 2px var(--border-colour) solid;
+    border-radius: 0% !important;
 }
 
 .ham-bars {
@@ -135,16 +293,20 @@ dl, ol, ul {
 #hamburgerMenu {
     width: 100%;
 }
+
 #hamburgerMenu .navbar-nav {
     min-height: 100vh;
 }
+
 #hamburgerMenu .nav-item:hover {
     background-color: var(--block-border-colour);
 }
+
 #hamburgerMenu hr {
     width: 40%;
     margin: 0 auto;
 }
+
 #hamburgerMenu .ham-icon {
     font-size: 20pt;
     text-decoration: none;
@@ -154,19 +316,16 @@ dl, ol, ul {
 /***** MAIN CONTENT *****/
 /************************/
 
-#main {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
 @media (max-width: 991px) {
     #main {
         margin: 0;
     }
+
     .pagination .nav-links {
         margin-top: 10px;
         margin-bottom: 10px;
     }
+
     .pagination .page-numbers {
         display: inline-block;
         width: 40px;
@@ -178,12 +337,50 @@ dl, ol, ul {
     }
 }
 
-.main-post {
-    margin-bottom: 30px;
+.main-post a {
+    text-decoration: none;
+}
+
+.main-post-right a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.main-post .wp-post-image {
+    width: 300px;
+}
+
+.main-post .post-image>img {
+    width: 100%;
+}
+
+.main-post a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.main-post a:not(.main-post .main-post-taglist a):hover {
+    background-color: var(--btn-hover-colour);
+    color: var(--btn-hover-text-colour);
+}
+
+.main-post .main-post-taglist a {
+    text-decoration: none;
+}
+
+.main-post .main-post-taglist a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.main-post-right {
+    padding-bottom: 0;
 }
 
 .main-post-taglist {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 .main-post-taglist li {
@@ -195,8 +392,15 @@ dl, ol, ul {
     color: var(--bg-colour);
 }
 
+.main-post-right>p:last-of-type {
+    display: none;
+}
+
+.more-link {
+    padding-bottom: 0;
+}
+
 .main-post-mobile {
-    border-bottom: 1px solid;
     width: 100%;
     margin: auto;
 }
@@ -242,6 +446,37 @@ dl, ol, ul {
     font-size: smaller;
 }
 
+.wp-block-video video {
+    width: 100%;
+    height: auto;
+}
+
+.wp-block-embed-youtube iframe {
+    width: 100%;
+    height: calc(942px * 9 / 16);
+}
+
+@media (max-width: 991px) {
+    .wp-block-embed-youtube iframe {
+        width: 100%;
+        height: revert-layer;
+    }
+}
+
+.wp-block-columns {
+    display: flex;
+    width: 100%;
+}
+
+.wp-block-column {
+    word-wrap: anywhere;
+    padding-right: 10px;
+}
+
+.wp-block-column:last-of-type {
+    padding-right: 0;
+}
+
 .pagination div {
     margin: 0 auto;
 }
@@ -250,13 +485,35 @@ dl, ol, ul {
     display: none;
 }
 
+.pagination .nav-links {
+    display: block ruby;
+}
+
+.pagination .nav-links .page-numbers {
+    display: inline-block;
+    width: 35px;
+    border: 2px solid black;
+    font-size: 1.3rem;
+    text-align: center;
+    height: auto;
+}
+
+.pagination .nav-links a:hover {
+    background-color: #e7e7e7;
+}
+
+.pagination .nav-links a {
+    text-decoration: none;
+}
+
 /*******************/
 /***** SIDEBAR *****/
 /*******************/
 
 .main-side-block {
     width: 300px;
-    margin-bottom: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .main-side-block:last-of-type {
@@ -268,29 +525,37 @@ dl, ol, ul {
     color: #fff;
 }
 
-.main-socials {
-    display: none;
+.main-latest-release-link {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
 }
 
-.main-socials:first-of-type {
-    display: block;
+.main-latest-release-link:hover {
+    background-color: var(--btn-hover-colour);
+    color: var(--btn-hover-text-colour);
 }
 
-.main-social-dot {
-    height: 20px;
-    width: 20px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
+.btn-discord,
+.btn-discord:hover {
+    background-color: #5865f2;
 }
 
-.main-social-dot:hover {
-    background-color: var(--text-colour);
+.btn-discord>a,
+.btn-discord>i,
+.btn-twitter>a,
+.btn-twitter>i {
+    color: #fff;
+    text-decoration: none;
 }
 
-.main-social-dot:first-of-type {
-    background-color: var(--text-colour);
+.btn-discord>a,
+.btn-twitter>a {
+    margin-left: 10px;
+}
+
+.btn-twitter,
+.btn-twitter:hover {
+    background-color: #00acee;
 }
 
 #main-ajikan-project img:hover {
@@ -302,7 +567,20 @@ dl, ol, ul {
 /*****************/
 
 .disco-list .disco-release img {
-    width: 50px;
+    width: 60px;
+}
+
+.disco-release-title {
+    text-decoration: none;
+}
+
+.disco-release-title:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.disco-release-title>span {
+    font-family: 'Lora Semi Bold', sans-serif;
 }
 
 @media (max-width: 991px) {
@@ -315,6 +593,27 @@ dl, ol, ul {
     }
 }
 
+#top-btn {
+    font-size: 30pt;
+    z-index: 1;
+    position: fixed;
+    bottom: 10%;
+    left: 35px;
+}
+
+/******************/
+/***** LYRICS *****/
+/******************/
+
+.lyrics-link {
+    text-decoration: none;
+}
+
+.lyrics-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
 /****************/
 /***** SONG *****/
 /****************/
@@ -322,6 +621,31 @@ dl, ol, ul {
 #open-hidden {
     cursor: pointer;
     color: var(--link-hover-colour);
+}
+
+.song-releases>a {
+    text-decoration: none;
+}
+
+.song-releases>a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.song-text-btn,
+.song-text-btn:active,
+.song-text-btn:focus {
+    background-color: var(--btn-colour);
+    color: var(--text-colour);
+    padding: 5px 10px;
+    border: 3px var(--border-colour) solid;
+    border-radius: 5px;
+}
+
+.song-text-btn:hover {
+    background-color: var(--btn-hover-colour);
+    color: var(--btn-hover-text-colour);
+    border: 3px var(--border-colour) solid;
 }
 
 /*******************/
@@ -334,6 +658,11 @@ dl, ol, ul {
 
 .main-tracklist-link {
     text-decoration: none;
+}
+
+.main-tracklist-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
 }
 
 .main-image-container {
@@ -378,6 +707,91 @@ dl, ol, ul {
     display: block;
 }
 
+.rel-ver-btn,
+.rel-ver-btn:active,
+.rel-ver-btn:focus {
+    background-color: var(--btn-colour);
+    color: var(--text-colour);
+    padding: 5px 10px;
+    border: 3px var(--border-colour) solid;
+    border-radius: 5px;
+    width: 25%;
+    margin-left: 5%;
+}
+
+.rel-ver-btn:hover {
+    background-color: var(--btn-hover-colour);
+    color: var(--btn-hover-text-colour);
+    border: 3px var(--border-colour) solid;
+}
+
+
+/******************/
+/******* MV *******/
+/******************/
+
+.mv-page-local {
+    width: 100%;
+    height: auto;
+}
+
+.mv-link {
+    text-decoration: none;
+}
+
+.mv-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+/**********************/
+/***** INTERVIEWS *****/
+/**********************/
+
+.interview-post .wp-post-image {
+    width: 300px;
+}
+
+.post-image>img {
+    width: 100%;
+}
+
+/****************/
+/***** TABS *****/
+/****************/
+
+.tabs-btn,
+.tabs-btn:active,
+.tabs-btn:focus,
+.tabs-pdf-btn,
+.tabs-pdf-btn:active,
+.tabs-pdf-btn:focus,
+#tabs-pdf-pages button,
+#tabs-pdf-pages button:active,
+#tabs-pdf-pages button:focus {
+    background-color: var(--btn-colour);
+    color: var(--text-colour);
+    padding: 5px 10px;
+    border: 3px var(--border-colour) solid;
+    border-radius: 5px;
+}
+
+.tabs-btn:hover,
+.tabs-pdf-btn:hover,
+#tabs-pdf-pages button:hover {
+    background-color: var(--btn-hover-colour);
+    color: var(--btn-hover-text-colour);
+    border: 3px var(--border-colour) solid;
+}
+
+.tabs-btn:hover a {
+    color: var(--btn-hover-text-colour);
+}
+
+.tabs-btn a {
+    text-decoration: none;
+}
+
 /******************/
 /***** FOOTER *****/
 /******************/
@@ -391,6 +805,35 @@ dl, ol, ul {
 #main-footer {
     width: 100%;
     text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--footer-bg-colour);
+    color: var(--footer-text-colour);
+    z-index: 2;
+}
+
+#main-footer .nav-link {
+    color: var(--footer-text-colour);
+    cursor: pointer;
+}
+
+#main-footer .nav-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+#main-footer .nav-link:hover,
+#main-footer .nav-link:active {
+    color: var(--footer-text-colour);
+}
+
+#main-footer h1,
+#main-footer h2,
+#main-footer h3,
+#main-footer h4,
+#main-footer h5,
+#main-footer h6 {
+    color: var(--footer-text-colour);
 }
 
 #main-footer.main-wrapper {

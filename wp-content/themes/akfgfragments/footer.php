@@ -1,68 +1,78 @@
-<footer id= "main-footer" class="mt-auto bg-light">
+<footer id="main-footer">
     <div class="main-wrapper">
         <div class="row justify-content-center">
-            <div class="col-lg-7 col-xl-7 col-xxl-7" id="ftr-left-block">
-                <h6>akfgfragments.com</h6>
-                <?php 
-                    if (get_locale() === "en_GB") {
-                        echo "<p>Your guide to Asian Kung-Fu Generation <span class='ftr-crossed'>world world</span> world</p>";
-                    } else {
-                ?>
-                        <p><?php _e("Your guide to Asian Kung-Fu Generation world"); ?></p>
+            <div class="col-lg-8 col-xl-8 col-xxl-8" id="ftr-left-block">
+                <h5>akfgfragments.com</h5>
                 <?php
-                    }
-                
+                if (get_locale() === "en_GB") {
+                    echo "<p>Your guide to Asian Kung-Fu Generation <span class='ftr-crossed'>world world</span> world</p>";
+                } else {
+                    ?>
+                    <p><?php _e('Your guide to Asian Kung-Fu Generation world', 'akfgfragments'); ?></p>
+                    <?php
+                }
+
                 ?>
             </div>
             <div class="col-4" id="ftr-right-block">
-                <nav id="ftr-menu" class="navbar navbar-expand-lg">
-                    <div class="container-fluid">
-                        <div class="collapse navbar-collapse">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item"><a class="nav-link" href="/about"><?php _e("About us") ?></a></li>
-                                <li class="nav-item"><a class="nav-link" href="/team"><?php _e("Team") ?></a></li>
-                                <li class="nav-item"><a class="nav-link" href="/thanks"><?php _e("Thanks") ?></a></li>
-                            </ul>
-                        </div>
+                <div class="row">
+                    <div class="col-6">
+                        <nav id="ftr-menu" class="navbar navbar-expand-lg">
+                            <div class="container-fluid">
+                                <div class="collapse navbar-collapse">
+                                    <ul class="navbar-nav d-flex flex-column me-auto mb-2 mb-lg-0">
+                                        <li class="nav-item"><a class="nav-link"
+                                                href="/about"><?php _e('About us', 'akfgfragments') ?></a></li>
+                                        <li class="nav-item"><a class="nav-link"
+                                                href="/team"><?php _e('Team', 'akfgfragments') ?></a></li>
+                                        <li class="nav-item"><a class="nav-link"
+                                                href="/thanks"><?php _e('Thanks', 'akfgfragments') ?></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
                     </div>
-                </nav>
-                <nav id="ftr-socials" class="navbar navbar-expand-lg">
-                    <div class="container-fluid">
-                        <div class="collapse navbar-collapse">
-                            <ul class="navbar-nav d-flex flex-row">
-                                <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="https://twitter.com/AkfgfragmentsEn" rel="nofollow" target="_blank" role="img" title="Twitter" aria-label="Twitter">
-                                        <i class="bi bi-twitter"></i>
-                                    </a>
-                                </li>
-                                <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="https://t.me/akfgfragments" rel="nofollow" target="_blank" role="img" title="Telegram" aria-label="Telegram">
-                                        <i class="bi bi-telegram"></i>
-                                    </a>
-                                </li>
-                                <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="https://facebook.com/akfgfragmentscom" rel="nofollow" target="_blank" role="img" title="Telegram" aria-label="Telegram">
-                                        <i class="bi bi-facebook"></i>
-                                    </a>
-                                </li>
-                                <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="https://discord.gg/mQJ4TcjM3h" rel="nofollow" target="_blank" role="img" title="Discord" aria-label="Discord">
-                                        <i class="bi bi-discord"></i>
-                                    </a>
-                                </li>
-                                <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="https://www.reddit.com/r/AsianKungFuGeneration" rel="nofollow" target="_blank" role="img" title="Reddit" aria-label="Reddit">
-                                        <i class="bi bi-reddit"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="col-6">
+                        <nav id="ftr-socials" class="navbar navbar-expand-lg">
+                            <div class="container-fluid">
+                                <div class="collapse navbar-collapse">
+                                    <ul class="navbar-nav d-flex flex-column">
+                                        <li class="nav-item me-3 me-lg-0">
+                                            <a class="nav-link" href="https://twitter.com/AkfgfragmentsEn"
+                                                rel="nofollow" target="_blank" role="img" title="Twitter"
+                                                aria-label="Twitter">Twitter</a>
+                                        </li>
+                                        <li class="nav-item me-3 me-lg-0">
+                                            <a class="nav-link" href="https://t.me/akfgfragments" rel="nofollow"
+                                                target="_blank" role="img" title="Telegram"
+                                                aria-label="Telegram">Telegram</a>
+                                        </li>
+                                        <li class="nav-item me-3 me-lg-0">
+                                            <a class="nav-link" href="https://facebook.com/akfgfragmentscom"
+                                                rel="nofollow" target="_blank" role="img" title="Telegram"
+                                                aria-label="Telegram">Facebook</a>
+                                        </li>
+                                        <li class="nav-item me-3 me-lg-0">
+                                            <a class="nav-link" href="https://discord.gg/mQJ4TcjM3h" rel="nofollow"
+                                                target="_blank" role="img" title="Discord"
+                                                aria-label="Discord">Discord</a>
+                                        </li>
+                                        <li class="nav-item me-3 me-lg-0">
+                                            <a class="nav-link" href="https://www.reddit.com/r/AsianKungFuGeneration"
+                                                rel="nofollow" target="_blank" role="img" title="Reddit"
+                                                aria-label="Reddit">Reddit</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
                     </div>
-                </nav>
+                </div>
             </div>
         </div>
-        <div class="row text-center">
-            <p>akfgfragments © <?php echo date('Y'); ?></p>
+        <div id="ftr-copyright" class="row text-center">
+            <p class="mb-0">akfgfragments © <?php echo date('Y'); ?></p>
         </div>
     </div>
+    <?php wp_footer(); ?>
 </footer>

@@ -1,0 +1,365 @@
+# Copyright (C) 2023 Timofey Gribanov
+# This file is distributed under the .
+msgid ""
+msgstr ""
+"Project-Id-Version: akfgfragments\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/akfgfragments\n"
+"Last-Translator: \n"
+"Language-Team: Belarusian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-05-18T15:20:38+02:00\n"
+"PO-Revision-Date: 2023-06-14 14:04\n"
+"X-Generator: WP-CLI 2.7.1\n"
+"X-Domain: akfgfragments\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n%100>=11 && n%100<=14 ? 2 : 3);\n"
+"X-Crowdin-Project: akfgfragments\n"
+"X-Crowdin-Project-ID: 538230\n"
+"X-Crowdin-Language: be\n"
+"X-Crowdin-File: akfgfragments.pot\n"
+"X-Crowdin-File-ID: 4\n"
+"Language: be_BY\n"
+
+#: 404.php:8
+msgid "Oops!"
+msgstr "Вой!"
+
+#: 404.php:9
+msgid "It seems that this page doesn't exist."
+msgstr "Здаецца, гэтай старонкі не існуе."
+
+#: 404.php:17
+msgid "Go to our <a href=\"https://akfgfragments.com\">home page</a> or check the <a href=\"%s\">latest material</a> we've written."
+msgstr "Перайдзіце на нашу <a href=\"https://akfgfragments.com\">галоўную старонку</a> або прачытайце наш <a href=\"%s\">апошні артыкул</a>."
+
+#: footer.php:11
+msgid "Your guide to Asian Kung-Fu Generation world"
+msgstr "Твой гід у сьвет Asian Kung-Fu Generation"
+
+#: footer.php:25
+#: header-header.php:118
+msgid "About us"
+msgstr "Пра нас"
+
+#: footer.php:27
+#: header-header.php:121
+msgid "Team"
+msgstr "Каманда"
+
+#: footer.php:29
+#: header-header.php:124
+msgid "Thanks"
+msgstr "Падзякі"
+
+#: get_catalogue_info.php:39
+msgid "Sorry! There's no information about this version."
+msgstr "Выбачце! Няма інфармацыі пра гэту вэрсію."
+
+#: get_interviews.php:54
+msgid "Date of the interview"
+msgstr "Дата інтэрвію"
+
+#: header-header.php:56
+#: header-header.php:95
+msgid "Discography"
+msgstr "Дыскаграфія"
+
+#: header-header.php:59
+#: header-header.php:98
+msgid "Music Videos"
+msgstr "Відэакліпы"
+
+#: header-header.php:62
+#: header-header.php:101
+msgid "Lyrics"
+msgstr "Тэксты песень"
+
+#: header-header.php:65
+#: header-header.php:104
+msgid "Tablatures"
+msgstr "Табулатуры"
+
+#: header-header.php:68
+#: header-header.php:107
+msgid "Interviews"
+msgstr "Інтэрвію"
+
+#: header-header.php:71
+#: header-header.php:110
+msgid "Stuff"
+msgstr "Атрыбутыка"
+
+#: header-header.php:75
+#: header-header.php:114
+msgid "Side Projects"
+msgstr "Пабочныя праекты"
+
+#: header-header.php:92
+#: header.php:28
+msgid "Home"
+msgstr "Галоўная"
+
+#: header-header.php:133
+msgid "Join our Discord"
+msgstr "Далучайцеся да нас у Discord"
+
+#: header.php:40
+msgid "Tabs"
+msgstr "табы"
+
+#: header.php:61
+msgid "Interview: "
+msgstr "Інтэрвію: "
+
+#: header.php:131
+msgid "Your ultimate guide to Asian Kung-Fu Generation world. News, discography, lyrics, tabs, interviews, music videos – all in one place!"
+msgstr "Твой гід у сьвет Asian Kung-Fu Generation. Навіны, дыскаграфія, тэксты песень, відэакліпы – усё ў адному месьце!"
+
+#: header.php:166
+msgid "Your ultimate guide to Asian Kung-Fu Generation world."
+msgstr "Твой гід у сьвет Asian Kung-Fu Generation."
+
+#: index.php:17
+#: templates/blank.php:19
+msgid "Sorry, no posts matched your criteria."
+msgstr "Выбачайце, але ні чаго ня знойдзена."
+
+#: index.php:30
+msgid "Pagination"
+msgstr "Пагінацыя"
+
+#: load_lyrics.php:47
+msgid "Japanese"
+msgstr "японскую"
+
+#: load_lyrics.php:50
+#: templates/song.php:200
+msgid "romaji"
+msgstr "ромадзі"
+
+#: load_lyrics.php:53
+#: templates/interview.php:28
+#: templates/interviews.php:21
+msgid "English"
+msgstr "ангельскую"
+
+#: load_lyrics.php:56
+#: templates/interview.php:37
+#: templates/interviews.php:30
+msgid "French"
+msgstr "францускую"
+
+#: load_lyrics.php:59
+#: templates/interview.php:31
+#: templates/interviews.php:24
+msgid "German"
+msgstr "нямецкую"
+
+#: load_lyrics.php:62
+#: templates/interview.php:34
+#: templates/interviews.php:27
+msgid "Spanish"
+msgstr "гішпанскую"
+
+#: load_lyrics.php:65
+msgid "Portuguese"
+msgstr "партугальскую"
+
+#: load_lyrics.php:68
+#: templates/interview.php:40
+#: templates/interviews.php:33
+msgid "Russian"
+msgstr "расейскую"
+
+#: load_lyrics.php:71
+msgid "Ukrainian"
+msgstr "украінскай"
+
+#: load_lyrics.php:74
+msgid "Belarusian"
+msgstr "беларускай"
+
+#: load_lyrics.php:77
+msgid "the selected language"
+msgstr "абранай мове"
+
+#: load_lyrics.php:80
+msgid "Sorry! This song's lyrics are not yet available in "
+msgstr "Выбачце! Тэкст гэтай песьні пакуль не перакладаны на "
+
+#: posts.php:78
+#: templates/blank.php:12
+#: templates/blank.php:16
+msgid "(more...)"
+msgstr "(болей...)"
+
+#: sidebar.php:5
+msgid "Join our Discord server!"
+msgstr "Далучайцеся да серверу ў Discord!"
+
+#: sidebar.php:6
+msgid "We have interesting Asian Kung-Fu Generation related discussions there, and more!"
+msgstr "Там у нас цікавыя абмеркаваньні аб Asian Kung-Fu Generation, і іншае!"
+
+#: sidebar.php:15
+msgid "Follow us on Twitter!"
+msgstr "Падпішыцеся на наш Twitter!"
+
+#: sidebar.php:16
+msgid "All the news are there!"
+msgstr "Усе навіны — там!"
+
+#: sidebar.php:25
+msgid "The latest release"
+msgstr "Апошні рэліз"
+
+#: sidebar.php:36
+msgid "Release date: "
+msgstr "Дата рэлизу: "
+
+#: sidebar.php:38
+msgid "Type: "
+msgstr "Тып: "
+
+#: sidebar.php:40
+msgid "More about this release"
+msgstr "Больш пра рэліз"
+
+#: templates/disco.php:81
+msgid "Jump to:"
+msgstr "Перайсьці да:"
+
+#: templates/disco.php:82
+msgid "albums"
+msgstr "альбомаў"
+
+#: templates/disco.php:83
+msgid "singles"
+msgstr "сінглаў"
+
+#: templates/disco.php:84
+msgid "compilations"
+msgstr "зборнікаў"
+
+#: templates/disco.php:85
+msgid "indies"
+msgstr "індзі-рэлізаў"
+
+#: templates/interview.php:24
+msgid "Change the interview's language"
+msgstr "Зьмяніць мову інтэрвію"
+
+#: templates/interviews.php:17
+msgid "Change interviews' language"
+msgstr "Зьмяніць мову інтэрвію"
+
+#: templates/music-videos.php:26
+#: templates/mv.php:35
+msgid "Year"
+msgstr "Год"
+
+#: templates/music-videos.php:27
+#: templates/mv.php:34
+msgid "Director"
+msgstr "Рэжысэр"
+
+#: templates/release.php:29
+msgid "Type of release:"
+msgstr "Тып выданьня:"
+
+#: templates/release.php:42
+msgid "Release date:"
+msgstr "Дата выданьня:"
+
+#: templates/release.php:68
+msgid "Tracklist:"
+msgstr "Сьпіс песень:"
+
+#: templates/release.php:130
+#: templates/song.php:84
+#: templates/song.php:240
+msgid "more..."
+msgstr "болей..."
+
+#: templates/release.php:171
+#: templates/release.php:254
+msgid "Versions:"
+msgstr "Версіі:"
+
+#: templates/song-tabs.php:21
+msgid "Information about the song"
+msgstr "Інфармацыя пра песьню"
+
+#: templates/song-tabs.php:53
+msgid "Full Band Score"
+msgstr "Усе партыі"
+
+#: templates/song-tabs.php:55
+msgid "Rhythm Guitar (Gotoh)"
+msgstr "Рытм-гітара (Ґота)"
+
+#: templates/song-tabs.php:57
+msgid "Lead Guitar (Kita)"
+msgstr "Лід-гітара (Кіта)"
+
+#: templates/song-tabs.php:59
+msgid "Bass (Yamada)"
+msgstr "Бас-гітара (Ямада)"
+
+#: templates/song-tabs.php:61
+msgid "Drums (Ijichi)"
+msgstr "Ударныя (Ідзіці)"
+
+#: templates/song.php:29
+msgid "Part of:"
+msgstr "Частка:"
+
+#: templates/song.php:45
+msgid "Tabs:"
+msgstr "Табы:"
+
+#: templates/song.php:194
+msgid "Lyrics:"
+msgstr "Тэкст песьні:"
+
+#: templates/song.php:198
+msgid "japanese"
+msgstr "японская"
+
+#: templates/song.php:202
+msgid "english"
+msgstr "ангельская"
+
+#: templates/song.php:204
+msgid "french"
+msgstr "француская"
+
+#: templates/song.php:206
+msgid "german"
+msgstr "нямецкая"
+
+#: templates/song.php:208
+msgid "spanish"
+msgstr "гішпанская"
+
+#: templates/song.php:210
+msgid "portuguese"
+msgstr "партугальская"
+
+#: templates/song.php:212
+msgid "russian"
+msgstr "расейская"
+
+#: templates/song.php:214
+msgid "ukrainian"
+msgstr "украінская"
+
+#: templates/song.php:216
+msgid "belarusian"
+msgstr "беларуская"
+
+#: templates/song.php:237
+msgid "less..."
+msgstr "меньш..."
+

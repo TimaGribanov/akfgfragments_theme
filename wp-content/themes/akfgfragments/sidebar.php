@@ -1,94 +1,52 @@
-<script type="text/javascript">
-    //Scroll through socials
-    (function($) {
+<?php require_once(get_theme_root() . "/akfgfragments/normalise_title.php"); ?>
 
-        $(document).ready(function() {
-            var socials = $('#main-socials-block').find('.main-socials');
-            var socialsDots = $('#main-social-dots').find('.main-social-dot');
-            var i = 0;
-            setInterval(function() {
-                if (i == socials.length) {
-                    i = 0;
-                }
-                var j;
-                if (i == socials.length - 1) {
-                    
-                    j = 0;
-                } else {
-                    j = i + 1;
-                }
-                var currentElement = $(socials[i]);
-                var currentDot = $(socialsDots[i]);
-                var nextElement = $(socials[j]);
-                var nextDot = $(socialsDots[j]);
-
-                currentElement.hide();
-                currentDot.attr('style', 'background-color: #bbb;');
-                nextElement.show();
-                nextDot.attr('style', 'background-color: var(--text-colour);');
-
-                i++;
-            }, 15000);
-        });
-
-    })( jQuery );
-</script>
-
-<div id="main-sidebar" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 d-none d-lg-block d-xl-block d-xxl-block">
-    <div id="main-discord" class="main-side-block text-center border border-light border-2 rounded-2">
-        <h4><?php _e("Join our Discord server!"); ?></h3>
-        <p><?php _e("We have interesting Asian Kung-Fu Generation related discussions there, and more!"); ?></p>
-        <a href="https://discord.gg/mQJ4TcjM3h" target="_blank"><button type="button" class="btn btn-discord mb-2"><i class="bi bi-discord"></i><span class="main-btn-text">Join</span></button></a>
+<div id="main-sidebar" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 d-none d-lg-block d-xl-block d-xxl-block">
+    <div id="main-discord" class="main-side-block text-center">
+        <h4><?php _e('Join our Discord server!', 'akfgfragments'); ?></h4>
+        <p><?php _e('We have interesting Asian Kung-Fu Generation related discussions there, and more!', 'akfgfragments'); ?>
+        </p>
+        <a href="https://discord.gg/mQJ4TcjM3h" target="_blank"><button type="button" class="btn btn-discord mb-2"><i
+                    class="bi bi-discord"></i><span class="main-btn-text">Join</span></button></a>
     </div>
 
-    <div id="main-socials-block" class="main-side-block text-center border border-light border-2 rounded-2">
-        <div id="main-social-1" class="main-socials">
-            <a class="twitter-timeline" data-width="300" data-height="400" data-dnt="true" href="https://twitter.com/AkfgfragmentsEn?ref_src=twsrc%5Etfw">Tweets by AkfgfragmentsEn</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
-        </div>
-        <div id="main-social-2" class="main-socials">
-            <a class="twitter-timeline" data-width="300" data-height="400" data-dnt="true" href="https://twitter.com/AKG_information?ref_src=twsrc%5Etfw">Tweets by AKG_information</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-        <div id="main-social-3" class="main-socials">
-            <a class="twitter-timeline" data-width="300" data-height="400" data-dnt="true" href="https://twitter.com/gotch_akg?ref_src=twsrc%5Etfw">Tweets by gotch_akg</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-        <div id="main-social-4" class="main-socials">
-            <a class="twitter-timeline" data-width="300" data-height="400" data-dnt="true" href="https://twitter.com/kiyoshiakg?ref_src=twsrc%5Etfw">Tweets by kiyoshiakg</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-        <div id="main-social-dots">
-            <span class="main-social-dot"></span>
-            <span class="main-social-dot"></span>
-            <span class="main-social-dot"></span>
-            <span class="main-social-dot"></span>
-        </div>
+    <hr class="block-separator" />
+
+    <div id="main-twitter-block" class="main-side-block text-center">
+        <h4><?php _e('Follow us on Twitter!', 'akfgfragments'); ?></h4>
+        <p><?php _e('All the news are there!', 'akfgfragments'); ?></p>
+        <a href="https://twitter.com/AkfgfragmentsEn" target="_blank"><button type="button"
+                class="btn btn-twitter mb-2"><i class="bi bi-twitter"></i><span
+                    class="main-btn-text">Follow</span></button></a>
     </div>
 
-    <script type="text/javascript">
-        //Click through socials
-        (function($) {
+    <hr class="block-separator" />
 
-            $('.main-social-dot').on('click', function() {
-                var socials = $('#main-socials-block').find('.main-socials');
-                var socialsDots = $('#main-social-dots').find('.main-social-dot');
-
-                var index = $('.main-social-dot').index(this);
-
-                var currentIndex;
-                socials.each(function() {
-                    if($(this).is(':visible')) {
-                        currentIndex = $(socials).index(this);
-                    }
-                });
-
-                $(socials[currentIndex]).hide();
-                $(socialsDots[currentIndex]).attr('style', 'background-color: #bbb;');
-                $(socials[index]).show();
-                $(socialsDots[index]).attr('style', 'background-color: var(--text-colour);');
-            });
-
-        })( jQuery );
-    </script>
-
-    <div id="main-ajikan-project" class="main-side-block text-center border border-light border-2 rounded-2">
-        <a href="https://ajikanproject.com" target="_blank"><img class="rounded-2" src="/wp-content/themes/akfgfragments/assets/img/ajikan_project_logo.png" width="300px" height="300px"/></a>
+    <div id="main-latest-release" class="main-side-block text-center">
+        <h4><?php _e('The latest release', 'akfgfragments'); ?></h4>
+        <?php
+        $releasedb = new wpdb(DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST);
+        $results = $releasedb->get_results("SELECT r.title_ro AS title, r.date AS `date`, r.img_uri AS uri, t.type AS type FROM releases r JOIN types t ON t.id = r.type ORDER BY r.date DESC LIMIT 1;");
+        ?>
+        <h5><?php echo $results[0]->title; ?></h5>
+        <img src="<?php echo $results[0]->uri; ?>"
+            alt="<?php echo "Cover of " . $results[0]->title . " " . $results[0]->type; ?>" width="200px"
+            height="200px" />
+        <?php $date_format = get_option('date_format');
+        $rel_date = $results[0]->date; ?>
+        <p class="mb-1"><?php _e('Release date: ', 'akfgfragments');
+        echo wp_date("{$date_format}", strtotime("$rel_date")); ?></p>
+        <p class="mb-1"><?php _e('Type: ', 'akfgfragments');
+        echo $results[0]->type; ?></p>
+        <a class="main-latest-release-link" href="/release?<?php echo normaliseTitle($results[0]->title); ?>"><?php _e('More about this release', 'akfgfragments'); ?></a>
     </div>
+
+    <hr class="block-separator" />
+
+    <div id="main-ajikan-project" class="main-side-block text-center">
+        <a href="https://ajikanproject.com" target="_blank"><img
+                src="/wp-content/themes/akfgfragments/assets/img/ajikan_project_logo.png" width="300px"
+                height="300px" /></a>
+    </div>
+
+    <hr class="block-separator" />
 </div>

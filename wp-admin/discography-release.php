@@ -16,6 +16,8 @@ $title       = __( 'Releases' );
 $this_file   = 'discography-release.php';
 $parent_file = 'discography-release.php';
 
+$type = "";
+
 $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $query = parse_url($url, PHP_URL_QUERY); //Get a $query
 if(strpos($query, "release_type=") !== false) {

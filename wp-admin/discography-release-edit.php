@@ -256,6 +256,8 @@ $title_parsed = str_replace('%3F', '?', $title_parsed); //Cahnge %3F to a questi
 
                 $i++;
             }
+
+            echo "<meta http-equiv='refresh' content='0'>";
         }
     ?>
 </div>

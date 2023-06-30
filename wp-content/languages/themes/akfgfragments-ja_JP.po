@@ -1,0 +1,365 @@
+# Copyright (C) 2023 Timofey Gribanov
+# This file is distributed under the .
+msgid ""
+msgstr ""
+"Project-Id-Version: akfgfragments\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/akfgfragments\n"
+"Last-Translator: \n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-05-18T15:20:38+02:00\n"
+"PO-Revision-Date: 2023-06-14 14:04\n"
+"X-Generator: WP-CLI 2.7.1\n"
+"X-Domain: akfgfragments\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: akfgfragments\n"
+"X-Crowdin-Project-ID: 538230\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: akfgfragments.pot\n"
+"X-Crowdin-File-ID: 4\n"
+"Language: ja_JP\n"
+
+#: 404.php:8
+msgid "Oops!"
+msgstr "おっと！"
+
+#: 404.php:9
+msgid "It seems that this page doesn't exist."
+msgstr "このページが存在しないようです。"
+
+#: 404.php:17
+msgid "Go to our <a href=\"https://akfgfragments.com\">home page</a> or check the <a href=\"%s\">latest material</a> we've written."
+msgstr "<a href=\"https://akfgfragments.com\">ホームページ</a> に移動するか、 <a href=\"%s\">最新の記事</a> を確認してください。"
+
+#: footer.php:11
+msgid "Your guide to Asian Kung-Fu Generation world"
+msgstr "アジアン・カンフー・ジェネレーションの世界へのガイド"
+
+#: footer.php:25
+#: header-header.php:118
+msgid "About us"
+msgstr "情報"
+
+#: footer.php:27
+#: header-header.php:121
+msgid "Team"
+msgstr "チーム"
+
+#: footer.php:29
+#: header-header.php:124
+msgid "Thanks"
+msgstr "感謝"
+
+#: get_catalogue_info.php:39
+msgid "Sorry! There's no information about this version."
+msgstr "申し訳ありませんが、このバージョンについての情報はありません。"
+
+#: get_interviews.php:54
+msgid "Date of the interview"
+msgstr "インタビューの日付"
+
+#: header-header.php:56
+#: header-header.php:95
+msgid "Discography"
+msgstr "ディスコグラフィー"
+
+#: header-header.php:59
+#: header-header.php:98
+msgid "Music Videos"
+msgstr "ミュージックビデオ"
+
+#: header-header.php:62
+#: header-header.php:101
+msgid "Lyrics"
+msgstr "歌詞"
+
+#: header-header.php:65
+#: header-header.php:104
+msgid "Tablatures"
+msgstr "タブ"
+
+#: header-header.php:68
+#: header-header.php:107
+msgid "Interviews"
+msgstr "インタビュー"
+
+#: header-header.php:71
+#: header-header.php:110
+msgid "Stuff"
+msgstr "グッズ"
+
+#: header-header.php:75
+#: header-header.php:114
+msgid "Side Projects"
+msgstr "サイドプロジェクト"
+
+#: header-header.php:92
+#: header.php:28
+msgid "Home"
+msgstr "ホーム"
+
+#: header-header.php:133
+msgid "Join our Discord"
+msgstr "Discord に参加する"
+
+#: header.php:40
+msgid "Tabs"
+msgstr "タブ"
+
+#: header.php:61
+msgid "Interview: "
+msgstr "インタビュー: "
+
+#: header.php:131
+msgid "Your ultimate guide to Asian Kung-Fu Generation world. News, discography, lyrics, tabs, interviews, music videos – all in one place!"
+msgstr "最新ニュース、ディスコグラフィー、歌詞、タブ、インタビュー、ミュージックビデオ。 すべて1つの場所にあります!"
+
+#: header.php:166
+msgid "Your ultimate guide to Asian Kung-Fu Generation world."
+msgstr "アジアン・カンフー・ジェネレーションの世界へのガイド。"
+
+#: index.php:17
+#: templates/blank.php:19
+msgid "Sorry, no posts matched your criteria."
+msgstr "申し訳ありませんが、条件に一致する投稿はありません。"
+
+#: index.php:30
+msgid "Pagination"
+msgstr "ページネーション"
+
+#: load_lyrics.php:47
+msgid "Japanese"
+msgstr "日本語にまだ利用できません。"
+
+#: load_lyrics.php:50
+#: templates/song.php:200
+msgid "romaji"
+msgstr "ローマ字にまだ利用できません。"
+
+#: load_lyrics.php:53
+#: templates/interview.php:28
+#: templates/interviews.php:21
+msgid "English"
+msgstr "英語にまだ利用できません。"
+
+#: load_lyrics.php:56
+#: templates/interview.php:37
+#: templates/interviews.php:30
+msgid "French"
+msgstr "フランス語にまだ利用できません。"
+
+#: load_lyrics.php:59
+#: templates/interview.php:31
+#: templates/interviews.php:24
+msgid "German"
+msgstr "ドイツ語にまだ利用できません。"
+
+#: load_lyrics.php:62
+#: templates/interview.php:34
+#: templates/interviews.php:27
+msgid "Spanish"
+msgstr "スペイン語にまだ利用できません。"
+
+#: load_lyrics.php:65
+msgid "Portuguese"
+msgstr "ポルトガル語にまだ利用できません。"
+
+#: load_lyrics.php:68
+#: templates/interview.php:40
+#: templates/interviews.php:33
+msgid "Russian"
+msgstr "ロシア語にまだ利用できません。"
+
+#: load_lyrics.php:71
+msgid "Ukrainian"
+msgstr "ウクライナ語にまだ利用できません。"
+
+#: load_lyrics.php:74
+msgid "Belarusian"
+msgstr "ベラルーシ語にまだ利用できません。"
+
+#: load_lyrics.php:77
+msgid "the selected language"
+msgstr "この言語にまだ利用できません。"
+
+#: load_lyrics.php:80
+msgid "Sorry! This song's lyrics are not yet available in "
+msgstr "申し訳ありません！この曲の歌詞は"
+
+#: posts.php:78
+#: templates/blank.php:12
+#: templates/blank.php:16
+msgid "(more...)"
+msgstr "(もっと...)"
+
+#: sidebar.php:5
+msgid "Join our Discord server!"
+msgstr "Discordサーバーに参加しましょう！"
+
+#: sidebar.php:6
+msgid "We have interesting Asian Kung-Fu Generation related discussions there, and more!"
+msgstr "そこに興味深いアジカン昆布の世代関連の議論などがあります!"
+
+#: sidebar.php:15
+msgid "Follow us on Twitter!"
+msgstr "Twitterでフォロー！"
+
+#: sidebar.php:16
+msgid "All the news are there!"
+msgstr "ニュースはすべてそこにあります！"
+
+#: sidebar.php:25
+msgid "The latest release"
+msgstr "最新のリリース"
+
+#: sidebar.php:36
+msgid "Release date: "
+msgstr "リリース日: "
+
+#: sidebar.php:38
+msgid "Type: "
+msgstr "種別: "
+
+#: sidebar.php:40
+msgid "More about this release"
+msgstr "このリリースについて"
+
+#: templates/disco.php:81
+msgid "Jump to:"
+msgstr "移動先:"
+
+#: templates/disco.php:82
+msgid "albums"
+msgstr "アルバム"
+
+#: templates/disco.php:83
+msgid "singles"
+msgstr "シングル"
+
+#: templates/disco.php:84
+msgid "compilations"
+msgstr "コンピレーション"
+
+#: templates/disco.php:85
+msgid "indies"
+msgstr "インディ"
+
+#: templates/interview.php:24
+msgid "Change the interview's language"
+msgstr "インタビューの言語を変更する"
+
+#: templates/interviews.php:17
+msgid "Change interviews' language"
+msgstr "インタビューの言語を変更する"
+
+#: templates/music-videos.php:26
+#: templates/mv.php:35
+msgid "Year"
+msgstr "年"
+
+#: templates/music-videos.php:27
+#: templates/mv.php:34
+msgid "Director"
+msgstr "監督"
+
+#: templates/release.php:29
+msgid "Type of release:"
+msgstr "リリースの種類:"
+
+#: templates/release.php:42
+msgid "Release date:"
+msgstr "リリース日:"
+
+#: templates/release.php:68
+msgid "Tracklist:"
+msgstr "曲のリスト:"
+
+#: templates/release.php:130
+#: templates/song.php:84
+#: templates/song.php:240
+msgid "more..."
+msgstr "もっと..."
+
+#: templates/release.php:171
+#: templates/release.php:254
+msgid "Versions:"
+msgstr "バージョン:"
+
+#: templates/song-tabs.php:21
+msgid "Information about the song"
+msgstr "曲についての情報"
+
+#: templates/song-tabs.php:53
+msgid "Full Band Score"
+msgstr "フルバンドスコア"
+
+#: templates/song-tabs.php:55
+msgid "Rhythm Guitar (Gotoh)"
+msgstr "リズムギター（後藤）"
+
+#: templates/song-tabs.php:57
+msgid "Lead Guitar (Kita)"
+msgstr "リードギター（喜多）"
+
+#: templates/song-tabs.php:59
+msgid "Bass (Yamada)"
+msgstr "ベース（山田）"
+
+#: templates/song-tabs.php:61
+msgid "Drums (Ijichi)"
+msgstr "ドラムス（伊地知）"
+
+#: templates/song.php:29
+msgid "Part of:"
+msgstr "その一部:"
+
+#: templates/song.php:45
+msgid "Tabs:"
+msgstr "タブ:"
+
+#: templates/song.php:194
+msgid "Lyrics:"
+msgstr "歌詞:"
+
+#: templates/song.php:198
+msgid "japanese"
+msgstr "日本語"
+
+#: templates/song.php:202
+msgid "english"
+msgstr "英語"
+
+#: templates/song.php:204
+msgid "french"
+msgstr "フランス語"
+
+#: templates/song.php:206
+msgid "german"
+msgstr "ドイツ語"
+
+#: templates/song.php:208
+msgid "spanish"
+msgstr "スペイン語"
+
+#: templates/song.php:210
+msgid "portuguese"
+msgstr "ポルトガル語"
+
+#: templates/song.php:212
+msgid "russian"
+msgstr "ロシア語"
+
+#: templates/song.php:214
+msgid "ukrainian"
+msgstr "ウクライナ語"
+
+#: templates/song.php:216
+msgid "belarusian"
+msgstr "ベラルーシ語"
+
+#: templates/song.php:237
+msgid "less..."
+msgstr "少ない..."
+
