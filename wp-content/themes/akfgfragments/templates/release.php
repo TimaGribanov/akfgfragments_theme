@@ -339,18 +339,19 @@ function printSpotify($url)
     //Versions desktop
     $('.rel-ver-btn').click(function () {
         const cat = $(this).attr('name')
+        const catHtml = cat.replace('.', '\\.') //needed for handling dots
 
-        if ($(`#version-info-${cat}`).css('display') == 'none') {
+        if ($(`#version-info-${catHtml}`).css('display') == 'none') {
             $.ajax({
                 url: `/wp-content/themes/akfgfragments/get_catalogue_info.php?cat=${cat}`,
                 success: function (response) {
-                    $(`#version-info-${cat}`).html(response)
-                    $(`#version-info-${cat}`).css({ display: "block" })
+                    $(`#version-info-${catHtml}`).html(response)
+                    $(`#version-info-${catHtml}`).css({ display: "block" })
                 }
             })
         }
         else {
-            $(`#version-info-${cat}`).css({ display: "none" })
+            $(`#version-info-${catHtml}`).css({ display: "none" })
         }
 
     })
@@ -358,18 +359,19 @@ function printSpotify($url)
     //Versions mobile
     $('.rel-ver-btn').click(function () {
         const cat = $(this).attr('name')
+        const catHtml = cat.replace('.', '\\.') //needed for handling dots
 
-        if ($(`#version-info-${cat}-mobile`).css('display') == 'none') {
+        if ($(`#version-info-${catHtml}-mobile`).css('display') == 'none') {
             $.ajax({
                 url: `/wp-content/themes/akfgfragments/get_catalogue_info.php?cat=${cat}`,
                 success: function (response) {
-                    $(`#version-info-${cat}-mobile`).html(response)
-                    $(`#version-info-${cat}-mobile`).css({ display: "block" })
+                    $(`#version-info-${catHtml}-mobile`).html(response)
+                    $(`#version-info-${catHtml}-mobile`).css({ display: "block" })
                 }
             })
         }
         else {
-            $(`#version-info-${cat}-mobile`).css({ display: "none" })
+            $(`#version-info-${catHtml}-mobile`).css({ display: "none" })
         }
 
     })
