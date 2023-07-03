@@ -58,7 +58,7 @@ if (is_single() && 'interview' == get_post_type()) { ?>
     // FOR FEED
 } else { ?>
         <!-- DESKTOP -->
-        <div class="row main-post d-none d-lg-block d-xl-block d-xxl-block">
+        <div class="row main-post d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
             <div class="row">
                 <div class="col-4">
                     <?php
@@ -101,7 +101,7 @@ if (is_single() && 'interview' == get_post_type()) { ?>
         </div>
 
         <!-- MOBILE -->
-        <div class="row main-post d-block d-sm-block d-md-block">
+        <div class="row main-post d-block d-sm-block d-md-block d-lg-none d-xl-none d-xxl-none">
             <div class="row">
                 <div class="row">
                     <?php
