@@ -38,6 +38,8 @@ if ($interviews->have_posts()) {
                 <p><?php the_excerpt(); ?></p>
             </div>
         </div>
+
+        <hr class="block-separator" />
         <?php
     }
 
