@@ -14,6 +14,8 @@ $title_parsed = str_replace('/\'', '\'', $title_parsed); //Delete slashes if the
 $title_parsed = str_replace('%26', '&', $title_parsed); //Change %26 to an ampersand
 $title_parsed = str_replace('%23', '#', $title_parsed); //Change %26 to a number sign
 $title_parsed = str_replace('%3F', '?', $title_parsed); //Change %26 to a question mark
+$title_parsed = str_replace('%28', '(', $title_parsed); //Change %28 to an opening bracket
+$title_parsed = str_replace('%29', ')', $title_parsed); //Change %29 to a closing bracket
 $title_split = explode(" ", $title_parsed);
 $particles_list = array("no", "wo", "de", "wa", "ni", "ga", "e", "mo", "kara", "made", "yo", "ne", "ka", "ya", "to");
 foreach ($title_split as $part) {
