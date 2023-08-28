@@ -5,7 +5,7 @@ Author: Timofey Gribanov
 Author URI: https://github.com/TimaGribanov
 Description: A simple but effective WordPress theme for akfgfragments – international Asian Kung-Fu Generation fan project.
 Text Domain: akfgfragments
-Version: 0.2.8-beta
+Version: 0.2.9-beta
 */
 
 /*************/
@@ -435,11 +435,9 @@ strong {
     color: var(--text-colour);
 }
 
-@media (max-width: 991px) {
-    .wp-block-image img {
-        width: 100%;
-        height: auto;
-    }
+.wp-block-image img {
+    width: 100%;
+    height: auto;
 }
 
 .wp-block-image .aligncenter {
