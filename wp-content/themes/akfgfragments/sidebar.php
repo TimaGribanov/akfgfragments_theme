@@ -43,7 +43,7 @@
     <hr class="block-separator" />
 
     <div id="main-ajikan-project" class="main-side-block text-center">
-        <a href="https://ajikanproject.com" target="_blank"><img
+        <a href="https://ajikanproject.akfgfragments.com" target="_blank"><img
                 src="/wp-content/themes/akfgfragments/assets/img/ajikan_project_logo.png" width="300px"
                 height="300px" /></a>
     </div>
