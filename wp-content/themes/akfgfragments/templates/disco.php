@@ -114,6 +114,8 @@ function capitaiseFirstLetter($input) {
                             case 'ru_RU':
                                 $type_print = capitaiseFirstLetter( pluraliseTypes($type->type_string_ru, 'ru_RU') );
                                 break;
+                            case 'id_ID':
+                                $type_print = capitaiseFirstLetter( pluraliseTypes($type->type_string_id, 'id_ID') );
                             default:
                                 $type_print = ucwords($type->type_string) . "s";
                                 break;
