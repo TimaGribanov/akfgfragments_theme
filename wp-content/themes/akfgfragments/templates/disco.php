@@ -88,7 +88,7 @@ function capitaiseFirstLetter($input) {
                     </div>
                     <?php
                     $discodb = new wpdb(DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST);
-                    $results_types = $discodb->get_results("SELECT DISTINCT t.`type` AS type_string, t.`type_de` AS type_string_de, t.`type_uk` AS type_string_uk, t.`type_be` AS type_string_be, t.`type_ja` AS type_string_ja, t.`type_ru` AS type_string_ru, r.`type` AS type_int FROM releases r JOIN types t ON t.id = r.`type`;");
+                    $results_types = $discodb->get_results("SELECT DISTINCT t.`type` AS type_string, t.`type_de` AS type_string_de, t.`type_uk` AS type_string_uk, t.`type_be` AS type_string_be, t.`type_ja` AS type_string_ja, t.`type_ru` AS type_string_ru, t.`type_id` AS type_string_id, r.`type` AS type_int FROM releases r JOIN types t ON t.id = r.`type`;");
 
                     foreach ($results_types as $type) {
                         echo "<div class='row mb-2'>";
