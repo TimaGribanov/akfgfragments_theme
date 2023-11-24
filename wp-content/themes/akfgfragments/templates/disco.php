@@ -116,6 +116,7 @@ function capitaiseFirstLetter($input) {
                                 break;
                             case 'id_ID':
                                 $type_print = capitaiseFirstLetter( pluraliseTypes($type->type_string_id, 'id_ID') );
+                                break;
                             default:
                                 $type_print = ucwords($type->type_string) . "s";
                                 break;
