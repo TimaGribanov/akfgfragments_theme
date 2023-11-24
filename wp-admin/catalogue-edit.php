@@ -37,6 +37,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                     <input type="text" id="num" name="num" value="<?php echo $row->num; ?>" required>
                     <label for="info">
                         <h3>Info*:</h3>
+                        <h5>Only English now, sorry. It'll be fixed</h5>
                     </label>
                     <?php
                     $breaks = array("<br />","<br>","<br/>","<br />","&lt;br /&gt;","&lt;br/&gt;","&lt;br&gt;");

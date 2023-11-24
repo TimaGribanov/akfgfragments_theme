@@ -29,6 +29,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                 <input type="text" id="num" name="num" required>
                 <label for="info">
                     <h3>Info*:</h3>
+                    <h5>Only English for now, sorry. It'll be fixed.</h5>
                 </label>
                 <textarea id="info" name="info" style="width: 400px; height: 424px;" required></textarea>
             </div>

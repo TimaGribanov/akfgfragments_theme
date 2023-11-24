@@ -38,7 +38,7 @@ $title_parsed = str_replace('%3F', '?', $title_parsed); //Change %3F to a questi
     <div style="display: flex; width: 100%;">
         <?php
         $discodb = new wpdb(DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST);
-        $results = $discodb->get_results("SELECT title_ja, title_ro, title_en, title_ru, title_es, title_de, title_fr, title_be, title_uk, title_fi, title_pt, spotify_uri FROM songs WHERE title_ro =  \"$title_parsed\";");
+        $results = $discodb->get_results("SELECT title_ja, title_ro, title_en, title_ru, title_es, title_de, title_fr, title_be, title_uk, title_fi, title_pt, title_id, spotify_uri FROM songs WHERE title_ro =  \"$title_parsed\";");
         foreach ($results as $row) {
             ?>
             <div style="flex: 0 0 30%;">
@@ -101,6 +101,11 @@ $title_parsed = str_replace('%3F', '?', $title_parsed); //Change %3F to a questi
                                 <td><input type="text" id="title_pt" name="title_pt" value="<?php echo $row->title_pt; ?>">
                                 </td>
                             </tr>
+                            <tr>
+                                <td><label for="title_id">Indonesian: </label></td>
+                                <td><input type="text" id="title_id" name="title_id" value="<?php echo $row->title_id; ?>">
+                                </td>
+                            </tr>
                         </table>
                     </div><br>
 
@@ -134,6 +139,7 @@ $title_parsed = str_replace('%3F', '?', $title_parsed); //Change %3F to a questi
                     <option class="lyrics-lang-option" value="uk">Ukrainian</option>
                     <option class="lyrics-lang-option" value="fi">Finnish</option>
                     <option class="lyrics-lang-option" value="pt">Portuguese</option>
+                    <option class="lyrics-lang-option" value="id">Indonesian</option>
                 </select><br>
 
                 <textarea id="lyrics-text" name="lyrics-text" style="width: 400px; height: 424px;"></textarea><br><br>
@@ -188,6 +194,7 @@ $title_parsed = str_replace('%3F', '?', $title_parsed); //Change %3F to a questi
         $title_uk = stripslashes($_POST['title_uk']);
         $title_fi = stripslashes($_POST['title_fi']);
         $title_pt = stripslashes($_POST['title_pt']);
+        $title_id = stripslashes($_POST['title_id']);
         $spotify_uri = $_POST['spotify_uri'];
 
         $song_id_arr = $discodb->get_results("SELECT id FROM songs WHERE title_ro = \"$title_ro\";");
@@ -206,6 +213,7 @@ $title_parsed = str_replace('%3F', '?', $title_parsed); //Change %3F to a questi
                 "title_uk" => "$title_uk",
                 "title_fi" => "$title_fi",
                 "title_pt" => "$title_pt",
+                "title_id" => "$title_id",
                 "spotify_uri" => "$spotify_uri"
             ),
             array("ID" => $song_id)

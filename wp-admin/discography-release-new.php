@@ -70,6 +70,10 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                             <td><label for="title_pt">Portuguese: </label></td>
                             <td><input type="text" id="title_pt" name="title_pt"></td>
                         </tr>
+                        <tr>
+                            <td><label for="title_id">Indonesian: </label></td>
+                            <td><input type="text" id="title_id" name="title_id"></td>
+                        </tr>
                     </table>
                 </div><br>
                 <label for="type"><h3>Type*:</h3></label>
@@ -155,6 +159,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
             $title_uk = stripslashes($_POST['title_uk']);
             $title_fi = stripslashes($_POST['title_fi']);
             $title_pt = stripslashes($_POST['title_pt']);
+            $title_id = stripslashes($_POST['title_id']);
             $type = $_POST['type'];
             $date = $_POST['date'];
             $catalogue = $_POST['catalogue'];
@@ -178,6 +183,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                     "title_uk" => "$title_uk",
                     "title_fi" => "$title_fi",
                     "title_pt" => "$title_pt",
+                    "title_id" => "$title_id",
                     "type" => "$type",
                     "date" => "$date",
                     "catalogue" => "$catalogue",

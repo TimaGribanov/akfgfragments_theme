@@ -35,7 +35,7 @@ $title_parsed = str_replace('%3F', '?', $title_parsed); //Cahnge %3F to a questi
     <h1><?php global $title_parsed; esc_html_e( 'Edit release: ' . $title_parsed ); ?></h1>
     <?php
     $discodb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
-    $results = $discodb->get_results( "SELECT r.title_ja, r.title_ro, r.title_en, r.title_ru, r.title_es, r.title_de, r.title_fr, r.title_be, r.title_uk, r.title_fi, r.title_pt, r.type, r.date, r.catalogue, r.spotify_uri, r.img_uri FROM releases r WHERE title_ro =  \"$title_parsed\";" );
+    $results = $discodb->get_results( "SELECT r.title_ja, r.title_ro, r.title_en, r.title_ru, r.title_es, r.title_de, r.title_fr, r.title_be, r.title_uk, r.title_fi, r.title_pt, r.title_id, r.type, r.date, r.catalogue, r.spotify_uri, r.img_uri FROM releases r WHERE title_ro =  \"$title_parsed\";" );
     foreach ($results as $row) {
     ?>
     
@@ -88,6 +88,10 @@ $title_parsed = str_replace('%3F', '?', $title_parsed); //Cahnge %3F to a questi
                         <tr>
                             <td><label for="title_pt">Portuguese: </label></td>
                             <td><input type="text" id="title_pt" name="title_pt" value="<?php echo $row->title_pt; ?>"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="title_id">Indonesian: </label></td>
+                            <td><input type="text" id="title_id" name="title_id" value="<?php echo $row->title_id; ?>"></td>
                         </tr>
                     </table>
                 </div><br>
@@ -194,6 +198,7 @@ $title_parsed = str_replace('%3F', '?', $title_parsed); //Cahnge %3F to a questi
             $title_uk = stripslashes($_POST['title_uk']);
             $title_fi = stripslashes($_POST['title_fi']);
             $title_pt = stripslashes($_POST['title_pt']);
+            $title_id = stripslashes($_POST['title_id']);
             $type = $_POST['type'];
             $date = $_POST['date'];
             $catalogue = $_POST['catalogue'];
@@ -219,6 +224,7 @@ $title_parsed = str_replace('%3F', '?', $title_parsed); //Cahnge %3F to a questi
                     "title_uk" => "$title_uk",
                     "title_fi" => "$title_fi",
                     "title_pt" => "$title_pt",
+                    "title_id" => "$title_id",
                     "type" => "$type",
                     "date" => "$date",
                     "catalogue" => "$catalogue",

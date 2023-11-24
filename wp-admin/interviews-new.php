@@ -85,6 +85,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                     <option value="be" onclick="loadTextLocale('be')">Belarusian</option>
                     <!--option value="fi" onclick="loadTextLocale('fi')">Finnish</option-->
                     <option value="pt" onclick="loadTextLocale('pt')">Portuguese</option>
+                    <option value="id" onclick="loadTextLocale('id')">Indonesian</option>
                 </select>
                 <label for="title">
                     <h3>Title in selected language*:</h3>
