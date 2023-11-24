@@ -64,6 +64,9 @@ if (!empty($lyrics_results)) {
         case 'pt':
             $lang_full = __('Portuguese', 'akfgfragments');
             break;
+        case 'id':
+            $lang_full = __('Indonesian', 'akfgfragments');
+            break;
         case 'ru':
             $lang_full = __('Russian', 'akfgfragments');
             break;

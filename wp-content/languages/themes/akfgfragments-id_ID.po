@@ -1,342 +1,350 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: akfgfragments\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: \n"
+"Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-11-24T10:28:14+01:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-11-24 11:39\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: akfgfragments\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: akfgfragments\n"
+"X-Crowdin-Project-ID: 538230\n"
+"X-Crowdin-Language: id\n"
+"X-Crowdin-File: akfgfragments.pot\n"
+"X-Crowdin-File-ID: 4\n"
+"Language: id_ID\n"
 
 #: themes/akfgfragments/404.php:8
 msgid "Oops!"
-msgstr ""
+msgstr "Ups!"
 
 #: themes/akfgfragments/404.php:9
 msgid "It seems that this page doesn't exist."
-msgstr ""
+msgstr "Sepertinya halaman ini tidak ada."
 
 #: themes/akfgfragments/404.php:17
 msgid "Go to our <a href=\"https://akfgfragments.com\">home page</a> or check the <a href=\"%s\">latest material</a> we've written."
-msgstr ""
+msgstr "Silakan ke <a href=\"https://akfgfragments.com\">beranda</a> kami atau cek <a href=\"%s\">kiriman terbaru</a> yang kami tulis."
 
 #: themes/akfgfragments/footer.php:11
 msgid "Your guide to Asian Kung-Fu Generation world"
-msgstr ""
+msgstr "Panduan kalian menuju dunia Asian Kung-Fu Generation"
 
 #: themes/akfgfragments/footer.php:25
 #: themes/akfgfragments/header-header.php:119
 msgid "About us"
-msgstr ""
+msgstr "Tentang kami"
 
 #: themes/akfgfragments/footer.php:27
 #: themes/akfgfragments/header-header.php:122
 msgid "Team"
-msgstr ""
+msgstr "Tim"
 
 #: themes/akfgfragments/footer.php:29
 #: themes/akfgfragments/header-header.php:125
 msgid "Thanks"
-msgstr ""
+msgstr "Terima kasih"
 
 #: themes/akfgfragments/get_catalogue_info.php:39
 msgid "Sorry! There's no information about this version."
-msgstr ""
+msgstr "Maaf! Tidak ada informasi tentang versi ini."
 
 #: themes/akfgfragments/header-header.php:57
 #: themes/akfgfragments/header-header.php:96
 msgid "Discography"
-msgstr ""
+msgstr "Diskografi"
 
 #: themes/akfgfragments/header-header.php:60
 #: themes/akfgfragments/header-header.php:99
 msgid "Music Videos"
-msgstr ""
+msgstr "Video Musik"
 
 #: themes/akfgfragments/header-header.php:63
 #: themes/akfgfragments/header-header.php:102
 msgid "Lyrics"
-msgstr ""
+msgstr "Lirik"
 
 #: themes/akfgfragments/header-header.php:66
 #: themes/akfgfragments/header-header.php:105
 msgid "Tablatures"
-msgstr ""
+msgstr "Tablatur"
 
 #: themes/akfgfragments/header-header.php:69
 #: themes/akfgfragments/header-header.php:108
 msgid "Interviews"
-msgstr ""
+msgstr "Wawancara"
 
 #: themes/akfgfragments/header-header.php:72
 #: themes/akfgfragments/header-header.php:111
 msgid "Stuff"
-msgstr ""
+msgstr "Barang"
 
 #: themes/akfgfragments/header-header.php:76
 #: themes/akfgfragments/header-header.php:115
 msgid "Side Projects"
-msgstr ""
+msgstr "Proyek Lainnya"
 
 #: themes/akfgfragments/header-header.php:93
 #: themes/akfgfragments/header.php:28
 msgid "Home"
-msgstr ""
+msgstr "Beranda"
 
 #: themes/akfgfragments/header-header.php:134
 msgid "Join our Discord"
-msgstr ""
+msgstr "Gabung Discord kami"
 
 #: themes/akfgfragments/header.php:40
 msgid "Tabs"
-msgstr ""
+msgstr "Tab"
 
 #: themes/akfgfragments/header.php:61
 msgid "Interview: "
-msgstr ""
+msgstr "Wawancara: "
 
 #: themes/akfgfragments/header.php:131
 msgid "Your ultimate guide to Asian Kung-Fu Generation world. News, discography, lyrics, tabs, interviews, music videos – all in one place!"
-msgstr ""
+msgstr "Panduan utama kalian menuju dunia Asian Kung-Fu Generation. Berita, diskografi, lirik, tab, wawancara, video musik – semua ada di satu tempat!"
 
 #: themes/akfgfragments/header.php:166
 msgid "Your ultimate guide to Asian Kung-Fu Generation world."
-msgstr ""
+msgstr "Panduan utama kalian menuju dunia Asian Kung-Fu Generation."
 
 #: themes/akfgfragments/index.php:17
 #: themes/akfgfragments/templates/blank.php:19
 msgid "Sorry, no posts matched your criteria."
-msgstr ""
+msgstr "Maaf, tidak ada kiriman sesuai kriteria Anda."
 
 #: themes/akfgfragments/index.php:30
 msgid "Pagination"
-msgstr ""
+msgstr "Pagination"
 
 #: themes/akfgfragments/load_lyrics.php:47
 msgid "Japanese"
-msgstr ""
+msgstr "bahasa Jepang"
 
 #: themes/akfgfragments/load_lyrics.php:50
 #: themes/akfgfragments/templates/song.php:206
 msgid "romaji"
-msgstr ""
+msgstr "romaji"
 
 #: themes/akfgfragments/load_lyrics.php:53
 msgid "English"
-msgstr ""
+msgstr "bahasa Inggris"
 
 #: themes/akfgfragments/load_lyrics.php:56
 msgid "French"
-msgstr ""
+msgstr "bahasa Prancis"
 
 #: themes/akfgfragments/load_lyrics.php:59
 msgid "German"
-msgstr ""
+msgstr "bahasa Jerman"
 
 #: themes/akfgfragments/load_lyrics.php:62
 msgid "Spanish"
-msgstr ""
+msgstr "bahasa Spanyol"
 
 #: themes/akfgfragments/load_lyrics.php:65
 msgid "Portuguese"
-msgstr ""
+msgstr "bahasa Portugis"
 
 #: themes/akfgfragments/load_lyrics.php:68
 msgid "Indonesian"
-msgstr ""
+msgstr "bahasa Indonesia"
 
 #: themes/akfgfragments/load_lyrics.php:71
 msgid "Russian"
-msgstr ""
+msgstr "bahasa Rusia"
 
 #: themes/akfgfragments/load_lyrics.php:74
 msgid "Ukrainian"
-msgstr ""
+msgstr "bahasa Ukraina"
 
 #: themes/akfgfragments/load_lyrics.php:77
 msgid "Belarusian"
-msgstr ""
+msgstr "bahasa Belarus"
 
 #: themes/akfgfragments/load_lyrics.php:80
 msgid "the selected language"
-msgstr ""
+msgstr "bahasa yang dipilih"
 
 #: themes/akfgfragments/load_lyrics.php:83
 msgid "Sorry! This song's lyrics are not yet available in "
-msgstr ""
+msgstr "Maaf! Lirik lagu ini belum tersedia dalam "
 
 #: themes/akfgfragments/posts.php:98
 #: themes/akfgfragments/posts.php:141
 #: themes/akfgfragments/templates/blank.php:12
 #: themes/akfgfragments/templates/blank.php:16
 msgid "(more...)"
-msgstr ""
+msgstr "(lebih banyak...)"
 
 #: themes/akfgfragments/sidebar.php:5
 msgid "Join our Discord server!"
-msgstr ""
+msgstr "Ayo gabung server Discord kami!"
 
 #: themes/akfgfragments/sidebar.php:6
 msgid "We have interesting Asian Kung-Fu Generation related discussions there, and more!"
-msgstr ""
+msgstr "Kami punya diskusi menarik tentang Asian Kung-Fu Generation di sana dan hal lainnya!"
 
 #: themes/akfgfragments/sidebar.php:15
 msgid "Follow us on Twitter!"
-msgstr ""
+msgstr "Ikuti kami di Twitter!"
 
 #: themes/akfgfragments/sidebar.php:16
 msgid "All the news are there!"
-msgstr ""
+msgstr "Semua berita ada di sana!"
 
 #: themes/akfgfragments/sidebar.php:25
 msgid "The latest release"
-msgstr ""
+msgstr "Rilisan terbaru"
 
 #: themes/akfgfragments/sidebar.php:36
 msgid "Release date: "
-msgstr ""
+msgstr "Tanggal rilis: "
 
 #: themes/akfgfragments/sidebar.php:38
 msgid "Type: "
-msgstr ""
+msgstr "Tipe: "
 
 #: themes/akfgfragments/sidebar.php:40
 msgid "More about this release"
-msgstr ""
+msgstr "Lainnya tentang rilisan ini"
 
 #: themes/akfgfragments/templates/disco.php:83
 msgid "Jump to:"
-msgstr ""
+msgstr "Lompat ke:"
 
 #: themes/akfgfragments/templates/disco.php:84
 msgid "albums"
-msgstr ""
+msgstr "album"
 
 #: themes/akfgfragments/templates/disco.php:85
 msgid "singles"
-msgstr ""
+msgstr "single"
 
 #: themes/akfgfragments/templates/disco.php:86
 msgid "compilations"
-msgstr ""
+msgstr "kompilasi"
 
 #: themes/akfgfragments/templates/disco.php:87
 msgid "indies"
-msgstr ""
+msgstr "indie"
 
 #: themes/akfgfragments/templates/music-videos.php:26
 #: themes/akfgfragments/templates/mv.php:35
 msgid "Year"
-msgstr ""
+msgstr "Tahun"
 
 #: themes/akfgfragments/templates/music-videos.php:27
 #: themes/akfgfragments/templates/mv.php:34
 msgid "Director"
-msgstr ""
+msgstr "Sutradara"
 
 #: themes/akfgfragments/templates/release.php:29
 msgid "Type of release:"
-msgstr ""
+msgstr "Rilisan tipe:"
 
 #: themes/akfgfragments/templates/release.php:42
 msgid "Release date:"
-msgstr ""
+msgstr "Tanggal rilis:"
 
 #: themes/akfgfragments/templates/release.php:68
 msgid "Tracklist:"
-msgstr ""
+msgstr "Daftar lagu:"
 
 #: themes/akfgfragments/templates/release.php:130
 #: themes/akfgfragments/templates/song.php:84
 #: themes/akfgfragments/templates/song.php:248
 msgid "more..."
-msgstr ""
+msgstr "lebih banyak..."
 
 #: themes/akfgfragments/templates/release.php:174
 #: themes/akfgfragments/templates/release.php:260
 msgid "Versions:"
-msgstr ""
+msgstr "Versi:"
 
 #: themes/akfgfragments/templates/song-tabs.php:21
 msgid "Information about the song"
-msgstr ""
+msgstr "Informasi mengenai lagu"
 
 #: themes/akfgfragments/templates/song-tabs.php:53
 msgid "Full Band Score"
-msgstr ""
+msgstr "Full Band Score"
 
 #: themes/akfgfragments/templates/song-tabs.php:55
 msgid "Rhythm Guitar (Gotoh)"
-msgstr ""
+msgstr "Gitar Ritme (Gotoh)"
 
 #: themes/akfgfragments/templates/song-tabs.php:57
 msgid "Lead Guitar (Kita)"
-msgstr ""
+msgstr "Gitar Utama (Kita)"
 
 #: themes/akfgfragments/templates/song-tabs.php:59
 msgid "Bass (Yamada)"
-msgstr ""
+msgstr "Bas (Yamada)"
 
 #: themes/akfgfragments/templates/song-tabs.php:61
 msgid "Drums (Ijichi)"
-msgstr ""
+msgstr "Drum (Ijichi)"
 
 #: themes/akfgfragments/templates/song.php:29
 msgid "Part of:"
-msgstr ""
+msgstr "Bagian dari:"
 
 #: themes/akfgfragments/templates/song.php:45
 msgid "Tabs:"
-msgstr ""
+msgstr "Tab:"
 
 #: themes/akfgfragments/templates/song.php:200
 msgid "Lyrics:"
-msgstr ""
+msgstr "Lirik:"
 
 #: themes/akfgfragments/templates/song.php:204
 msgid "japanese"
-msgstr ""
+msgstr "b. jepang"
 
 #: themes/akfgfragments/templates/song.php:208
 msgid "english"
-msgstr ""
+msgstr "b. inggris"
 
 #: themes/akfgfragments/templates/song.php:210
 msgid "french"
-msgstr ""
+msgstr "b. prancis"
 
 #: themes/akfgfragments/templates/song.php:212
 msgid "german"
-msgstr ""
+msgstr "b. jerman"
 
 #: themes/akfgfragments/templates/song.php:214
 msgid "spanish"
-msgstr ""
+msgstr "b. spanyol"
 
 #: themes/akfgfragments/templates/song.php:216
 msgid "portuguese"
-msgstr ""
+msgstr "b. portugis"
 
 #: themes/akfgfragments/templates/song.php:218
 msgid "indonesian"
-msgstr ""
+msgstr "b. indonesia"
 
 #: themes/akfgfragments/templates/song.php:220
 msgid "russian"
-msgstr ""
+msgstr "b. rusia"
 
 #: themes/akfgfragments/templates/song.php:222
 msgid "ukrainian"
-msgstr ""
+msgstr "b. ukraina"
 
 #: themes/akfgfragments/templates/song.php:224
 msgid "belarusian"
-msgstr ""
+msgstr "b. belarus"
 
 #: themes/akfgfragments/templates/song.php:245
 msgid "less..."
-msgstr ""
+msgstr "lebih dikit..."
+

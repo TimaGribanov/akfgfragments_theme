@@ -26,7 +26,9 @@ function pluraliseTypes($input, $locale)
                 $plural_form = $input . "s";
                 break;
         }
-    } elseif ($locale == 'ru_RU') {
+    } elseif ($locale == 'id_ID') {
+        $plural_form = $input;
+    }elseif ($locale == 'ru_RU') {
         if ($input == 'видео' || $input == 'другое' || $input == 'инди') {
             $plural_form = $input;
         } elseif ($input == 'сборник') {

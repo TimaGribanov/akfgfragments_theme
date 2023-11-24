@@ -108,7 +108,7 @@ function printSpotify($url)
 
             //Connect to another DB containing discography data
             $releasedb = new wpdb(DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST);
-            $results = $releasedb->get_results("SELECT r.title_ja, r.title_ro, r.title_en, r.title_ru, r.title_es, r.title_de, r.title_fr, r.title_be, r.title_uk, r.title_fi, r.title_pt, r.date, r.catalogue, r.spotify_uri, r.img_uri, t.type FROM releases r JOIN types t ON t.id = r.type WHERE title_ro =  \"$title_parsed\";");
+            $results = $releasedb->get_results("SELECT r.title_ja, r.title_ro, r.title_en, r.title_ru, r.title_es, r.title_de, r.title_fr, r.title_be, r.title_uk, r.title_fi, r.title_pt, r.title_id, r.date, r.catalogue, r.spotify_uri, r.img_uri, t.type FROM releases r JOIN types t ON t.id = r.type WHERE title_ro =  \"$title_parsed\";");
             $tracklist = $releasedb->get_results("SELECT s.title_ro FROM rel_songs rs JOIN releases r ON r.id = rs.release_id JOIN songs s ON s.id = rs.song_id WHERE r.title_ro = \"$title_parsed\" ORDER BY rs.release_pos ASC;");
             ?>
             <!-- ON DESKTOP -->
@@ -141,6 +141,9 @@ function printSpotify($url)
                             }
                             if ($row->title_pt != "") {
                                 echo "<p class='title-trans'><span title='Português'>" . $row->title_pt . "</span></p>";
+                            }
+                            if ($row->title_id != "") {
+                                echo "<p class='title-trans'><span title='Bahasa Indonesia'>" . $row->title_id . "</span></p>";
                             }
                             if ($row->title_ru != "") {
                                 echo "<p class='title-trans'><span title='Русский'>" . $row->title_ru . "</span></p>";
@@ -225,6 +228,9 @@ function printSpotify($url)
                             }
                             if ($row->title_pt != "") {
                                 echo "<p class='title-trans mt-1 mb-1'><span title='Português'>" . $row->title_pt . "</span></p>";
+                            }
+                            if ($row->title_id != "") {
+                                echo "<p class='title-trans mt-1 mb-1'><span title='Bahasa Indonesia'>" . $row->title_id . "</span></p>";
                             }
                             if ($row->title_ru != "") {
                                 echo "<p class='title-trans mt-1 mb-1'><span title='Русский'>" . $row->title_ru . "</span></p>";

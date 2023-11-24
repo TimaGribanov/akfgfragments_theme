@@ -6,6 +6,7 @@ function buildLangSelector()
     $langs = array(
         array('English', 'en'),
         array('Deutsch', 'de'),
+        array('Bahasa Indonesia', 'id'),
         //array('Français', 'fr'),
         //array('Español', 'es'),
         //array('Português', 'pt'),
