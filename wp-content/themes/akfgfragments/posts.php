@@ -51,6 +51,7 @@ if (is_single() && 'interview' == get_post_type()) { ?>
                     echo '" src="' . $post_thumbnail_url . '"></div>';
                 }
                 ?>
+                <p class="no-indent">Author: <a href="https://akfgfragments.com/author?author_name=<?php echo get_the_author_meta('display_name', $author_id); ?>" target="_blank"><?php echo get_the_author_meta('display_name', $author_id); ?></a></p>
                 <p><?php the_content(); ?></p>
             </div>
         </div>
