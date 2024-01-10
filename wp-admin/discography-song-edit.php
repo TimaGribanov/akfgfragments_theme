@@ -29,6 +29,7 @@ $title_parsed = str_replace('%27', '\'', $title_parsed); //Change %27 to a singl
 $title_parsed = str_replace('%26', '&', $title_parsed); //Change %26 to an ampersand
 $title_parsed = str_replace('%23', '#', $title_parsed); //Change %23 to a number sign
 $title_parsed = str_replace('%3F', '?', $title_parsed); //Change %3F to a question mark
+$title_parsed = str_replace('=', '', $title_parsed);
 ?>
 
 <div class="wrap">
@@ -151,7 +152,7 @@ $title_parsed = str_replace('%3F', '?', $title_parsed); //Change %3F to a questi
                         showLyrics('<?php echo $title ?>', 'ja')
                     };
 
-                    document.getElementById('lyrics-lang').addEventListener('click', function () { showLyrics('<?php echo $title ?>', this.value) });
+                    document.getElementById('lyrics-lang').addEventListener('click', function () { showLyrics('<?php echo $title_parsed ?>', this.value) });
 
                     function showLyrics(song, lang) {
                         let searchString = 'song=' + song + '&lang=' + lang;
