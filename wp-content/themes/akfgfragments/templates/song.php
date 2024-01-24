@@ -62,7 +62,7 @@ function printTabs($title, $title_ro)
             //Connect to another DB containing discography data
             $songdb = new wpdb(DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST);
             $results = $songdb->get_results("SELECT * FROM songs WHERE title_ro = \"$title_parsed\"");
-            $song_releases = $songdb->get_results("SELECT r.title_ro FROM rel_songs rs JOIN releases r ON r.id = rs.release_id JOIN songs s ON s.id = rs.song_id WHERE s.title_ro LIKE \"$title_parsed%\"");
+            $song_releases = $songdb->get_results("SELECT r.title_ro FROM rel_songs rs JOIN releases r ON r.id = rs.release_id JOIN songs s ON s.id = rs.song_id WHERE s.title_ro LIKE \"$title_parsed\"");
             $tabs_results = $songdb->get_results("SELECT t.id FROM tabs t JOIN songs s ON t.song_id = s.id WHERE s.title_ro = \"$title_parsed\"");
             ?>
                 <!-- ON DESKTOP -->
