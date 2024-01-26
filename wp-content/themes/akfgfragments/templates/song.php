@@ -256,7 +256,7 @@ function printTabs($title, $title_ro)
         const lang = $(this).attr('name')
         $.ajax({
             url: `/wp-content/themes/akfgfragments/load_lyrics.php?title=<?php global $title_parsed;
-            echo $title_parsed; ?>&lang=${lang}`,
+                echo str_replace('&', '%26', $title_parsed); ?>&lang=${lang}`,
             success: function (response) {
                 $('#song-lyrics').html(response)
             }

@@ -22,7 +22,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
-$url = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $title = parse_url($url, PHP_URL_QUERY); //Get a query
 $title_parsed = str_replace('_', ' ', $title); //Delete underscores if they exist
 $title_parsed = str_replace('%27', '\'', $title_parsed); //Change %27 to a single quote
@@ -149,10 +149,10 @@ $title_parsed = str_replace('=', '', $title_parsed);
 
                 <script type="text/javascript">
                     window.onload = (event) => {
-                        showLyrics('<?php echo $title ?>', 'ja')
+                        showLyrics('<?php echo str_replace('\'', '%27', str_replace('&', '%26', $title)); ?>', 'ja')
                     };
 
-                    document.getElementById('lyrics-lang').addEventListener('click', function () { showLyrics('<?php echo $title_parsed ?>', this.value) });
+                    document.getElementById('lyrics-lang').addEventListener('click', function () { showLyrics('<?php echo str_replace('\'', '%27', str_replace('&', '%26', $title_parsed)); ?>', this.value) });
 
                     function showLyrics(song, lang) {
                         let searchString = 'song=' + song + '&lang=' + lang;
@@ -228,7 +228,13 @@ $title_parsed = str_replace('=', '', $title_parsed);
         $lyrics = preg_replace("/[\r\n]*/", "", $lyrics);
         $lang = $_POST['lyrics-lang'];
 
-        $song_id = $discodb->get_results("SELECT id FROM songs WHERE title_ro = \"$title_parsed\";");
+        $title_query = str_replace('%2F', '/',
+            str_replace('\'', '%27',
+                str_replace('&', '%26',
+                    $title_parsed))
+        );
+
+        $song_id = $discodb->get_results("SELECT id FROM songs WHERE title_ro = \"$title_query\";");
 
         foreach ($song_id as $row) {
             $lyrics_id_arr = $discodb->get_results("SELECT id FROM lyrics WHERE song_id = \"$row->id\" AND lang = \"$lang\";");

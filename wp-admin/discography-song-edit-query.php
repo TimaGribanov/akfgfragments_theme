@@ -11,6 +11,7 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
 require_once __DIR__ . '/admin.php';
+require_once(get_theme_root() . "/akfgfragments/parse_url.php");
 
 $title = $_POST['song'];
 $title_parsed = str_replace('_', ' ', $title); //Delete underscores if they exist
@@ -18,6 +19,8 @@ $title_parsed = str_replace('%27', '\'', $title_parsed); //Change %27 to a singl
 $title_parsed = str_replace('%26', '&', $title_parsed); //Change %26 to an ampersand
 $title_parsed = str_replace('%23', '#', $title_parsed); //Change %23 to a number sign
 $title_parsed = str_replace('%3F', '?', $title_parsed); //Change %3F to a question mark
+$title_parsed = str_replace('=', '', $title_parsed);
+$title_parsed = str_parsed('%2F', '/', $title_parsed);
 
 $lang = $_POST['lang'];
 

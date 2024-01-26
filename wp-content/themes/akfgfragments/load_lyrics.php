@@ -19,6 +19,7 @@ $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http
 $query = parse_url($url, PHP_URL_QUERY); //Get a query
 parse_str($query, $output);
 $title = $output['title'];
+$title = str_replace('%26', '&', $title);
 $lang = $output['lang'];
 
 //Connect to another DB containing discography data
