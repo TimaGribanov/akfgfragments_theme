@@ -1,8 +1,7 @@
 <?php /* Template Name: Akfgfragments Author Page */?>
 <?php
-$curauth = (isset($_GET['name']))
-  ? get_user_by('slug', $name)
-  : get_userdata(intval($author));
+$name = $_GET['nickname'];
+$curauth = get_user_by('slug', $name);
 
 $usertwitter = get_user_meta($curauth->ID, 'twitter');
 $useryoutube = get_user_meta($curauth->ID, 'youtube');

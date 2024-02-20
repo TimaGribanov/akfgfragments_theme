@@ -19,7 +19,7 @@ $html_locale = str_replace('_', '-', $html_locale);
     if (is_404()) {
         $og_title = '404';
     } else if (strcmp($post->post_title, "Author") === 0) {
-        $display_name = str_replace('author name=', '', $title_parsed);
+        $display_name = str_replace('nickname=', '', $title_parsed);
         $og_title = "Author: $display_name";
     } else {
         if (!empty($post->post_title) && strcmp($post->post_title, "MV") !== 0 && strcmp($post->post_title, "Tabs per song") !== 0 && strcmp($post->post_title, "Interview") !== 0 && strcmp($post->post_title, "Release") !== 0 && strcmp($post->post_title, "Song") !== 0 && !(parse_url($url, PHP_URL_PATH) == "/") && !(str_contains(parse_url($url, PHP_URL_PATH), "/page"))) {
