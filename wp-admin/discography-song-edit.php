@@ -24,6 +24,9 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $title = parse_url($url, PHP_URL_QUERY); //Get a query
+if ($title == 'Nothing_Is_the_Matter') {
+    $title = $title . "?";
+}
 $title_parsed = str_replace('_', ' ', $title); //Delete underscores if they exist
 $title_parsed = str_replace('%27', '\'', $title_parsed); //Change %27 to a single quote
 $title_parsed = str_replace('%26', '&', $title_parsed); //Change %26 to an ampersand
@@ -149,7 +152,7 @@ $title_parsed = str_replace('=', '', $title_parsed);
 
                 <script type="text/javascript">
                     window.onload = (event) => {
-                        showLyrics('<?php echo str_replace('\'', '%27', str_replace('&', '%26', $title)); ?>', 'ja')
+                        showLyrics('<?php echo str_replace('?', '%3F', str_replace('\'', '%27', str_replace('&', '%26', $title))); ?>', 'ja')
                     };
 
                     document.getElementById('lyrics-lang').addEventListener('click', function () { showLyrics('<?php echo str_replace('\'', '%27', str_replace('&', '%26', $title_parsed)); ?>', this.value) });
@@ -228,10 +231,10 @@ $title_parsed = str_replace('=', '', $title_parsed);
         $lyrics = preg_replace("/[\r\n]*/", "", $lyrics);
         $lang = $_POST['lyrics-lang'];
 
-        $title_query = str_replace('%2F', '/',
+        $title_query = str_replace('%3F, '?', str_replace('%2F', '/',
             str_replace('\'', '%27',
                 str_replace('&', '%26',
-                    $title_parsed))
+                    $title_parsed)))
         );
 
         $song_id = $discodb->get_results("SELECT id FROM songs WHERE title_ro = \"$title_query\";");
