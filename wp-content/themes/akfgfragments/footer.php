@@ -48,6 +48,11 @@
                                                 aria-label="Telegram">Telegram</a>
                                         </li>
                                         <li class="nav-item me-3 me-lg-0">
+                                            <a class="nav-link" href="https://www.instagram.com/akfgfragments_com/" rel="nofollow"
+                                                target="_blank" role="img" title="Instagram"
+                                                aria-label="Instagram">Instagram</a>
+                                        </li>
+                                        <li class="nav-item me-3 me-lg-0">
                                             <a class="nav-link" href="https://facebook.com/akfgfragmentscom"
                                                 rel="nofollow" target="_blank" role="img" title="Telegram"
                                                 aria-label="Telegram">Facebook</a>
