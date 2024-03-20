@@ -36,6 +36,7 @@ if (!empty($lyrics_results)) {
     foreach ($lyrics_results as $row) {
         $text_db = $row->text;
         $text_parsed = str_replace('\\\'', '\'', $text_db);
+        $text_parsed = str_replace('\"', '"', $text_parsed);
         if ($lang == 'ja') {
             echo "<div id='song-text' lang='ja-jp'>" . $text_parsed . "</div>";
         } else {
