@@ -32,6 +32,7 @@ $lyrics = $lyricsdb->get_results( "SELECT text FROM lyrics WHERE song_id = \"$so
 foreach ($lyrics as $row) {
     $breaks = array("<br />","<br>","<br/>","<br />","&lt;br /&gt;","&lt;br/&gt;","&lt;br&gt;");
     $text = str_ireplace($breaks, "\n", $row->text);
+    $text = str_replace('\"', '"', $text);
     echo $text;
 }
 ?>
