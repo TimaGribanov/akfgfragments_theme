@@ -85,10 +85,10 @@
 </main>
 
 <!-- PDF.JS library -->
-<script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+<script src="//mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
 
 
-<script type="text/javascript">
+<script type="module">
     function resizeCanvas() {
         var canvas = document.getElementById('tabs-pdf');
         var context = canvas.getContext('2d');
@@ -161,9 +161,9 @@
 
         url = '/files/tabs/' + title + '/' + filename + '.pdf'
 
-        const pdfjsLib = window['pdfjs-dist/build/pdf']
+        var { pdfjsLib } = globalThis
 
-        pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js'
+        pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.mjs'
 
         const loadingTask = pdfjsLib.getDocument(url)
 
@@ -241,9 +241,7 @@
         loadPdf('<?php echo $title; ?>', 'full')
         checkPrev()
     }
-</script>
 
-<script type="text/javascript">
     $('.tabs-pdf-btn').click(function () {
         const part = $(this).attr('name')
 
