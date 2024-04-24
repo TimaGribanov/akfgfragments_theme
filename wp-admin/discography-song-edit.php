@@ -231,11 +231,7 @@ $title_parsed = str_replace('=', '', $title_parsed);
         $lyrics = preg_replace("/[\r\n]*/", "", $lyrics);
         $lang = $_POST['lyrics-lang'];
 
-        $title_query = str_replace('%3F, '?', str_replace('%2F', '/',
-            str_replace('\'', '%27',
-                str_replace('&', '%26',
-                    $title_parsed)))
-        );
+        $title_query = str_replace("%3F", "?", str_replace("%2F", "/", str_replace("'", "%27", str_replace("&", "%26", $title_parsed))));
 
         $song_id = $discodb->get_results("SELECT id FROM songs WHERE title_ro = \"$title_query\";");
 
