@@ -1,6 +1,9 @@
 <?php /* Template Name: Akfgfragments Author Page */?>
 <?php
-$name = $_GET['nickname'];
+$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$query = parse_url($url, PHP_URL_QUERY); //Get a query
+
+$name = str_replace('nickname=', '', $query);
 $curauth = get_user_by('slug', $name);
 
 $usertwitter = get_user_meta($curauth->ID, 'twitter');
