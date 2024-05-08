@@ -1,15 +1,17 @@
+# Copyright (C) 2024 Timofey Gribanov
+# This file is distributed under the .
 msgid ""
 msgstr ""
 "Project-Id-Version: akfgfragments\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/akfgfragments\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-11-24T10:28:14+01:00\n"
-"PO-Revision-Date: 2023-11-24 11:38\n"
-"X-Generator: WP-CLI 2.7.1\n"
+"POT-Creation-Date: 2024-05-08T10:15:33+00:00\n"
+"PO-Revision-Date: 2024-05-08 10:25\n"
+"X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: akfgfragments\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
 "X-Crowdin-Project: akfgfragments\n"
@@ -19,332 +21,336 @@ msgstr ""
 "X-Crowdin-File-ID: 4\n"
 "Language: ru_RU\n"
 
-#: themes/akfgfragments/404.php:8
+#: 404.php:8
 msgid "Oops!"
 msgstr "Ой!"
 
-#: themes/akfgfragments/404.php:9
+#: 404.php:9
 msgid "It seems that this page doesn't exist."
 msgstr "Похоже, данной страницы не существует."
 
-#: themes/akfgfragments/404.php:17
+#: 404.php:17
 msgid "Go to our <a href=\"https://akfgfragments.com\">home page</a> or check the <a href=\"%s\">latest material</a> we've written."
 msgstr "Можете перейти на нашу <a href=\"https://akfgfragments.com\">главную страницу</a> или прочитать <a href=\"%s\">последнюю статью</a>."
 
-#: themes/akfgfragments/footer.php:11
+#: footer.php:11
 msgid "Your guide to Asian Kung-Fu Generation world"
 msgstr "Твой путеводитель в мир Asian Kung-Fu Generation"
 
-#: themes/akfgfragments/footer.php:25
-#: themes/akfgfragments/header-header.php:119
+#: footer.php:25
+#: header-header.php:119
 msgid "About us"
 msgstr "О нас"
 
-#: themes/akfgfragments/footer.php:27
-#: themes/akfgfragments/header-header.php:122
+#: footer.php:27
+#: header-header.php:122
 msgid "Team"
 msgstr "Команда"
 
-#: themes/akfgfragments/footer.php:29
-#: themes/akfgfragments/header-header.php:125
+#: footer.php:29
+#: header-header.php:125
 msgid "Thanks"
 msgstr "Благодарности"
 
-#: themes/akfgfragments/get_catalogue_info.php:39
+#: get_catalogue_info.php:39
 msgid "Sorry! There's no information about this version."
 msgstr "Простите! Об этой версии нет информации."
 
-#: themes/akfgfragments/header-header.php:57
-#: themes/akfgfragments/header-header.php:96
+#: header-header.php:57
+#: header-header.php:96
 msgid "Discography"
 msgstr "Дискография"
 
-#: themes/akfgfragments/header-header.php:60
-#: themes/akfgfragments/header-header.php:99
+#: header-header.php:60
+#: header-header.php:99
 msgid "Music Videos"
 msgstr "Видеоклипы"
 
-#: themes/akfgfragments/header-header.php:63
-#: themes/akfgfragments/header-header.php:102
+#: header-header.php:63
+#: header-header.php:102
 msgid "Lyrics"
 msgstr "Тексты песен"
 
-#: themes/akfgfragments/header-header.php:66
-#: themes/akfgfragments/header-header.php:105
+#: header-header.php:66
+#: header-header.php:105
 msgid "Tablatures"
 msgstr "Табулатуры"
 
-#: themes/akfgfragments/header-header.php:69
-#: themes/akfgfragments/header-header.php:108
+#: header-header.php:69
+#: header-header.php:108
 msgid "Interviews"
 msgstr "Интервью"
 
-#: themes/akfgfragments/header-header.php:72
-#: themes/akfgfragments/header-header.php:111
+#: header-header.php:72
+#: header-header.php:111
 msgid "Stuff"
 msgstr "Атрибутика"
 
-#: themes/akfgfragments/header-header.php:76
-#: themes/akfgfragments/header-header.php:115
+#: header-header.php:76
+#: header-header.php:115
 msgid "Side Projects"
 msgstr "Сторонние проекты"
 
-#: themes/akfgfragments/header-header.php:93
-#: themes/akfgfragments/header.php:28
+#: header-header.php:93
+#: header.php:30
 msgid "Home"
 msgstr "Главная"
 
-#: themes/akfgfragments/header-header.php:134
+#: header-header.php:134
 msgid "Join our Discord"
 msgstr "Добавляйтесь к нам в Discord"
 
-#: themes/akfgfragments/header.php:40
+#: header.php:42
 msgid "Tabs"
 msgstr "табы"
 
-#: themes/akfgfragments/header.php:61
+#: header.php:63
 msgid "Interview: "
 msgstr "Интервью: "
 
-#: themes/akfgfragments/header.php:131
+#: header.php:133
 msgid "Your ultimate guide to Asian Kung-Fu Generation world. News, discography, lyrics, tabs, interviews, music videos – all in one place!"
 msgstr "Твой путеводитель в мир Asian Kung-Fu Generation. Новости, дискография, тексты песен, табы, интервью, видеоклипы — всё в одом месте!"
 
-#: themes/akfgfragments/header.php:166
+#: header.php:168
 msgid "Your ultimate guide to Asian Kung-Fu Generation world."
 msgstr "Твой путеводитель в мир Asian Kung-Fu Generation."
 
-#: themes/akfgfragments/index.php:17
-#: themes/akfgfragments/templates/blank.php:19
+#: index.php:17
+#: templates/blank.php:19
 msgid "Sorry, no posts matched your criteria."
 msgstr "К сожалению, по вашему поиску ничего не найдено."
 
-#: themes/akfgfragments/index.php:30
+#: index.php:30
 msgid "Pagination"
 msgstr "Пагинация"
 
-#: themes/akfgfragments/load_lyrics.php:47
+#: load_lyrics.php:49
 msgid "Japanese"
 msgstr "японском"
 
-#: themes/akfgfragments/load_lyrics.php:50
-#: themes/akfgfragments/templates/song.php:206
+#: load_lyrics.php:52
+#: templates/song.php:206
 msgid "romaji"
 msgstr "ромадзи"
 
-#: themes/akfgfragments/load_lyrics.php:53
+#: load_lyrics.php:55
 msgid "English"
 msgstr "английском"
 
-#: themes/akfgfragments/load_lyrics.php:56
+#: load_lyrics.php:58
 msgid "French"
 msgstr "французском"
 
-#: themes/akfgfragments/load_lyrics.php:59
+#: load_lyrics.php:61
 msgid "German"
 msgstr "немецком"
 
-#: themes/akfgfragments/load_lyrics.php:62
+#: load_lyrics.php:64
 msgid "Spanish"
 msgstr "испанском"
 
-#: themes/akfgfragments/load_lyrics.php:65
+#: load_lyrics.php:67
 msgid "Portuguese"
 msgstr "португальском"
 
-#: themes/akfgfragments/load_lyrics.php:68
+#: load_lyrics.php:70
 msgid "Indonesian"
 msgstr "индонезийском"
 
-#: themes/akfgfragments/load_lyrics.php:71
+#: load_lyrics.php:73
 msgid "Russian"
 msgstr "русском"
 
-#: themes/akfgfragments/load_lyrics.php:74
+#: load_lyrics.php:76
 msgid "Ukrainian"
 msgstr "украинском"
 
-#: themes/akfgfragments/load_lyrics.php:77
+#: load_lyrics.php:79
 msgid "Belarusian"
 msgstr "беларусском"
 
-#: themes/akfgfragments/load_lyrics.php:80
+#: load_lyrics.php:82
 msgid "the selected language"
 msgstr "выбранном языке"
 
-#: themes/akfgfragments/load_lyrics.php:83
+#: load_lyrics.php:85
 msgid "Sorry! This song's lyrics are not yet available in "
 msgstr "Извините! Текст этой песни ещё не переведён на "
 
-#: themes/akfgfragments/posts.php:98
-#: themes/akfgfragments/posts.php:141
-#: themes/akfgfragments/templates/blank.php:12
-#: themes/akfgfragments/templates/blank.php:16
+#: posts.php:99
+#: posts.php:142
+#: templates/blank.php:12
+#: templates/blank.php:16
 msgid "(more...)"
 msgstr "(больше...)"
 
-#: themes/akfgfragments/sidebar.php:5
+#: sidebar.php:5
 msgid "Join our Discord server!"
 msgstr "Заходите на наш сервер в Discord!"
 
-#: themes/akfgfragments/sidebar.php:6
+#: sidebar.php:6
 msgid "We have interesting Asian Kung-Fu Generation related discussions there, and more!"
 msgstr "У нас там интересные обсуждения по Asian Kung-Fu Generation, и не только!"
 
-#: themes/akfgfragments/sidebar.php:15
+#: sidebar.php:15
 msgid "Follow us on Twitter!"
 msgstr "Подпишитесь на наш Твиттер!"
 
-#: themes/akfgfragments/sidebar.php:16
+#: sidebar.php:16
 msgid "All the news are there!"
 msgstr "Все новости — там!"
 
-#: themes/akfgfragments/sidebar.php:25
+#: sidebar.php:25
 msgid "The latest release"
 msgstr "Последний релиз"
 
-#: themes/akfgfragments/sidebar.php:36
+#: sidebar.php:36
 msgid "Release date: "
 msgstr "Дата релиза: "
 
-#: themes/akfgfragments/sidebar.php:38
+#: sidebar.php:38
 msgid "Type: "
 msgstr "Тип: "
 
-#: themes/akfgfragments/sidebar.php:40
+#: sidebar.php:40
 msgid "More about this release"
 msgstr "Больше об этом релизе"
 
-#: themes/akfgfragments/templates/disco.php:83
+#: templates/disco.php:83
 msgid "Jump to:"
 msgstr "Перейти к:"
 
-#: themes/akfgfragments/templates/disco.php:84
+#: templates/disco.php:84
 msgid "albums"
 msgstr "альбомам"
 
-#: themes/akfgfragments/templates/disco.php:85
+#: templates/disco.php:85
 msgid "singles"
 msgstr "синглам"
 
-#: themes/akfgfragments/templates/disco.php:86
+#: templates/disco.php:86
 msgid "compilations"
 msgstr "сборникам"
 
-#: themes/akfgfragments/templates/disco.php:87
+#: templates/disco.php:87
 msgid "indies"
 msgstr "инди-релизам"
 
-#: themes/akfgfragments/templates/music-videos.php:26
-#: themes/akfgfragments/templates/mv.php:35
+#: templates/music-videos.php:26
+#: templates/mv.php:35
 msgid "Year"
 msgstr "Год"
 
-#: themes/akfgfragments/templates/music-videos.php:27
-#: themes/akfgfragments/templates/mv.php:34
+#: templates/music-videos.php:27
+#: templates/mv.php:34
 msgid "Director"
 msgstr "Режиссёр"
 
-#: themes/akfgfragments/templates/release.php:29
+#: templates/mv.php:36
+msgid "Info about the song"
+msgstr "О песне"
+
+#: templates/release.php:29
 msgid "Type of release:"
 msgstr "Тип издания:"
 
-#: themes/akfgfragments/templates/release.php:42
+#: templates/release.php:42
 msgid "Release date:"
 msgstr "Дата выхода:"
 
-#: themes/akfgfragments/templates/release.php:68
+#: templates/release.php:68
 msgid "Tracklist:"
 msgstr "Список песен:"
 
-#: themes/akfgfragments/templates/release.php:130
-#: themes/akfgfragments/templates/song.php:84
-#: themes/akfgfragments/templates/song.php:248
+#: templates/release.php:130
+#: templates/song.php:84
+#: templates/song.php:248
 msgid "more..."
 msgstr "больше..."
 
-#: themes/akfgfragments/templates/release.php:174
-#: themes/akfgfragments/templates/release.php:260
+#: templates/release.php:174
+#: templates/release.php:260
 msgid "Versions:"
 msgstr "Версии:"
 
-#: themes/akfgfragments/templates/song-tabs.php:21
+#: templates/song-tabs.php:21
 msgid "Information about the song"
 msgstr "Информация о песне"
 
-#: themes/akfgfragments/templates/song-tabs.php:53
+#: templates/song-tabs.php:53
 msgid "Full Band Score"
 msgstr "Все партии"
 
-#: themes/akfgfragments/templates/song-tabs.php:55
+#: templates/song-tabs.php:55
 msgid "Rhythm Guitar (Gotoh)"
 msgstr "Ритм-гитара (Гото)"
 
-#: themes/akfgfragments/templates/song-tabs.php:57
+#: templates/song-tabs.php:57
 msgid "Lead Guitar (Kita)"
 msgstr "Лид-гитара (Кита)"
 
-#: themes/akfgfragments/templates/song-tabs.php:59
+#: templates/song-tabs.php:59
 msgid "Bass (Yamada)"
 msgstr "Бас-гитара (Ямада)"
 
-#: themes/akfgfragments/templates/song-tabs.php:61
+#: templates/song-tabs.php:61
 msgid "Drums (Ijichi)"
 msgstr "Ударные (Идзити)"
 
-#: themes/akfgfragments/templates/song.php:29
+#: templates/song.php:29
 msgid "Part of:"
 msgstr "Входит в:"
 
-#: themes/akfgfragments/templates/song.php:45
+#: templates/song.php:45
 msgid "Tabs:"
 msgstr "Табы:"
 
-#: themes/akfgfragments/templates/song.php:200
+#: templates/song.php:200
 msgid "Lyrics:"
 msgstr "Текст:"
 
-#: themes/akfgfragments/templates/song.php:204
+#: templates/song.php:204
 msgid "japanese"
 msgstr "японский"
 
-#: themes/akfgfragments/templates/song.php:208
+#: templates/song.php:208
 msgid "english"
 msgstr "английский"
 
-#: themes/akfgfragments/templates/song.php:210
+#: templates/song.php:210
 msgid "french"
 msgstr "французский"
 
-#: themes/akfgfragments/templates/song.php:212
+#: templates/song.php:212
 msgid "german"
 msgstr "немецкий"
 
-#: themes/akfgfragments/templates/song.php:214
+#: templates/song.php:214
 msgid "spanish"
 msgstr "испанский"
 
-#: themes/akfgfragments/templates/song.php:216
+#: templates/song.php:216
 msgid "portuguese"
 msgstr "португальский"
 
-#: themes/akfgfragments/templates/song.php:218
+#: templates/song.php:218
 msgid "indonesian"
 msgstr "индонейзийский"
 
-#: themes/akfgfragments/templates/song.php:220
+#: templates/song.php:220
 msgid "russian"
 msgstr "русский"
 
-#: themes/akfgfragments/templates/song.php:222
+#: templates/song.php:222
 msgid "ukrainian"
 msgstr "украинский"
 
-#: themes/akfgfragments/templates/song.php:224
+#: templates/song.php:224
 msgid "belarusian"
 msgstr "беларусский"
 
-#: themes/akfgfragments/templates/song.php:245
+#: templates/song.php:245
 msgid "less..."
 msgstr "меньше..."
 
