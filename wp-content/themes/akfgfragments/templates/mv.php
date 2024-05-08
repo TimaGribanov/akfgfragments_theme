@@ -33,7 +33,7 @@
 
                         echo "<p class='mt-3 mb-1'><strong>" . __( 'Director', 'akfgfragments' ) . ":</strong> $dir</p>";
                         echo "<p class='mt-1 mb-1'><strong>" . __( 'Year', 'akfgfragments' ) . ":</strong> " . date("Y", strtotime("$row->date")) . "</p>";
-                        echo "<p class='mt-1'><strong><a class='mv-link' href='/song?" . normaliseTitle($title_parsed) . "' target='_blank'>Info about the song</a></strong></p>";
+                        echo "<p class='mt-1'><strong><a class='mv-link' href='/song?" . normaliseTitle($title_parsed) . "' target='_blank'>" . __( 'Info about the song', 'akfgfragments' ) . "</a></strong></p>";
                     }
                 }
                 ?>
