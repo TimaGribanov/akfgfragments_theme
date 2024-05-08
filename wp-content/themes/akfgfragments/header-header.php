@@ -10,8 +10,8 @@ function buildLangSelector()
         //array('Français', 'fr'),
         //array('Español', 'es'),
         //array('Português', 'pt'),
-        //array('Русский', 'ru'),
-        //array('Українська', 'uk'),
+        array('Русский', 'ru'),
+        array('Українська', 'uk'),
         //array('Беларуская', 'be'),
         //array('Suomi', 'fi'),
         array('日本語', 'ja')
