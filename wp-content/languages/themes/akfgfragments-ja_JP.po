@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-05-08T10:15:33+00:00\n"
-"PO-Revision-Date: 2024-05-08 10:25\n"
+"POT-Creation-Date: 2024-05-08T11:01:45+00:00\n"
+"PO-Revision-Date: 2024-05-08 11:27\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: akfgfragments\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -177,6 +177,10 @@ msgstr "この言語にまだ利用できません。"
 #: load_lyrics.php:85
 msgid "Sorry! This song's lyrics are not yet available in "
 msgstr "申し訳ありません！この曲の歌詞は"
+
+#: posts.php:54
+msgid "Author:"
+msgstr "投稿者："
 
 #: posts.php:99
 #: posts.php:142
