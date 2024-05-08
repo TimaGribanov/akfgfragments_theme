@@ -21,7 +21,7 @@
                         <p><a href="/song?<?php echo $title; ?>"><?php _e('Information about the song', 'akfgfragments'); ?></a></p>
                     </div>
                     <div class="row mt-3">
-                        <h2>Download</h2>
+                        <h2><?php _e( 'Download',  'akfgfragments'); ?></h2>
 
                         <?php
                         if (!empty($results)) {
@@ -35,18 +35,16 @@
                             echo "</div>";
                             echo "</div>";
                         } else {
-                            echo "<p>Sorry! There are no tabs for this song on our site yet.</p>";
-                            echo "<p>But we're working on it!</p>";
+                            echo "<p>" . __( 'Sorry! There are no tabs for this song on our site yet. But we\'re working on it!',  'akfgfragments') . "</p>";
                         }
                         ?>
-
                     </div>
 
                     <?php
                     if (!empty($results)) {
                         ?>
                         <div class="row mt-3">
-                            <h2>Online view</h2>
+                            <h2><?php _e( 'Online view',  'akfgfragments'); ?></h2>
                             <div class="d-grid gap-2 d-md-block">
                                 <div id="tabs-pdf-buttons">
                                     <input type="submit" class="me-2 mb-2 tabs-pdf-btn" name="full"
@@ -68,8 +66,8 @@
 
                             <div id="tabs-pdf-pages" class="row">
                                 <div class="text-center">
-                                    <button id="tabs-pdf-pages-prev" onclick="loadPrev()">prev</button>
-                                    <button id="tabs-pdf-pages-next" onclick="loadNext()">next</button>
+                                    <button id="tabs-pdf-pages-prev"><?php _e( 'prev', 'akfgfragments' ); ?></button>
+                                    <button id="tabs-pdf-pages-next"><?php _e( 'next', 'akfgfragments' ); ?></button>
                                 </div>
                                 <div class="col"></div>
                             </div>
@@ -246,6 +244,14 @@
         const part = $(this).attr('name')
 
         loadPdf('<?php echo $title; ?>', part)
+    })
+
+    $('#tabs-pdf-pages-prev').click(function() {
+        loadPrev()
+    })
+
+    $('#tabs-pdf-pages-next').click(function() {
+        loadNext()
     })
 </script>
 
