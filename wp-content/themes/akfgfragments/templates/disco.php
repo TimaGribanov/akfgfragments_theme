@@ -36,7 +36,7 @@ function pluraliseTypes($input, $locale)
         } else {
             $plural_form = $input . "ы";
         }
-    } elseif ($locale == 'uk_UA') {
+    } elseif ($locale == 'uk') {
         if ($input == 'збірка') {
             $plural_form = 'збірки';
         } elseif ($input == 'альбом' || $input == 'сінгл' || $input == 'міні-альбом') {
@@ -44,7 +44,7 @@ function pluraliseTypes($input, $locale)
         } else {
             $plural_form = $input;
         }
-    } elseif ($locale == 'be_BY') {
+    } elseif ($locale == 'bel') {
         if ($input == 'зборнік') {
             $plural_form = 'зборнікі';
         } elseif ($input == 'альбом' || $input == 'сінгл' || $input == 'міні-альбом') {
@@ -85,6 +85,7 @@ function capitaiseFirstLetter($input) {
                         <div class="col"><a href="#singles"><?php _e( 'singles', 'akfgfragments' ) ?></a></div>
                         <div class="col"><a href="#compilations"><?php _e( 'compilations', 'akfgfragments' ) ?></a></div>
                         <div class="col"><a href="#indies"><?php _e( 'indies', 'akfgfragments' ) ?></a></div>
+                        <div class="col"><a href="#other"><?php _e( 'other', 'akfgfragments' ) ?></a></div>
                     </div>
                     <?php
                     $discodb = new wpdb(DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST);
@@ -102,14 +103,14 @@ function capitaiseFirstLetter($input) {
                             case 'de_DE':
                                 $type_print = ucwords(pluraliseTypes($type->type_string_de, 'de_DE'));
                                 break;
-                            case 'ja_JP':
+                            case 'ja':
                                 $type_print = $type->type_string_ja;
                                 break;
-                            case 'uk_UA':
-                                $type_print = capitaiseFirstLetter( pluraliseTypes($type->type_string_uk, 'uk_UA') );
+                            case 'uk':
+                                $type_print = capitaiseFirstLetter( pluraliseTypes($type->type_string_uk, 'uk') );
                                 break;
-                            case 'be_BY':
-                                $type_print = capitaiseFirstLetter( pluraliseTypes($type->type_string_be, 'be_BY') );
+                            case 'bel':
+                                $type_print = capitaiseFirstLetter( pluraliseTypes($type->type_string_be, 'bel') );
                                 break;
                             case 'ru_RU':
                                 $type_print = capitaiseFirstLetter( pluraliseTypes($type->type_string_ru, 'ru_RU') );
@@ -140,13 +141,17 @@ function capitaiseFirstLetter($input) {
 
                             $date_format = get_option('date_format');
 
-                            if ($release->date == "2000-01-01") {
+                            if (($release->date == "2000-01-01" || $release->date == "2002-01-01")
+                                && ($type->type_string == "other" || $type->type_string == "indie")) {
                                 if ($curr_locale == "ja_JP") {
                                     echo "<p class='d-none d-lg-block d-xl-block d-xxl-block'>" . date("Y年", strtotime("$release->date")) . "</p>";
                                 } else {
                                     echo "<p class='d-none d-lg-block d-xl-block d-xxl-block'>" . date("Y", strtotime("$release->date")) . "</p>";
                                 }
-                            } else {
+                            } else if ($release->date == "0000-00-00") {
+                                echo "<p class='d-none d-lg-block d-xl-block d-xxl-block'>" . __( 'Release date is unknown', 'akfgfragments' ) . "</p>";
+                            }
+                            else {
                                 echo "<p class='d-none d-lg-block d-xl-block d-xxl-block'>" . wp_date( "{$date_format}", strtotime("$release->date") ) . "</p>";
                             }
                             echo "</div>";
