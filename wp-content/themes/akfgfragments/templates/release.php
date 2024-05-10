@@ -55,7 +55,7 @@ function printReleaseDate($date)
     echo "<div class='row'>";
     if ($date == "2000-01-01" || $date == "2002-01-01") {
         dateBlock("short", $date);
-    } else if ($release->date == "0000-00-00") {
+    } else if ($date == "0000-00-00") {
         unknownDateBlock();
     } else {
         dateBlock("full", $date);
