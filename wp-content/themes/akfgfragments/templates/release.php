@@ -31,7 +31,7 @@ function printReleaseType($type)
 }
 
 function dateBlock($format, $date)
-{
+{    
     if ($format == "full") {
         $formatString = "jS F Y";
     } else {
@@ -44,14 +44,19 @@ function dateBlock($format, $date)
     echo "</p>";
 }
 
+function unknownDateBlock() {
+    echo "<p id='release-date'>";
+    _e('Release date is unknown', 'akfgfragments');
+    echo "</p>";
+}
+
 function printReleaseDate($date)
 {
-
-
     echo "<div class='row'>";
-
-    if ($date == "2000-01-01") {
+    if ($date == "2000-01-01" || $date == "2002-01-01") {
         dateBlock("short", $date);
+    } else if ($release->date == "0000-00-00") {
+        dateBlock("unknown", $date);
     } else {
         dateBlock("full", $date);
     }
