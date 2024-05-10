@@ -101,6 +101,20 @@ function printSpotify($url)
 
     echo "</div>";
 }
+
+function doWeHaveMoreTranslations($row) {
+    $ret_val = False;
+
+    if (($row->title_de != "") || ($row->title_es != "")
+        || ($row->title_fr != "") || ($row->title_pt != "")
+        || ($row->title_id != "") || ($row->title_ru != "")
+        || ($row->title_uk != "") || ($row->title_be != "")
+        || ($row->title_fi != "")) {
+        $ret_val = True;
+    }
+
+    return $ret_val;
+}
 ?>
 
 <?php get_header(); ?>
@@ -131,6 +145,8 @@ function printSpotify($url)
                     
                             echo "<div class='row'>"; //Title translations
                             echo "<p class='title-trans'><span title='日本語' lang='ja-jp'>" . $row->title_ja . "</span>, <span title='English'>" . $row->title_en . "</span></p>";
+
+                            if (doWeHaveMoreTranslations($row)) {
                             echo "<p class='title-trans' id='open-hidden'>";
                             _e('more...', 'akfgfragments');
                             echo "</p>";
@@ -150,6 +166,9 @@ function printSpotify($url)
                             if ($row->title_id != "") {
                                 echo "<p class='title-trans'><span title='Bahasa Indonesia'>" . $row->title_id . "</span></p>";
                             }
+                            if ($row->title_fi != "") {
+                                echo "<p class='title-trans'><span title='Suomi'>" . $row->title_fi . "</span></p>";
+                            }
                             if ($row->title_ru != "") {
                                 echo "<p class='title-trans'><span title='Русский'>" . $row->title_ru . "</span></p>";
                             }
@@ -160,6 +179,7 @@ function printSpotify($url)
                                 echo "<p class='title-trans'><span title='Беларуская'>" . $row->title_be . "</span></p>";
                             }
                             echo "</div>";
+                            }
                             echo "</div>"; //End of title translations
                     
                             printReleaseType($row->type); //Release type
@@ -193,8 +213,10 @@ function printSpotify($url)
                             echo "<div class='col'>"; //The second col: Album cover, Spotify
                     
                             printCover($row->img_uri); //Album cover
-                    
-                            printSpotify($row->spotify_uri); //Spotify
+
+                            if ($row->spotify_uri !== "") {
+                                printSpotify($row->spotify_uri); //Spotify
+                            };
                     
                             echo "</div>"; //End of the second col
                         }
@@ -237,6 +259,9 @@ function printSpotify($url)
                             if ($row->title_id != "") {
                                 echo "<p class='title-trans mt-1 mb-1'><span title='Bahasa Indonesia'>" . $row->title_id . "</span></p>";
                             }
+                            if ($row->title_fi != "") {
+                                echo "<p class='title-trans'><span title='Suomi'>" . $row->title_fi . "</span></p>";
+                            }
                             if ($row->title_ru != "") {
                                 echo "<p class='title-trans mt-1 mb-1'><span title='Русский'>" . $row->title_ru . "</span></p>";
                             }
@@ -273,9 +298,11 @@ function printSpotify($url)
                             }
 
                             echo "</div>"; //End of versions
-                    
-                            printSpotify($row->spotify_uri); //Spotify
-                    
+
+                            if ($row->spotify_uri !== "") {
+                                printSpotify($row->spotify_uri); //Spotify
+                            };
+                            
                             echo "</div>"; //End of the first col
                         }
                     }
