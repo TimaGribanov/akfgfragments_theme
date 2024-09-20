@@ -131,6 +131,7 @@
     let currentPage = 1
 
     function loadPdf(title, part) {
+        let filename = ''
         currentPage = 1
 
         if (title.includes('_/_'))
