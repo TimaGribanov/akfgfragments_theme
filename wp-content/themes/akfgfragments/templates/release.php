@@ -92,7 +92,6 @@ function printSpotify($url)
     if (strpos($url, ",") === false) {
         if (str_contains($url, "playlist/")) {
             echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/" . $url . "?utm_source=generator' width='60%' height='380' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
-        }
         } else {
             echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/album/" . $url . "?utm_source=generator' width='60%' height='380' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
         }
