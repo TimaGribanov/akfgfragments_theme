@@ -174,15 +174,6 @@ $html_locale = str_replace('_', '-', $html_locale);
     <meta name="twitter:image"
         content="https://akfgfragments.com/wp-content/uploads/2022/05/akfgfragments_meta_image.png" />
 
-    <!--  FOR TESTBED ONLY -->
-    <!--
-    <meta name="robots" content="noindex" />
-    -->
-
-    <!-- FOR PRODUCTION -->
-    <meta name="google-site-verification" content="l0FRBaDseDjdiy5dTC3vsNiG0DbxBRPsuYxf29BDv8Y" />
-    <meta name="msvalidate.01" content="A6B2545E3F1222DC6899B9CDDBF4591B" />
-
     <title>
         <?php echo $og_title; ?>
     </title>
