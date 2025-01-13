@@ -39,7 +39,7 @@ function pluraliseTypes($input, $locale)
     } elseif ($locale == 'uk') {
         if ($input == 'збірка') {
             $plural_form = 'збірки';
-        } elseif ($input == 'альбом' || $input == 'сінгл' || $input == 'міні-альбом') {
+        } elseif ($input == 'альбом' || $input == 'сингл' || $input == 'міні-альбом') {
             $plural_form = $input . "и";
         } else {
             $plural_form = $input;
