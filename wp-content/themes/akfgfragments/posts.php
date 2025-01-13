@@ -27,8 +27,13 @@ if (is_single() && 'interview' == get_post_type()) { ?>
                 <h5><?php
                 $date_format = get_option('date_format');
                 $time_format = get_option('time_format');
-                $timezone = $_COOKIE["local_timezone"];
-                echo wp_date("{$date_format} {$time_format}", get_post_timestamp(), new DateTimeZone($timezone));
+                if (!isset($_COOKIE["local_timezone"])) {
+                    $date_string = wp_date("{$date_format} {$time_format} {$tz_string}", get_post_timestamp());
+                    echo $date_string . ' UTC+0';
+                } else {
+                    $timezone = $_COOKIE["local_timezone"];
+                    echo wp_date("{$date_format} {$time_format}", get_post_timestamp(), new DateTimeZone($timezone));
+                }
                 ?></h5>
                 <?php
                 $post_tags = get_the_tags();
