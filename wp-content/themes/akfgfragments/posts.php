@@ -66,7 +66,7 @@ if (is_single() && 'interview' == get_post_type()) { ?>
         <!-- DESKTOP -->
         <div class="row main-post d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
             <div class="row">
-                <div class="col-4">
+                <div class="col-lg-6 col-xl-5 col-xxl-4">
                     <?php
                     if (has_post_thumbnail()) {
                         $post_thumbnail_id = get_post_thumbnail_id();
@@ -81,15 +81,20 @@ if (is_single() && 'interview' == get_post_type()) { ?>
                     }
                     ?>
                 </div>
-                <div class="col-8 main-post-right">
+                <div class="col main-post-right">
                     <a href="<?php the_permalink(); ?>">
                         <h1><?php the_title(); ?></h1>
                     </a>
                     <h6><?php
                     $date_format = get_option('date_format');
                     $time_format = get_option('time_format');
-                    $timezone = $_COOKIE["local_timezone"];
-                    echo wp_date("{$date_format} {$time_format}", get_post_timestamp(), new DateTimeZone($timezone));
+                    if (!isset($_COOKIE["local_timezone"])) {
+                        $date_string = wp_date("{$date_format} {$time_format} {$tz_string}", get_post_timestamp());
+                        echo $date_string . ' UTC+0';
+                    } else {
+                        $timezone = $_COOKIE["local_timezone"];
+                        echo wp_date("{$date_format} {$time_format}", get_post_timestamp(), new DateTimeZone($timezone));
+                    }
                     ?></h6>
                     <?php
                     $post_tags = get_the_tags();
