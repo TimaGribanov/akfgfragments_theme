@@ -130,14 +130,14 @@ function capitaiseFirstLetter($input) {
                             echo "<div class='row d-flex align-items-center disco-release'>";
                             echo "<div class='col-lg-1 col-md-3'>";
                             if (strpos($release->img_uri, ",") === false) {
-                                echo "<a href='/release?" . normaliseTitle($release->title_ro) . "' target='blank_'><img src='" . $release->img_uri . "'></a>";
+                                echo "<a href='/release?title=" . normaliseTitle($release->title_ro) . "' target='blank_'><img src='" . $release->img_uri . "'></a>";
                             } else {
                                 $img_uri_arr = explode(",", $release->img_uri);
-                                echo "<a href='/release?" . normaliseTitle($release->title_ro) . "' target='blank_'><img src='" . $img_uri_arr[0] . "'></a>";
+                                echo "<a href='/release?title=" . normaliseTitle($release->title_ro) . "' target='blank_'><img src='" . $img_uri_arr[0] . "'></a>";
                             }
                             echo "</div>";
                             echo "<div class='col'>";
-                            echo "<a href='/release?" . normaliseTitle($release->title_ro) . "' class='disco-release-title' target='blank_'><span>" . $release->title_ro . "</span></a>";
+                            echo "<a href='/release?title=" . normaliseTitle($release->title_ro) . "' class='disco-release-title' target='blank_'><span>" . $release->title_ro . "</span></a>";
 
                             $date_format = get_option('date_format');
 

@@ -22,7 +22,7 @@
                         for ($i = 0; $i < $songs_number; $i++) {
                             $song = $results_songs["$i"]->title_ro;
                             echo "<div class='col mb-2'>";
-                            echo "<a class='lyrics-link' href='/song?" . normaliseTitle($song) . "' target='blank_'>" . $song . "</a>";
+                            echo "<a class='lyrics-link' href='/song?title=" . normaliseTitle($song) . "' target='blank_'>" . $song . "</a>";
                             echo "</div>";
                         }
                         echo "</div>";

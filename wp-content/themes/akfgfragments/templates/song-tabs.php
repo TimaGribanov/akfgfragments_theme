@@ -18,7 +18,7 @@
 
                     <h1 class="song_title"><?php echo $title_parsed; ?></h1>
                     <div class="row">
-                        <p><a href="/song?<?php echo $title; ?>"><?php _e('Information about the song', 'akfgfragments'); ?></a></p>
+                        <p><a href="/song?title=<?php echo $title; ?>"><?php _e('Information about the song', 'akfgfragments'); ?></a></p>
                     </div>
                     <div class="row mt-3">
                         <h2><?php _e( 'Download',  'akfgfragments'); ?></h2>

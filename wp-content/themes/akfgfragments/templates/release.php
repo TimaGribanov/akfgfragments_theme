@@ -77,7 +77,7 @@ function printTracklist($tracklist)
 
     for ($i = 0; $i < $tracklist_length; $i++) {
         $track = $tracklist["$i"]->title_ro;
-        echo "<li><a class='main-tracklist-link' href='song?" . normaliseTitle($track) . "'>" . $track . "</a></li>";
+        echo "<li><a class='main-tracklist-link' href='song?title=" . normaliseTitle($track) . "'>" . $track . "</a></li>";
     }
 
     echo "</ol>";
@@ -89,6 +89,7 @@ function printSpotify($url)
 {
     echo "<div class='row'>"; //Spotify
 
+    if ($url !== null) {
     if (strpos($url, ",") === false) {
         if (str_contains($url, "playlist/")) {
             echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/" . $url . "?utm_source=generator' width='60%' height='380' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
@@ -101,6 +102,7 @@ function printSpotify($url)
         foreach ($spotify_uri_arr as &$uri) {
             echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/album/" . $uri . "?utm_source=generator' width='60%' height='380' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
         }
+    }
     }
 
     echo "</div>";

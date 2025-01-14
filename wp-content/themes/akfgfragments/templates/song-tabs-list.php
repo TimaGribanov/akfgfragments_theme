@@ -24,7 +24,7 @@
                                 for ($i = 0; $i < $tabs_number; $i++) {
                                     $tab = $tabs["$i"]->title;
                                     echo "<div class='col mb-2'>";
-                                    echo "<a class='lyrics-link' href='/song-tabs?" . normaliseTitle($tab) . "' target='blank_'>" . $tab . "</a>";
+                                    echo "<a class='lyrics-link' href='/song-tabs?title=" . normaliseTitle($tab) . "' target='blank_'>" . $tab . "</a>";
                                     echo "</div>";
                                 }
                                 echo "</div>";

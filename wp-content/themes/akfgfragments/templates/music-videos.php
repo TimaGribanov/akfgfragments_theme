@@ -22,7 +22,7 @@
                         $dir_id = $results[$j]->director;
                         $dir = getName($dir_id, $curr_locale);
                         echo "<div class='col-lg-4 col-sm-6'>";
-                        echo "<h3><a href='/mv?" . normaliseTitle($title) . "' target='_blank'>$title</a></h3>";
+                        echo "<h3><a href='/mv?title=" . normaliseTitle($title) . "' target='_blank'>$title</a></h3>";
                         echo "<p class='mb-1'>" . __('Year', 'akfgfragments') . ": " . date("Y", strtotime("$date")) . "</p>";
                         echo "<p class='mt-1'>" . __('Director', 'akfgfragments') . ": " . $dir . "</p>";
                         echo "</div>";

@@ -5,6 +5,7 @@ function printSpotifySong($url)
 {
     echo "<div class='row'>";
 
+    if ($url !== null) {
     if (strpos($url, ",") === false) {
         echo "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/" .
             $url .
@@ -17,6 +18,7 @@ function printSpotifySong($url)
                 $uri . "?utm_source=generator' width='60%' height='80' frameBorder='0' allowfullscreen='' allow='autoplay;
                 clipboard-write; encrypted-media; fullscreen; picture-in-picture'></iframe>";
         }
+    }
     }
 
     echo "</div>";
@@ -31,7 +33,7 @@ function printReleases($song_releases)
     echo "<div>"; //List of releases
     if (!empty($song_releases)) {
         foreach ($song_releases as $row) {
-            echo "<p class='song-releases'><a href='release?" . normaliseTitle($row->title_ro) . "'>" . $row->title_ro . "</a></p>";
+            echo "<p class='song-releases'><a href='release?title=" . normaliseTitle($row->title_ro) . "'>" . $row->title_ro . "</a></p>";
         }
     }
     echo "</div>";
@@ -44,7 +46,7 @@ function printTabs($title, $title_ro)
     echo "<h3>";
     _e('Tabs:', 'akfgfragments');
     echo "</h3>";
-    echo "<a href='/song-tabs?$title' target='_blank'>$title_ro</a>";
+    echo "<a href='/song-tabs?title=$title' target='_blank'>$title_ro</a>";
     echo "</div>";
 }
 ?>

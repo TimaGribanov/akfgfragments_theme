@@ -8,6 +8,10 @@ $slug = ucwords($slug);
 
 $title = parse_url($url, PHP_URL_QUERY); //Get a query
 
+if (str_contains($title, 'title=')) {
+    $title = str_replace('title=', '', $title);
+}
+
 $title_parsed = str_replace('_', ' ', $title); //Delete underscores if they exist
 $title_parsed = str_replace('%27', '\'', $title_parsed); //Change %27 to a single quote
 $title_parsed = str_replace('/\'', '\'', $title_parsed); //Delete slashes if they exist
