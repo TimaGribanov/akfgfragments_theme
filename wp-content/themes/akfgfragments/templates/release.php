@@ -115,7 +115,7 @@ function doWeHaveMoreTranslations($row) {
         || ($row->title_fr != "") || ($row->title_pt != "")
         || ($row->title_id != "") || ($row->title_ru != "")
         || ($row->title_uk != "") || ($row->title_be != "")
-        || ($row->title_fi != "")) {
+        || ($row->title_fi != "") || ($row->title_it != "")) {
         $ret_val = True;
     }
 
@@ -133,7 +133,7 @@ function doWeHaveMoreTranslations($row) {
 
             //Connect to another DB containing discography data
             $releasedb = new wpdb(DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST);
-            $results = $releasedb->get_results("SELECT r.title_ja, r.title_ro, r.title_en, r.title_ru, r.title_es, r.title_de, r.title_fr, r.title_be, r.title_uk, r.title_fi, r.title_pt, r.title_id, r.date, r.catalogue, r.spotify_uri, r.img_uri, t.type FROM releases r JOIN types t ON t.id = r.type WHERE title_ro =  \"$title_parsed\";");
+            $results = $releasedb->get_results("SELECT r.title_ja, r.title_ro, r.title_en, r.title_ru, r.title_es, r.title_de, r.title_fr, r.title_be, r.title_uk, r.title_fi, r.title_pt, r.title_id, r.title_it, r.date, r.catalogue, r.spotify_uri, r.img_uri, t.type FROM releases r JOIN types t ON t.id = r.type WHERE title_ro =  \"$title_parsed\";");
             $tracklist = $releasedb->get_results("SELECT s.title_ro FROM rel_songs rs JOIN releases r ON r.id = rs.release_id JOIN songs s ON s.id = rs.song_id WHERE r.title_ro = \"$title_parsed\" ORDER BY rs.release_pos ASC;");
             ?>
             <!-- ON DESKTOP -->
@@ -165,6 +165,9 @@ function doWeHaveMoreTranslations($row) {
                             }
                             if ($row->title_fr != "") {
                                 echo "<p class='title-trans'><span title='Française'>" . $row->title_fr . "</span></p>";
+                            }
+                            if ($row->title_it != "") {
+                                echo "<p class='title-trans'><span title='Italiano'>" . $row->title_it . "</span></p>";
                             }
                             if ($row->title_pt != "") {
                                 echo "<p class='title-trans'><span title='Português'>" . $row->title_pt . "</span></p>";
@@ -258,6 +261,9 @@ function doWeHaveMoreTranslations($row) {
                             }
                             if ($row->title_fr != "") {
                                 echo "<p class='title-trans mt-1 mb-1'><span title='Française'>" . $row->title_fr . "</span></p>";
+                            }
+                            if ($row->title_it != "") {
+                                echo "<p class='title-trans mt-1 mb-1'><span title='Italiano'>" . $row->title_it . "</span></p>";
                             }
                             if ($row->title_pt != "") {
                                 echo "<p class='title-trans mt-1 mb-1'><span title='Português'>" . $row->title_pt . "</span></p>";

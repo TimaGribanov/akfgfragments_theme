@@ -95,6 +95,9 @@ function printTabs($title, $title_ro)
                             if ($row->title_fr != "") {
                                 echo "<p class='title-trans'><span title='Française'>" . $row->title_fr . "</span></p>";
                             }
+                            if ($row->title_it != "") {
+                                echo "<p class='title-trans'><span title='Italiano'>" . $row->title_it  . "</span></p>";
+                            }
                             if ($row->title_pt != "") {
                                 echo "<p class='title-trans'><span title='Português'>" . $row->title_pt . "</span></p>";
                             }
@@ -161,6 +164,9 @@ function printTabs($title, $title_ro)
                             if ($row->title_fr != "") {
                                 echo "<p class='title-trans'><span title='Française'>" . $row->title_fr . "</span></p>";
                             }
+                            if ($row->title_it != "") {
+                                echo "<p class='title-trans'><span title='Italiano'>" . $row->title_it  . "</span></p>";
+                            }
                             if ($row->title_pt != "") {
                                 echo "<p class='title-trans'><span title='Português'>" . $row->title_pt . "</span></p>";
                             }
@@ -214,6 +220,8 @@ function printTabs($title, $title_ro)
                                 value="<?php _e('german', 'akfgfragments'); ?>">
                             <input type="submit" class="me-2 mb-2 song-text-btn" name="es"
                                 value="<?php _e('spanish', 'akfgfragments'); ?>">
+                            <input type="submit" class="me-2 mb-2 song-text-btn" name="it"
+                                value="<?php _e('italian', 'akfgfragments');  ?>">
                             <input type="submit" class="me-2 mb-2 song-text-btn" name="pt"
                                 value="<?php _e('portuguese', 'akfgfragments'); ?>">
                             <input type="submit" class="me-2 mb-2 song-text-btn" name="id"
