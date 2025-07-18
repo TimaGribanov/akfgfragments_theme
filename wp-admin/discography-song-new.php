@@ -55,6 +55,10 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                             <td><input type="text" id="title_fr" name="title_fr"></td>
                         </tr>
                         <tr>
+                            <td><label for="title_it">Italian: </label></td>
+                            <td><input type="text" id="title_it" name="title_it"></td>
+                        </tr>
+                        <tr>
                             <td><label for="title_be">Belarusian: </label></td>
                             <td><input type="text" id="title_be" name="title_be"></td>
                         </tr>
@@ -62,10 +66,10 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                             <td><label for="title_uk">Ukrainian: </label></td>
                             <td><input type="text" id="title_uk" name="title_uk"></td>
                         </tr>
-                        <tr>
+                        <!--tr>
                             <td><label for="title_fi">Finnish: </label></td>
                             <td><input type="text" id="title_fi" name="title_fi"></td>
-                        </tr>
+                    </tr-->
                         <tr>
                             <td><label for="title_pt">Portuguese: </label></td>
                             <td><input type="text" id="title_pt" name="title_pt"></td>
@@ -95,6 +99,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                         <option value="es">Spanish</option>
                         <option value="de">German</option>
                         <option value="fr">French</option>
+                        <option value="it">Italian</option>
                         <option value="be">Belarusian</option>
                         <option value="uk">Ukrainian</option>
                         <option value="fi">Finnish</option>
@@ -116,9 +121,10 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
             $title_es = stripslashes($_POST['title_es']);
             $title_de = stripslashes($_POST['title_de']);
             $title_fr = stripslashes($_POST['title_fr']);
+            $title_it = stripslashes($_POST['title_it']);
             $title_be = stripslashes($_POST['title_be']);
             $title_uk = stripslashes($_POST['title_uk']);
-            $title_fi = stripslashes($_POST['title_fi']);
+            #$title_fi = stripslashes($_POST['title_fi']);
             $title_pt = stripslashes($_POST['title_pt']);
             $title_id = stripslashes($_POST['title_id']);
             $spotify_uri = $_POST['spotify_uri'];
@@ -135,9 +141,10 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
                     "title_es" => "$title_es",
                     "title_de" => "$title_de",
                     "title_fr" => "$title_fr",
+                    "title_it" => "$title_it",
                     "title_be" => "$title_be",
                     "title_uk" => "$title_uk",
-                    "title_fi" => "$title_fi",
+                    #"title_fi" => "$title_fi",
                     "title_pt" => "$title_pt",
                     "title_id" => "$title_id",
                     "spotify_uri" => "$spotify_uri"

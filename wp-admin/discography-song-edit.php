@@ -42,7 +42,7 @@ $title_parsed = str_replace('=', '', $title_parsed);
     <div style="display: flex; width: 100%;">
         <?php
         $discodb = new wpdb(DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST);
-        $results = $discodb->get_results("SELECT title_ja, title_ro, title_en, title_ru, title_es, title_de, title_fr, title_be, title_uk, title_fi, title_pt, title_id, spotify_uri FROM songs WHERE title_ro =  \"$title_parsed\";");
+        $results = $discodb->get_results("SELECT title_ja, title_ro, title_en, title_ru, title_es, title_de, title_fr, title_it, title_be, title_uk, title_fi, title_pt, title_id, spotify_uri FROM songs WHERE title_ro =  \"$title_parsed\";");
         foreach ($results as $row) {
             ?>
             <div style="flex: 0 0 30%;">
@@ -83,6 +83,11 @@ $title_parsed = str_replace('=', '', $title_parsed);
                             <tr>
                                 <td><label for="title_fr">French: </label></td>
                                 <td><input type="text" id="title_fr" name="title_fr" value="<?php echo $row->title_fr; ?>">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="title_it">Italian: </label></td>
+                                <td><input type="text" id="title_it" name="title_it" value="<?php echo $row->title_it; ?>">
                                 </td>
                             </tr>
                             <tr>
@@ -139,9 +144,10 @@ $title_parsed = str_replace('=', '', $title_parsed);
                     <option class="lyrics-lang-option" value="es">Spanish</option>
                     <option class="lyrics-lang-option" value="de">German</option>
                     <option class="lyrics-lang-option" value="fr">French</option>
+                    <option class="lyrics-lang-option" value="it">Italian</option>
                     <option class="lyrics-lang-option" value="be">Belarusian</option>
                     <option class="lyrics-lang-option" value="uk">Ukrainian</option>
-                    <option class="lyrics-lang-option" value="fi">Finnish</option>
+                    <!--option class="lyrics-lang-option" value="fi">Finnish</option-->
                     <option class="lyrics-lang-option" value="pt">Portuguese</option>
                     <option class="lyrics-lang-option" value="id">Indonesian</option>
                 </select><br>
@@ -194,9 +200,10 @@ $title_parsed = str_replace('=', '', $title_parsed);
         $title_es = stripslashes($_POST['title_es']);
         $title_de = stripslashes($_POST['title_de']);
         $title_fr = stripslashes($_POST['title_fr']);
+        $title_it = stripslashes($_POST['title_it']);
         $title_be = stripslashes($_POST['title_be']);
         $title_uk = stripslashes($_POST['title_uk']);
-        $title_fi = stripslashes($_POST['title_fi']);
+        // $title_fi = stripslashes($_POST['title_fi']);
         $title_pt = stripslashes($_POST['title_pt']);
         $title_id = stripslashes($_POST['title_id']);
         $spotify_uri = $_POST['spotify_uri'];
@@ -213,9 +220,10 @@ $title_parsed = str_replace('=', '', $title_parsed);
                 "title_es" => "$title_es",
                 "title_de" => "$title_de",
                 "title_fr" => "$title_fr",
+                "title_it" => "$title_it",
                 "title_be" => "$title_be",
                 "title_uk" => "$title_uk",
-                "title_fi" => "$title_fi",
+                // "title_fi" => "$title_fi",
                 "title_pt" => "$title_pt",
                 "title_id" => "$title_id",
                 "spotify_uri" => "$spotify_uri"
