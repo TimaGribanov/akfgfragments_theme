@@ -202,7 +202,7 @@ $title_parsed = str_replace('=', '', $title_parsed);
             $title_it = stripslashes($_POST['title_it']);
             $title_be = stripslashes($_POST['title_be']);
             $title_uk = stripslashes($_POST['title_uk']);
-            $title_fi = stripslashes($_POST['title_fi']);
+            // $title_fi = stripslashes($_POST['title_fi']);
             $title_pt = stripslashes($_POST['title_pt']);
             $title_id = stripslashes($_POST['title_id']);
             $type = $_POST['type'];
@@ -229,7 +229,7 @@ $title_parsed = str_replace('=', '', $title_parsed);
                     "title_it" => "$title_it",
                     "title_be" => "$title_be",
                     "title_uk" => "$title_uk",
-                    "title_fi" => "$title_fi",
+                    // "title_fi" => "$title_fi",
                     "title_pt" => "$title_pt",
                     "title_id" => "$title_id",
                     "type" => "$type",
