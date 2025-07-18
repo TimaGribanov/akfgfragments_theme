@@ -55,6 +55,10 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
             <h3>Indonesian:</h3>
           </label>
           <input type="text" id="idd" name="idd" value="<?php echo $row->idd; ?>">
+        <label for="it">
+            <h3>Italian:</h3>
+          </label>
+          <input type="text" id="it" name="it" value="<?php echo $row->it; ?>">
           <label for="ru">
             <h3>Russian:</h3>
           </label>
@@ -83,6 +87,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
     $ja = $_POST['ja'];
     $de = $_POST['de'];
     $idd = $_POST['idd'];
+    $it = $_POST['it'];
     $ru = $_POST['ru'];
     $uk = $_POST['uk'];
     $es = $_POST['es'];
@@ -96,6 +101,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
         "ja" => "$ja",
         "de" => "$de",
         "idd" => "$idd",
+        "it" => "$it",
         "ru" => "$ru",
         "uk" => "$uk",
         "es" => "$es"
