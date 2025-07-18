@@ -36,7 +36,7 @@ $title_parsed = str_replace('=', '', $title_parsed);
     <h1><?php global $title_parsed; esc_html_e( 'Edit release: ' . $title_parsed ); ?></h1>
     <?php
     $discodb = new wpdb( DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST );
-    $results = $discodb->get_results( "SELECT r.title_ja, r.title_ro, r.title_en, r.title_ru, r.title_es, r.title_de, r.title_fr, r.title_be, r.title_uk, r.title_fi, r.title_pt, r.title_id, r.type, r.date, r.catalogue, r.spotify_uri, r.img_uri FROM releases r WHERE title_ro =  \"$title_parsed\";" );
+    $results = $discodb->get_results( "SELECT r.title_ja, r.title_ro, r.title_en, r.title_ru, r.title_es, r.title_de, r.title_fr, r.title_it, r.title_be, r.title_uk, r.title_fi, r.title_pt, r.title_id, r.type, r.date, r.catalogue, r.spotify_uri, r.img_uri FROM releases r WHERE title_ro =  \"$title_parsed\";" );
     foreach ($results as $row) {
     ?>
     
@@ -75,6 +75,10 @@ $title_parsed = str_replace('=', '', $title_parsed);
                             <td><input type="text" id="title_fr" name="title_fr" value="<?php echo $row->title_fr; ?>"></td>
                         </tr>
                         <tr>
+                            <td><label for="title_it">Italian: </label></td>
+                            <td><input type="text" id="title_it" name="title_it value="<?php echo $row->title_it; ?>"></td>
+                        </tr>
+                        <tr>
                             <td><label for="title_be">Belarusian: </label></td>
                             <td><input type="text" id="title_be" name="title_be" value="<?php echo $row->title_be; ?>"></td>
                         </tr>
@@ -82,10 +86,10 @@ $title_parsed = str_replace('=', '', $title_parsed);
                             <td><label for="title_uk">Ukrainian: </label></td>
                             <td><input type="text" id="title_uk" name="title_uk" value="<?php echo $row->title_uk; ?>"></td>
                         </tr>
-                        <tr>
+                        <!--tr>
                             <td><label for="title_fi">Finnish: </label></td>
                             <td><input type="text" id="title_fi" name="title_fi" value="<?php echo $row->title_fi; ?>"></td>
-                        </tr>
+                    </tr-->
                         <tr>
                             <td><label for="title_pt">Portuguese: </label></td>
                             <td><input type="text" id="title_pt" name="title_pt" value="<?php echo $row->title_pt; ?>"></td>
@@ -195,6 +199,7 @@ $title_parsed = str_replace('=', '', $title_parsed);
             $title_es = stripslashes($_POST['title_es']);
             $title_de = stripslashes($_POST['title_de']);
             $title_fr = stripslashes($_POST['title_fr']);
+            $title_it = stripslashes($_POST['title_it']);
             $title_be = stripslashes($_POST['title_be']);
             $title_uk = stripslashes($_POST['title_uk']);
             $title_fi = stripslashes($_POST['title_fi']);
@@ -221,6 +226,7 @@ $title_parsed = str_replace('=', '', $title_parsed);
                     "title_es" => "$title_es",
                     "title_de" => "$title_de",
                     "title_fr" => "$title_fr",
+                    "title_it" => "$title_it",
                     "title_be" => "$title_be",
                     "title_uk" => "$title_uk",
                     "title_fi" => "$title_fi",
