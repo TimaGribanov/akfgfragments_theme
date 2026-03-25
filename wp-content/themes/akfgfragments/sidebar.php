@@ -25,7 +25,7 @@
         <h4><?php _e('The latest release', 'akfgfragments'); ?></h4>
         <?php
         $releasedb = new wpdb(DATA_DB_USER, DATA_DB_PWD, DATA_DB_NAME, DATA_DB_HOST);
-        $results = $releasedb->get_results("SELECT r.title_ro AS title, r.date AS `date`, r.img_uri AS uri, t.type AS type FROM releases r JOIN types t ON t.id = r.type ORDER BY r.date DESC LIMIT 1;");
+        $results = $releasedb->get_results("SELECT r.title_ro AS title, r.date AS `date`, r.img_uri AS uri, t.type AS type FROM releases r JOIN types t ON t.id = r.type WHERE r.date <= NOW() ORDER BY r.date DESC LIMIT 1;");
         ?>
         <h5><?php echo $results[0]->title; ?></h5>
         <img src="<?php echo $results[0]->uri; ?>"
