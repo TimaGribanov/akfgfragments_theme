@@ -232,6 +232,12 @@ function printTabs($title, $title_ro)
                                 value="<?php _e('ukrainian', 'akfgfragments'); ?>">
                             <input type="submit" class="mb-2 song-text-btn" name="be"
                                 value="<?php _e('belarusian', 'akfgfragments'); ?>">
+                            <input type="submit" class="mb-2 song-text-btn" name="ko"
+                                value="<?php _e('korean', 'akfgfragments'); ?>">
+                            <input type="submit" class="mb-2 song-text-btn" name="zh_TW"
+                                value="<?php _e('chinese (traditional)', 'akfgfragments'); ?>">
+                            <input type="submit" class="mb-2 song-text-btn" name="zh_CN"
+                                value="<?php _e('chinese (simplified)', 'akfgfragments'); ?>">
                         </div>
                     </div>
                     <div id="song-lyrics"></div>
