@@ -150,6 +150,9 @@ $title_parsed = str_replace('=', '', $title_parsed);
                     <!--option class="lyrics-lang-option" value="fi">Finnish</option-->
                     <option class="lyrics-lang-option" value="pt">Portuguese</option>
                     <option class="lyrics-lang-option" value="id">Indonesian</option>
+                    <option class="lyrics-lang-option" value="ko">Korean</option>
+                    <option class="lyrics-lang-option" value="zh_TW">Chinese (Traditional)</option>
+                    <option class="lyrics-lang-option" value="zh_CN">Chinese (Simplified)</option>
                 </select><br>
 
                 <textarea id="lyrics-text" name="lyrics-text" style="width: 400px; height: 424px;"></textarea><br><br>
